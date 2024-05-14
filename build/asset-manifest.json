@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6a954e18.css",
+    "main.js": "/static/js/main.3f297a6a.js",
+    "static/media/dontaelopez_An_abstract_brain_ecosystem_3D_ultra_high_resolutio_a46c4c0f-dbaa-4b85-add7-1f874396beaf 1.png": "/static/media/dontaelopez_An_abstract_brain_ecosystem_3D_ultra_high_resolutio_a46c4c0f-dbaa-4b85-add7-1f874396beaf 1.df8eda77d51ff99569df.png",
+    "static/media/dontaelopez_An_abstract_brain_ecosystem_3D_ultra_high_resolutio_a46c4c0f-dbaa-4b85-add7-1f874396beaf 2.png": "/static/media/dontaelopez_An_abstract_brain_ecosystem_3D_ultra_high_resolutio_a46c4c0f-dbaa-4b85-add7-1f874396beaf 2.27433a744a93774f7e92.png",
+    "static/media/dontaelopez_3D_ultra_high_resolution_and_you_are_looking_down_a_920c3ae9-51e0-408e-b959-15daa45dce55 1.png": "/static/media/dontaelopez_3D_ultra_high_resolution_and_you_are_looking_down_a_920c3ae9-51e0-408e-b959-15daa45dce55 1.7c39ca80a34d3a8d1a56.png",
+    "static/media/dontaelopez_An_abstract_brain3D_ultra_high_resolution_and_you_a_264f5637-1e77-4f78-960d-f1e994fa5c79 1.png": "/static/media/dontaelopez_An_abstract_brain3D_ultra_high_resolution_and_you_a_264f5637-1e77-4f78-960d-f1e994fa5c79 1.1bbadc2ca464fecb8c56.png",
+    "static/media/1BF9F1D4-C54E-479F-946F-A0BA0CC09547 1.png": "/static/media/1BF9F1D4-C54E-479F-946F-A0BA0CC09547 1.ed033a72e650cb422f83.png",
+    "static/media/IMG_0695.png": "/static/media/IMG_0695.3d69da526dfa12a590b5.png",
+    "static/media/IMG_0169.png": "/static/media/IMG_0169.30cac1ce0c1b6b65e144.png",
+    "static/media/IMG_0166.png": "/static/media/IMG_0166.c7e989507b72208bf54c.png",
+    "static/media/IMG_0167 1.png": "/static/media/IMG_0167 1.6d04d30955014a0aeb4e.png",
+    "index.html": "/index.html",
+    "main.6a954e18.css.map": "/static/css/main.6a954e18.css.map",
+    "main.3f297a6a.js.map": "/static/js/main.3f297a6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6a954e18.css",
+    "static/js/main.3f297a6a.js"
+  ]
+}
