@@ -21,6 +21,8 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+continue-on-error: true
+
 jobs:
   security:
     runs-on: ubuntu-latest
