@@ -1,11 +1,11 @@
-import { SignIn } from '@clerk/nextjs';
+//import { SignIn } from '@clerk/nextjs';
 
 
-const page = () => {
+const Sign_In_page = () => {
   return (
 
-    <SignIn />
+    <div>SignIn page</div>
   )
 }
 
-export default page
+export default Sign_In_page

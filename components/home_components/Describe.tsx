@@ -67,7 +67,7 @@ const Describe = () => {
                     title='ABQ Protocol'
                     content=' 3UM Finance simplifies finance by combining traditional, decentralized, and digital financial tools in one platform. It allows users to easily manage, create, and invest in various financial products using the latest in blockchain and AI technology.'
                 />}
-            <Link href='/root/ecosystem' className='bg-white mt-4 cursor-pointer border-[2px] border-blue-700 text-gradient rounded-full px-8 py-1'>VIEW MORE</Link>
+            <Link href='/ecosystem' className='bg-white mt-4 cursor-pointer border-[2px] border-blue-700 text-gradient rounded-full px-8 py-1'>VIEW MORE</Link>
 
 
         </div>

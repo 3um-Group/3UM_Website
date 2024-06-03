@@ -18,7 +18,7 @@ const Header = () => {
         <div className="w-full p-3 pl-5 flex flex-row items-center sm:border-none border-b border-gray-300">
             {/*DestTop vision */}
             <div className="min-w-10">
-                <Link href='/root' className='block'>
+                <Link href='/' className='block'>
                     <Image
                         src={three_um_logo}
                         alt='company logo'
@@ -30,15 +30,15 @@ const Header = () => {
             </div>
 
             <div className='sm:flex flex-1 flex-row justify-center items-center gap-16 mr-10 hidden'>
-                <Link href='/root/company'
+                <Link href='/company'
                     className={pathName.includes('company') ? 'border-b-2 border-blue-500 p-5' : 'p-5'} >Company</Link>
-                <Link href='/root/ecosystem'
+                <Link href='/ecosystem'
                     className={pathName.includes('ecosystem') ? 'border-b-2 border-blue-500 p-5' : 'p-5'}>Ecosystem</Link>
-                <Link href='/root/community'
+                <Link href='/community'
                     className={pathName.includes('community') ? 'border-b-2 border-blue-500 p-5' : 'p-5'}>Community</Link>
-                <Link href='/root/resources'
+                <Link href='/resources'
                     className={pathName.includes('resources') ? 'border-b-2 border-blue-500 p-5' : 'p-5'} >Resources</Link>
-                <Link href='/root/started'
+                <Link href='/started'
                     className={pathName.includes('started') ? 'border-b-2 border-blue-500 p-5' : 'rounded-full bg-blue-900 text-white py-1 px-6'} >Get Started</Link>
 
             </div>
@@ -52,7 +52,7 @@ const Header = () => {
                     toggle &&
                     <nav className='fixed top-0 left-0 w-full h-full z-20 bg-white' >
                         <div className='flex flex-row p-3 pl-5 mb-0 border-b border-gray-200 items-center'>
-                            <Link href='/root' className='block'>
+                            <Link href='/' className='block'>
                                 <Image
                                     src={three_um_logo}
                                     alt='company logo'
@@ -70,36 +70,36 @@ const Header = () => {
 
                         <div className='flex flex-col items-center gap-2 h-8/12 mb-5'>
                             <Link
-                                href='/root'
+                                href='/'
                                 onClick={() => { setToggle((old) => (!old)) }}
                                 className={`${pathName === '/root' ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`} >
                                 HOME
                             </Link>
                             <Link
-                                href='/root/company'
+                                href='/company'
                                 onClick={() => { setToggle((old) => (!old)) }}
                                 className={`${pathName.includes('company') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`} >
                                 COMPANY
                             </Link>
                             <Link
-                                href='/root/ecosystem'
+                                href='/ecosystem'
                                 onClick={() => { setToggle((old) => (!old)) }}
                                 className={`${pathName.includes('ecosystem') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
                                 ECOSYSTEM</Link>
                             <Link
-                                href='/root/community'
+                                href='/community'
                                 onClick={() => { setToggle((old) => (!old)) }}
                                 className={`${pathName.includes('community') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
                                 COMMUNITY
                             </Link>
                             <Link
-                                href='/root/resources'
+                                href='/resources'
                                 onClick={() => { setToggle((old) => (!old)) }}
                                 className={`${pathName.includes('resource') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
                                 RESOURCE
                             </Link>
                             <Link
-                                href='/root/legald'
+                                href='/legald'
                                 onClick={() => { setToggle((old) => (!old)) }}
                                 className={`${pathName.includes('legal') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
                                 LEGAL
@@ -107,7 +107,7 @@ const Header = () => {
                         </div>
 
                         <div className='flex flex-col pt-5 gap-3 items-center border-t border-gray-200'>
-                            <Link href='/root/started'
+                            <Link href='/started'
                                 className={pathName.includes('started') ? 'border-b-2 border-blue-500 p-5' : 'rounded-full bg-blue-700 text-white py-1 px-6'} >Get Started</Link>
                             <Link href='/sign-in' className='text-blue-500'>LOGIN</Link>
                         </div>
