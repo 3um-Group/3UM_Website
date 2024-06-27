@@ -12,8 +12,8 @@
 # next.js
 /.next/
 
-# Temporary change
-# /out/
+
+/out/
 
 # production
 /build
