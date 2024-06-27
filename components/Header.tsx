@@ -3,120 +3,141 @@ import three_um_logo from '@/public/assets/IMG_0701 1.png';
 import vector from '@/public/assets/Vector.png';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { MenuIcon, XIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 
 const Header = () => {
-    const [toggle, setToggle] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const pathName = usePathname();
 
 
 
     return (
-        <div className="w-full p-3 pl-5 flex flex-row items-center sm:border-none border-b border-gray-300">
-            {/*DestTop vision */}
-            <div className="min-w-10">
-                <Link href='/' className='block'>
-                    <Image
-                        src={three_um_logo}
-                        alt='company logo'
-                        width={40}
-                        height={40}
-                        className='cursor-pointer'
-                    />
-                </Link>
-            </div>
+        //     <header className="flex flex-col sm:flex-row justify-between items-center p-4 bg-white shadow-md sticky top-0 z-50">
+        //     <div className="flex justify-between items-center w-full sm:w-auto">
+        //       <div className="logo">
+        //         {/* Insert SVG or image tag for logo here */}
+        //       </div>
+        //       <button className="sm:hidden" onClick={() => setIsOpen(!isOpen)}>
+        //         {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+        //       </button>
+        //     </div>
+        //     <nav className={`flex flex-col sm:flex sm:flex-row gap-8 ${isOpen ? 'block' : 'hidden'} sm:block mx-auto`}>
 
-            <div className='sm:flex flex-1 flex-row justify-center items-center gap-16 mr-10 hidden'>
-                <Link href='/company'
-                    className={pathName.includes('company') ? 'border-b-2 border-blue-500 p-5' : 'p-5'} >Company</Link>
-                <Link href='/ecosystem'
-                    className={pathName.includes('ecosystem') ? 'border-b-2 border-blue-500 p-5' : 'p-5'}>Ecosystem</Link>
-                <Link href='/community'
-                    className={pathName.includes('community') ? 'border-b-2 border-blue-500 p-5' : 'p-5'}>Community</Link>
-                <Link href='/resources'
-                    className={pathName.includes('resources') ? 'border-b-2 border-blue-500 p-5' : 'p-5'} >Resources</Link>
-                <Link href='/started'
-                    className={pathName.includes('started') ? 'border-b-2 border-blue-500 p-5' : 'rounded-full bg-blue-900 text-white py-1 px-6'} >Get Started</Link>
+        //       <a href="/discover" className="text-gray-600 hover:text-gray-900">Discover</a>
+        //       <a href="/partners" className="text-gray-600 hover:text-gray-900">Partners</a>
+        //       <a href="/stories" className="text-gray-600 hover:text-gray-900">Stories</a>
+        //     </nav>
+        //   </header>
 
-            </div>
+        // <nav className="sticky top-0 z-50">
+        //     <div className='relative flex flex-row items-center border-b border-gray-100 bg-transparent xl:bg-white-700 xl:backdrop-blur-md'>
+        //         <div className='relative z-30 mx-auto flex w-full flex-row items-center justify-between bg-white-700 px-6 py-4 backdrop-blur-md xl:max-w-4xl xl:bg-transparent xl:px-0 xl:backdrop-filter-none'>
+        //             <div className="flex w-[162px] justify-start">
+        //                 <Link href='/' className='z-30 w-28'>
+        //                     <Image
+        //                         src={three_um_logo}
+        //                         alt='company logo'
+        //                         width={50}
+        //                         height={60}
+        //                         className='z-30 h-fit w-fullr'
+        //                     />
+        //                 </Link>
 
-            {/*Mobile vision incomplete*/}
-            <div className='text-2xl font-bold sm:hidden ml-auto mr-auto'>3UM</div>
+        //             </div>
+        //             <div className='hidden flex-row items-center gap-4 xl:flex'>
+        //                 <div className='font-label-size-200 group flex items-center gap-1 font-semibold'>
+        //                     <div className='z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900'>
+        //                         Our Company
+        //                     </div>
+        //                 </div>
+        //                 <div className='font-label-size-200 group flex items-center gap-1 font-semibold'>
+        //                     <div className='z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900'>
+        //                         Our Company
+        //                     </div>
+        //                 </div>
+        //                 <div className='font-label-size-200 group flex items-center gap-1 font-semibold'>
+        //                     <div className='z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900'>
+        //                         Our Company
+        //                     </div>
+        //                 </div>
 
-            <div className='sm:hidden'>
-                <Image alt='icon' src={vector} width={30} height={30} onClick={() => { setToggle((old) => (!old)) }} className='cursor-pointer ' />
-                {
-                    toggle &&
-                    <nav className='fixed top-0 left-0 w-full h-full z-20 bg-white' >
-                        <div className='flex flex-row p-3 pl-5 mb-0 border-b border-gray-200 items-center'>
-                            <Link href='/' className='block'>
-                                <Image
-                                    src={three_um_logo}
-                                    alt='company logo'
-                                    width={40}
-                                    height={40}
-                                    className='cursor-pointer'
-                                />
-                            </Link>
+        //             </div>
+        //             <div className="z-30 hidden items-center gap-2 xl:flex"><a data-testid="navigation-link" href="/contact-sales">
+        //                 <div className="group relative h-full rounded-lg transition-all focus:shadow-purple"><span
+        //                     className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-transparent text-gray-950 hover:bg-gray-100 hover:text-gray-700 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg font-button-size-100 px-4 py-3">Contact
+        //                     sales</span></div>
+        //             </a><a data-testid="navigation-link"
+        //                 href="https://auth.alchemy.com/?redirectUrl=https%3A%2F%2Fdashboard.alchemy.com%2Fsignup%2F">
+        //                     <div className="group relative h-full rounded-lg transition-all hover:bg-blue-100 active:bg-blue-50"><span
+        //                         className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gradient-to-br from-gradient-vibrant-blue-100 to-gradient-vibrant-blue-200 text-white-950 hover:bg-clip-text hover:text-transparent hover:shadow-gray-lg font-button-size-100 px-4 py-3">Sign
+        //                         in</span></div>
+        //                 </a></div>
+        //         </div>
+        //     </div>
+        // </nav>
 
-                            <div className='text-2xl font-bold ml-auto mr-auto'>3UM</div>
-                            <Image alt='icon' src={vector} width={30} height={30} onClick={() => { setToggle((old) => (!old)) }} className='m-0 cursor-pointer object-contain' />
+        <nav className="sticky top-0 z-50">
+            <div className='relative flex flex-row items-center border-b border-gray-100 bg-transparent xl:bg-white-700 xl:backdrop-blur-md'>
+                <div className='relative z-30 mx-auto flex w-full flex-row items-center justify-between bg-white-700 px-6 py-4 backdrop-blur-md xl:max-w-4xl xl:bg-transparent xl:px-0 xl:backdrop-filter-none'>
+                    <div className="flex w-[162px] justify-start">
+                        <Link href='/'>
 
+                            <Image
+                                src={three_um_logo}
+                                alt='company logo'
+                                width={50}
+                                height={60}
+                                className='z-30 h-fit w-fullr'
+                            />
 
+                        </Link>
+                        <div className="md:hidden">
+                            <button type="button" onClick={() => setIsOpen(!isOpen)}>
+                                {isOpen ? <XIcon className="h-6 w-6 text-white" /> : <MenuIcon className="h-6 w-6 text-white" />}
+                            </button>
                         </div>
+                    </div>
+                    <div className={`flex-row items-center gap-4 ${isOpen ? 'flex' : 'hidden'} md:flex`}>
+                        {/* Your existing menu items go here */}
 
-                        <div className='flex flex-col items-center gap-2 h-8/12 mb-5'>
-                            <Link
-                                href='/'
-                                onClick={() => { setToggle((old) => (!old)) }}
-                                className={`${pathName === '/root' ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`} >
-                                HOME
-                            </Link>
-                            <Link
-                                href='/company'
-                                onClick={() => { setToggle((old) => (!old)) }}
-                                className={`${pathName.includes('company') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`} >
-                                COMPANY
-                            </Link>
-                            <Link
-                                href='/ecosystem'
-                                onClick={() => { setToggle((old) => (!old)) }}
-                                className={`${pathName.includes('ecosystem') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
-                                ECOSYSTEM</Link>
-                            <Link
-                                href='/community'
-                                onClick={() => { setToggle((old) => (!old)) }}
-                                className={`${pathName.includes('community') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
-                                COMMUNITY
-                            </Link>
-                            <Link
-                                href='/resources'
-                                onClick={() => { setToggle((old) => (!old)) }}
-                                className={`${pathName.includes('resource') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
-                                RESOURCE
-                            </Link>
-                            <Link
-                                href='/legald'
-                                onClick={() => { setToggle((old) => (!old)) }}
-                                className={`${pathName.includes('legal') ? 'text-blue-500 bg-blue-100' : ''}  hover:bg-gray-200 w-full text-center py-1 px-2 my-0`}  >
-                                LEGAL
-                            </Link>
+                        <div className='font-label-size-200 group flex items-center gap-1 font-semibold'>
+                            <div className='z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900'>
+                                Our Company
+                            </div>
                         </div>
-
-                        <div className='flex flex-col pt-5 gap-3 items-center border-t border-gray-200'>
-                            <Link href='/started'
-                                className={pathName.includes('started') ? 'border-b-2 border-blue-500 p-5' : 'rounded-full bg-blue-700 text-white py-1 px-6'} >Get Started</Link>
-                            <Link href='/sign-in' className='text-blue-500'>LOGIN</Link>
+                        <div className='font-label-size-200 group flex items-center gap-1 font-semibold'>
+                            <div className='z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900'>
+                                Our Company
+                            </div>
                         </div>
+                        <div className='font-label-size-200 group flex items-center gap-1 font-semibold'>
+                            <div className='z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900'>
+                                Our Company
+                            </div>
+                        </div>
+                    </div>
+                    <div className="z-30 hidden items-center gap-2 xl:flex">
+                        {/* Your existing right-side content goes here */}
 
-                    </nav>
-                }
-
+                        <div className="group relative h-full rounded-lg transition-all focus:shadow-purple"><span
+                            className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-transparent text-gray-950 hover:bg-gray-100 hover:text-gray-700 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg font-button-size-100 px-4 py-3">Contact
+                            sales</span></div>
+        
+                        <div className="group relative h-full rounded-lg transition-all hover:bg-blue-100 active:bg-blue-50"><span
+                            className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gradient-to-br from-gradient-vibrant-blue-100 to-gradient-vibrant-blue-200 text-white-950 hover:bg-clip-text hover:text-transparent hover:shadow-gray-lg font-button-size-100 px-4 py-3">Sign
+                            in</span></div>
             </div>
         </div>
+      </div >
+    </nav >
+
+
+
+
+
     )
 }
 
