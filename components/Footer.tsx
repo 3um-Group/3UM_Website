@@ -1,4 +1,4 @@
-import three_um_logo from '@/public/assets/white_logo.png';
+import three_um_logo from '@/public/assets/3UM-dark.png';
 import { FacebookFilled } from "@ant-design/icons"
 import { LinkedinFilled } from '@ant-design/icons';
 import { YoutubeFilled } from '@ant-design/icons';
@@ -6,98 +6,65 @@ import { YoutubeFilled } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
+
 const Footer = () => {
   return (
-    <footer className='flex flex-col items-center mt-12 w-full bg-black text-white'>
+    <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14">
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-8 pb-8 lg:flex-row lg:justify-between lg:gap-12">
+        <div className="flex flex-col gap-5 border-white-950 border-opacity-10 sm:flex-row sm:justify-between lg:flex-col lg:border-b lg:border-none lg:pb-12">
+          <div className="flex flex-col gap-5">
+            <div>
+              <Link href='/'>
 
+                <Image
+                  src={three_um_logo}
+                  alt='company logo'
+                  width={100}
+                  height={100}
+                  className='z-30 h-fit w-fullr'
+                />
 
-
-      <div className='sm:flex hidden flex-row w-full justify-around mt-12'>
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Company</span>
-          <span>About Us</span>
-          <span>Mission & Vision</span>
-          <span>Roadmap</span>
-          <span>Careers</span>
-          <span>Press & Media</span>
-          <span>Contact Us</span>
+              </Link>
+            </div>
+            <p className="font-paragraph-size-200 font-medium">Your company tagline</p>
+            <div className="flex flex-wrap gap-3">
+              {/* Social media icons */}
+            </div>
+          </div>
+          <div className="mt-6 lg:mt-24">
+            <h2 className="font-heading-size-100 font-extrabold text-gray-50">Newsletter Signup</h2>
+            <p className="font-paragraph-size-200 pb-3 pt-1 font-medium">Sign up for our newsletter.</p>
+            <button className="group relative h-full w-full rounded-lg transition-all focus:shadow-purple sm:w-auto">
+              <span className="flex h-full w-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg font-button-size-200 px-4 py-3 sm:w-auto">
+                Subscribe
+              </span>
+            </button>
+          </div>
         </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Econsystem</span>
-          <span>3UM.ID</span>
-          <span>3UM Finance</span>
-          <span>3UM Genesis</span>
-          <span>ABQ Protocol</span>
-          <span>3UM Verse</span>
-          <span>Real World Projects</span>
-          <span>Pilot Prpgrams</span>
-          <span>Learning Academy</span>
-          <span>Partner</span>
-        </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Community</span>
-          <span>Community Home</span>
-          <span>3UM for StartUps</span>
-          <span>3UM for Developers</span>
-          <span>3UM x Creators</span>
-          <span>Governance</span>
-          <span>Events</span>
-          <span>Local Chapters</span>
-          <span>Ecosystem Jobs</span>
-        </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Resources</span>
-          <span>Documentation</span>
-          <span>Tutorials & Guides</span>
-          <span>Blog</span>
-          <span>FAQs</span>
-          <span>Support Center</span>
-          <span>Case Studies</span>
-          <span>Apple For Research</span>
-          <span>Study</span>
-        </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Legal</span>
-          <span>Legal Home</span>
-          <span>Terms of Use</span>
-          <span>Privacy Policy</span>
-        </div>
-
-      </div>
-
-      {/*Desktop version */}
-      <div className='sm:flex hidden flex-row justify-between w-full'>
-        <div className='flex flex-row  my-5 mx-20 mb-10 items-center gap-7'>
-          <Image alt='3UM Logo' src={three_um_logo} className='object-contain' />
-          <div className='opacity-75'>Copyright© 2024 3UM. All rights reserved.</div>
-        </div>
-        <div className='flex flex-row gap-5 my-5 mx-20 mb-10'>
-
-          <FacebookFilled className='text-4xl opacity-80' />
-          <LinkedinFilled className='text-4xl opacity-80' />
-          <YoutubeFilled className='text-4xl opacity-80' />
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-12 xl:gap-16">
+          {['Products', 'Developers', 'Community', 'Company', 'Contact'].map((category) => (
+            <div key={category} className="flex flex-col gap-4">
+              <h2 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h2>
+              <ul className="flex flex-col gap-2">
+                <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 1</a></li>
+                <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 2</a></li>
+                {/* Add more list items as needed */}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/*Mobile Version */}
-      <div className='flex flex-row items-center sm:hidden pt-5 w-full'>
-        <Image alt='3UM Logo' src={three_um_logo} className='object-contain ml-5 mr-auto' />
-
-        <div className='flex flex-row mr-5 ml-auto gap-3 '>
-          <FacebookFilled className='text-4xl opacity-80' />
-          <LinkedinFilled className='text-4xl opacity-80' />
-          <YoutubeFilled className='text-4xl opacity-80' />
-        </div>
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-start gap-4 border-white-950 border-opacity-30 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:border-t lg:pt-9">
+        <p className="font-paragraph-size-100 text-gray-200 text-sm sm:text-base">
+          2024 Your Company Name · <a href="#" className="hover:underline">Terms of service</a>
+        </p>
+        <a href="#" className="font-button-size-100 rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-700 sm:py-3 sm:text-base">
+          Powered by Your Company
+        </a>
       </div>
-      <div className='opacity-75 mb-4 mt-2'>Copyright© 2024 3UM. All rights reserved.</div>
-
-
     </footer>
-  )
+  );
 }
 
 export default Footer
