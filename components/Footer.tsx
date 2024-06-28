@@ -30,7 +30,7 @@ const Footer = () => {
               {/* Social media icons */}
             </div>
             <div className="mt-6">
-              <h2 className="font-heading-size-100 font-extrabold text-gray-50">Supercharge your inbox</h2>
+              <h5 className="font-heading-size-100 font-extrabold text-gray-50">Supercharge your inbox</h5>
               <p className="font-paragraph-size-200 pb-3 pt-1 font-medium">Sign up for our developer newsletter.</p>
               <button className="group relative w-full rounded-lg bg-gray-100 text-gray-700 px-4 py-3 transition-all hover:text-gray-500">
                 Subscribe
@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-12 xl:gap-16 mt-8 lg:mt-0">
             {['Products', 'Developers', 'Community', 'Company', 'Contact'].map((category) => (
               <div key={category} className="flex flex-col gap-4">
-                <h2 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h2>
+                <h5 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h5>
                 <ul className="flex flex-col gap-2">
                   {/* Add your specific links here */}
                   <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 1</a></li>
