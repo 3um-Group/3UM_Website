@@ -5,9 +5,9 @@ export type NavItem = {
   };
   
   const navItems: NavItem[] = [
-    { id: 'our-company', label: 'Our Company', href: '/' },
-    { id: 'our-people', label: 'Our People', href: '/' },
-    { id: 'investors', label: 'Investors', href: '/' }
+    { id: 'our-company', label: 'Our Company', href: '/company' },
+    { id: 'our-people', label: 'Our People', href: '/people' },
+    { id: 'investors', label: 'Investors', href: '/investors' }
     // Add more items as needed
   ];
   
