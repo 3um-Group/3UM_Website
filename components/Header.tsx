@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import three_um_logo from '@/public/assets/3UM-light.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import navItems from '@/utils/nav-items';
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,10 +32,10 @@ const Header = () => {
                         </div>
 
                         <div className="hidden flex-row items-center gap-4 xl:flex">
-                            {['Test 1', 'Test 2', 'Test 3'].map((item) => (
-                                <div key={item} className="font-label-size-200 group flex items-center gap-1 font-semibold">
+                            {navItems.map((item) => (
+                                <div key={item.id} className="font-label-size-200 group flex items-center gap-1 font-semibold">
                                     <div className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
-                                        {item}
+                                        {item.label}
                                     </div>
                                 </div>
                             ))}
