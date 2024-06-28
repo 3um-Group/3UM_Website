@@ -16,7 +16,7 @@ const Header = () => {
         <>
             <nav className="sticky top-0 z-50 bg-white shadow-md">
                 <div className="relative flex flex-row items-center border-b border-gray-100 xl:bg-white-700 xl:backdrop-blur-md">
-                    <div className="relative z-30 mx-auto flex w-full flex-row items-center justify-between px-6 py-4 xl:max-w-4xl xl:px-0">
+                    <div className="relative z-30 mx-auto flex w-full flex-row items-center justify-between px-6 py-4 xl:max-w-7xl xl:px-0">
                         <div className="flex w-[162px] justify-start">
                             <Link href='/'>
 
@@ -34,9 +34,11 @@ const Header = () => {
                         <div className="hidden flex-row items-center gap-4 xl:flex">
                             {navItems.map((item) => (
                                 <div key={item.id} className="font-label-size-200 group flex items-center gap-1 font-semibold">
-                                    <h6 className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
+                                    <div className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
+                                    <Link href={item.href}>
                                         {item.label}
-                                    </h6>
+                                    </Link>
+                                    </div>
                                 </div>
                             ))}
                         </div>

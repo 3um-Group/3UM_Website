@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import "../../../public/assets/styles/style.css";
+// import "../../../public/assets/styles/style.css";
+import './page.css';
+
 
 interface BioItemProps {
   name: string;
