@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="mt-6 lg:mt-24">
-            <h2 className="font-heading-size-100 font-extrabold text-gray-50">Newsletter Signup</h2>
+            <h6 className="font-heading-size-100 font-extrabold text-gray-50">Newsletter Signup</h6>
             <p className="font-paragraph-size-200 pb-3 pt-1 font-medium">Sign up for our newsletter.</p>
             <button className="group relative h-full w-full rounded-lg transition-all focus:shadow-purple sm:w-auto">
               <span className="flex h-full w-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg font-button-size-200 px-4 py-3 sm:w-auto">
@@ -45,7 +45,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-12 xl:gap-16">
           {['Products', 'Developers', 'Community', 'Company', 'Contact'].map((category) => (
             <div key={category} className="flex flex-col gap-4">
-              <h2 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h2>
+              <h6 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h6>
               <ul className="flex flex-col gap-2">
                 <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 1</a></li>
                 <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 2</a></li>

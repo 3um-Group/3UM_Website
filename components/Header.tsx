@@ -34,21 +34,21 @@ const Header = () => {
                         <div className="hidden flex-row items-center gap-4 xl:flex">
                             {navItems.map((item) => (
                                 <div key={item.id} className="font-label-size-200 group flex items-center gap-1 font-semibold">
-                                    <div className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
+                                    <h6 className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
                                         {item.label}
-                                    </div>
+                                    </h6>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="z-30 hidden items-center gap-2 xl:flex">
+                        <h6 className="z-30 hidden items-center gap-2 xl:flex">
                             <button className="font-button-size-100 px-4 py-3 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all">
                                 Contact sales
                             </button>
                             <button className="font-button-size-100 px-4 py-3 bg-gradient-to-br from-gradient-vibrant-blue-100 to-gradient-vibrant-blue-200 text-white-950 rounded-lg transition-all hover:shadow-gray-lg">
                                 Sign in
                             </button>
-                        </div>
+                        </h6>
 
                         <button
                             onClick={toggleMenu}
