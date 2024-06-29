@@ -1,3 +1,5 @@
+'use client'
+
 import Carousels from '@/components/home_components/Carousels';
 import Describe from '@/components/home_components/Describe';
 import Product from '@/components/home_components/Product';
@@ -29,55 +31,77 @@ import Card from '@/components/Card';
 
 import Image from 'next/image';
 import DataCard from '@/components/home_components/DataCards';
+import { useState } from 'react';
 
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState(0); // Set to 4 for "DAOs" to be active initially
+
+  const handlePrevTab = () => {
+    setActiveTab((prev) => (prev > 0 ? prev - 1 : tabs.length - 1));
+  };
+
+  const handleNextTab = () => {
+    setActiveTab((prev) => (prev < tabs.length - 1 ? prev + 1 : 0));
+  };
+
 
   const apiCards = [
     {
       icon: '🔒',
-      title: 'Embedded Accounts',
-      description: 'Make wallets invisible. Simple, non-custodial accounts to onboard users and transact with web2 UX.',
+      title: 'Integrated Identities',
+      description: 'Secure identity management with decentralized technology',
     },
     {
       icon: '🔄',
-      title: 'Account Abstraction Infrastructure',
-      description: 'ERC-4337 Bundler APIs. Gas Manager APIs. Account Abstraction SDK. Up to 35x cheaper than alternatives.',
+      title: 'Smart Contract Infrastructure',
+      description: 'Efficient and secure smart contract solutions.',
     },
     {
       icon: '📄',
-      title: 'Account Contracts',
-      description: 'Optimized ERC-4337 and ERC-6900 smart accounts on Ethereum and L2s.',
+      title: 'Decentralized Intelligence Tools',
+      description: 'Build and manage intelligent applications.',
     },
     {
       icon: '💱',
-      title: 'Transact',
-      description: '7.9x faster, 100% success rate. Transaction simulation, frontrunning protection, and real-time notifications.',
+      title: 'Real-Time Analytics',
+      description: ' Gain insights with real-time data processing.',
     },
     {
       icon: '🔮',
-      title: 'Transaction Simulation',
-      description: 'Transact with confidence. Preview how transactions will behave onchain, and keep your assets safe.',
+      title: 'Blockchain Simulation',
+      description: 'Test and verify transactions securely.',
     },
+  ];
+
+
+  const tabs = [
+    "3UM.ID",
+    "3UM Finance",
+    "3UM Genesis"
   ];
   return (
     <>
       <div className='relative'>
 
         <div className="pt-16 lg:pt-20"></div>
+        {/* First section - Hero Section */}
         <section className="overflow-hidden p-6 xl:pt-6 relative">
           <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-10 lg:flex-row lg:gap-8">
             {/* Left side content */}
             <div className="max-w-[670px] relative flex w-full flex-col gap-6 lg:w-1/2">
               <h1 className="text-5xl font-extrabold text-gray-900">
-                The most reliable way to build web3 apps
+                Nurturing the Future of Technology with Our Intelligent Ecosystem
               </h1>
               <p className="text-xl text-gray-700">
-                Powerful APIs, SDKs, and tools to build and scale your web3 app with ease.
+                Discover the 3UM Intelligent Ecosystem, where cutting-edge technology meets seamless integration.
+              </p>
+              <p className="text-xl text-gray-700">
+                Build, deploy, and scale your applications with our powerful infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="/signup" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
-                  Get your API key
+                  Explore the Ecosystem
                 </a>
                 <a href="/docs" className="text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center">
                   View docs
@@ -135,6 +159,7 @@ export default function Home() {
 
 
       <div className='relative'>
+        {/* Second section */}
         <section
           data-testid="heading-section-PdI721gFTOG_V3UBemfINg"
           id="heading-complete-developer-platform"
@@ -167,9 +192,10 @@ export default function Home() {
                 <h2 className="text-4xl font-bold">SuperDOA</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-xl">
-                Meet the web3 engine powering our suite of APIs. Read and write to the blockchain exactly as you want.
+                Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, amd interact with the infrastructure exactly as you want
+
               </p>
-              <div className="flex flex-row gap-4">
+              {/* <div className="flex flex-row gap-4">
                 <a
                   href="https://dashboard.alchemy.com/signup/?a="
                   className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors"
@@ -185,7 +211,7 @@ export default function Home() {
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                   </svg>
                 </a>
-              </div>
+              </div> */}
             </div>
             <div className="lg:w-1/2">
               {/* Placeholder for supernode diagram - replace with actual image */}
@@ -208,7 +234,11 @@ export default function Home() {
 
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Powerful write APIs for every use case</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Intelligent Solutions for Every Use Case</h2>
+            <p className="text-xl text-gray-700">
+              Explore our powerful tools and APIs designed to seamlessly integrate AI, blockchain, and quantum technologies.
+            </p>
+            <br/>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {apiCards.map((card, index) => (
                 <DataCard key={index} {...card} />
@@ -216,6 +246,91 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+
+        <section className="py-12 md:py-24 px-6 md:px-28 lg:px-52">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <p className="text-sm font-bold text-gray-700 mb-5">3UM SDK</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-5">
+            Comprehensive Intelligent Ecosystem{' '}
+              {/* <span className="bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                two lines of code
+              </span> */}
+            </h2>
+          </div>
+
+          <div className="mb-8">
+            <div className="hidden md:flex justify-center overflow-x-auto pb-2 mb-4">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`whitespace-nowrap px-4 py-2 font-medium text-lg ${activeTab === index
+                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  onClick={() => setActiveTab(index)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+            <div className="md:hidden flex justify-between items-center mb-4">
+              <span className="font-medium text-lg">{tabs[activeTab]}</span>
+              <div className="flex space-x-2">
+                <button
+                  onClick={handlePrevTab}
+                  className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={handleNextTab}
+                  className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-purple-50 rounded-xl p-6 md:p-10 flex flex-col md:flex-row gap-8">
+            <div className="md:w-1/2">
+              <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4">
+                  <h3 className="font-bold text-xl">DAO Members</h3>
+                </div>
+                <ul className="p-4 space-y-4">
+                  {['ajayvasisht.eth', 'katekassab.eth', 'probablynoam.eth', 'semanticseo.eth', 'gitmoney.eth'].map((member, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                      <span className="text-lg">{member}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <div className="flex justify-start mb-4">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                </div>
+                <pre className="text-sm overflow-x-auto bg-gray-100 p-4 rounded">
+                  <code>
+                    {`// Show all collection owners
+
+getOwnersForCollection
+    ('0xBC4CA...8A18a936f13D')`}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       </div>
 
