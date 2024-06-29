@@ -32,7 +32,7 @@ import Card from '@/components/Card';
 import Image from 'next/image';
 import DataCard from '@/components/home_components/DataCards';
 import { useState } from 'react';
-
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0); // Set to 4 for "DAOs" to be active initially
@@ -80,6 +80,12 @@ export default function Home() {
     "3UM Finance",
     "3UM Genesis"
   ];
+
+  const tabContent:any = {
+    "3UM.ID": "A revolutionary identity management system allowing users to control their digital identities securely, leveraging quantum computing, AI, and blockchain.",
+    "3UM Finance": "A comprehensive financial platform that empowers users to create, manage, and invest across CeFi, DeFi, HiFi, and TradFi, integrating robust security, real-time analytics, and personalized investment strategies.",
+    "3UM Genesis": "A powerful development platform enabling users to build, deploy, and scale intelligent applications across IoT, blockchain, AI, research, and more ecosystems with seamless connectivity and adaptive learning capabilities."
+  };
   return (
     <>
       <div className='relative'>
@@ -238,7 +244,7 @@ export default function Home() {
             <p className="text-xl text-gray-700">
               Explore our powerful tools and APIs designed to seamlessly integrate AI, blockchain, and quantum technologies.
             </p>
-            <br/>
+            <br />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {apiCards.map((card, index) => (
                 <DataCard key={index} {...card} />
@@ -252,7 +258,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="text-sm font-bold text-gray-700 mb-5">3UM SDK</p>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5">
-            Comprehensive Intelligent Ecosystem{' '}
+              Comprehensive Intelligent Ecosystem{' '}
               {/* <span className="bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 two lines of code
               </span> */}
@@ -260,76 +266,67 @@ export default function Home() {
           </div>
 
           <div className="mb-8">
-            <div className="hidden md:flex justify-center overflow-x-auto pb-2 mb-4">
-              {tabs.map((tab, index) => (
-                <button
-                  key={index}
-                  className={`whitespace-nowrap px-4 py-2 font-medium text-lg ${activeTab === index
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-600 hover:text-gray-900'
-                    }`}
-                  onClick={() => setActiveTab(index)}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-            <div className="md:hidden flex justify-between items-center mb-4">
-              <span className="font-medium text-lg">{tabs[activeTab]}</span>
-              <div className="flex space-x-2">
-                <button
-                  onClick={handlePrevTab}
-                  className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={handleNextTab}
-                  className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100"
-                >
-                  →
-                </button>
+        <div className="hidden md:flex justify-center overflow-x-auto pb-2 mb-4">
+          {tabs.map((tab, index) => (
+            <button
+              key={index}
+              className={`whitespace-nowrap px-4 py-2 font-medium text-lg ${
+                activeTab === index
+                  ? 'text-blue-600 border-b-2 border-blue-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+              onClick={() => setActiveTab(index)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+        <div className="md:hidden flex justify-between items-center mb-4">
+          <span className="font-medium text-lg">{tabs[activeTab]}</span>
+          <div className="flex space-x-2">
+            <button
+              onClick={handlePrevTab}
+              className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100"
+            >
+              ←
+            </button>
+            <button
+              onClick={handleNextTab}
+              className="p-2 rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="bg-purple-50 rounded-xl p-6 md:p-10 flex flex-col md:flex-row gap-8"
+        >
+          <div className="md:w-1/2">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4">
+                <h3 className="font-bold text-xl">{tabs[activeTab]}</h3>
+              </div>
+              <div className="p-4">
+                <p className="text-lg">{tabContent[tabs[activeTab]]}</p>
               </div>
             </div>
           </div>
-
-          <div className="bg-purple-50 rounded-xl p-6 md:p-10 flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4">
-                  <h3 className="font-bold text-xl">DAO Members</h3>
-                </div>
-                <ul className="p-4 space-y-4">
-                  {['ajayvasisht.eth', 'katekassab.eth', 'probablynoam.eth', 'semanticseo.eth', 'gitmoney.eth'].map((member, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
-                      <span className="text-lg">{member}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="md:w-1/2">
-              <div className="bg-white rounded-lg p-4 shadow-md">
-                <div className="flex justify-start mb-4">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  </div>
-                </div>
-                <pre className="text-sm overflow-x-auto bg-gray-100 p-4 rounded">
-                  <code>
-                    {`// Show all collection owners
-
-getOwnersForCollection
-    ('0xBC4CA...8A18a936f13D')`}
-                  </code>
-                </pre>
-              </div>
+          <div className="md:w-1/2">
+            <div className="bg-gray-200 rounded-lg h-full flex items-center justify-center">
+              <p className="text-gray-500 text-lg">Image Placeholder</p>
             </div>
           </div>
-        </section>
+        </motion.div>
+      </AnimatePresence>
+    </section>
 
 
       </div>
