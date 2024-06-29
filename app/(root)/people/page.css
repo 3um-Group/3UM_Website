@@ -1663,7 +1663,7 @@ html {
     --c-footer-bottom-text: var(--c-grey-300);
     --c-footnote: #a3aaae;
     --c-footnote: var(--c-grey-300);
-    --c-link: #a95228;
+    --c-link: #0f0f0f;
     --c-link: var(--c-copper-400);
     --c-link-hover: #000;
     --c-link-hover: var(--c-black);
@@ -1785,7 +1785,7 @@ html {
     --fw-h6: 400;
     --fs-h6-sm: 17px;
     --lh-h6-sm: 1.29;
-    --fs-body: 20px;
+    --fs-body: 16px;
     --lh-body: 1.5;
     --ff-body: "Guardian TextSans Web", sans-serif;
     --ff-body: var(--f-sans);
@@ -2940,8 +2940,7 @@ html {
   }
   
   a {
-    color: #a95228;
-    color: var(--c-link);
+    color: #160903;
     text-decoration: none;
   }
   

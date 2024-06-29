@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
 // import "../../../public/assets/styles/style.css";
-import './page.css';
-
+import "./page.css";
 
 interface BioItemProps {
   name: string;
@@ -369,14 +368,14 @@ const DirectoryBioLightbox: React.FC<DirectoryBioLightboxProps> = ({
         </button>
 
         <div className="bstn-bio__dialog-wrapper">
-          <div className="bstn-bio__image-wrap">
+          {/* <div className="bstn-bio__image-wrap">
             <img
               className="bstn-bio__image wp-post-image"
               data-src={imgSrc}
               alt={imgAlt}
               src={imgSrc}
             />
-          </div>
+          </div> */}
 
           <div className="bstn-bio__meta">
             <h3 className="bstn-bio__name is-style-h4 mb-zero" itemProp="name">
@@ -418,51 +417,138 @@ const page = () => {
 
   const bios = [
     {
-      name: "Qasim Abbas",
-      title: "Sr. Managing Director",
+      name: "Xiangyuan (Sherry) Chi",
+      title: "Data Analyst",
       business: "Tactical Opportunities",
       location: "London",
-      href: "https://www.blackstone.com/people/qasim-abbas/",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
-      imgSrc:
-        "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      imgAlt: "Qasim Abbas",
+
       description: `
-        <p style="text-align: justify;">Qasim Abbas is a Senior Managing Director in the Tactical Opportunities group at Blackstone. Mr. Abbas leads the group’s European investment strategy, with a particular focus on financial services, and is a member of the Tactical Opportunities Investment Committee. Mr. Abbas has been responsible for leading the group’s investments in Currencies Direct, Hipgnosis, Ki Insurance, Prima, NIBC, Rothesay Life, The Northview Group, performing mortgage pool acquisitions, FinTech platforms as well as the establishment of de novo lending platforms.</p>
-        <p style="text-align: justify;">Before joining Blackstone in 2012, Mr. Abbas was a Portfolio Manager with Trafalgar Asset Managers (a European credit-focused hedge fund), where he invested and traded in European Asset-Backed and Mortgage-Backed Securities across a range of asset classes. Prior to that, he was responsible for establishing a Europe-focused mortgage loan portfolio trading and investment desk at UBS AG in London, and previously spent eight years at Citigroup in emerging markets, securitization, and asset-backed special situations roles.</p>
-        <p style="text-align: justify;">Mr. Abbas received a B.A. in Economics and Government from Clark University. He currently serves as a director of Currencies Direct, NIBC, The Northview Group, Hipgnosis and Lombard International, and was formerly a director of Rothesay Life.</p>
-      `,
+        <p style="text-align: justify;">Sherry Chi is a dedicated Data Analyst with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. Sherry has developed expertise in building up Python-based ETL pipelines, applying Machine Learning techniques for predictive analytics, and transforming datasets into business insights for stakeholders.</p><br>
+  <p style="text-align: justify;">As a Data Scientist in VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train the Transformer model, which surpassed GPT-2 benchmarks. To ensure customer satisfaction, she developed a CRM system for fraud detection, saving users $16,000 in losses. Additionally, Sherry leveraged data storytelling skills to promote the Chatbot products to different audiences. To persuade professionals, she explained the models and algorithms behind the Chatbot in detail and compared it with GPT-2 based on effectiveness and accuracy. To persuade non-technical audiences, she used relatable analogies and interactive activities to keep them engaged, highlighting the user-friendly features.</p><br>
+  <p style="text-align: justify;">Sherry’s internship at AXA Investment Managers further honed her skills in financial modeling and data analysis. To increase efficiency, she automated the Python-based ETL pipeline and completed the data migration from a local server to MongoDB, saving the team 6 hours of manual work on reports and improving data retrieval time by 15%. She also volunteered to collaborate with the Fraud Detection team to assess the performance of Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
+  <p style="text-align: justify;">Sherry’s educational background in both Technology and Finance provides her with comprehensive insights. She always finds innovative ways to resolve old problems and maintains a balance between cost and efficiency. Her dedication to continuous learning and willingness for growth, combined with her proven track record, makes her a valuable asset to any data-driven team.</p><br>
+   `,
     },
     {
-      name: "Abbas",
-      title: " Director",
+      name: "Niklas Hoener",
+      title: " Business Development Executive",
       business: "Tactical",
       location: "Dallas",
-      href: "https://www.blackstone.com/people/qasim-abbas/",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
-      imgSrc:
-        "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      imgAlt: "Abbas",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
       description: `
-        <p style="text-align: justify;">Before joining Blackstone in 2012, Mr. Abbas was a Portfolio Manager with Trafalgar Asset Managers (a European credit-focused hedge fund), where he invested and traded in European Asset-Backed and Mortgage-Backed Securities across a range of asset classes. Prior to that, he was responsible for establishing a Europe-focused mortgage loan portfolio trading and investment desk at UBS AG in London, and previously spent eight years at Citigroup in emerging markets, securitization, and asset-backed special situations roles.</p>
-        <p style="text-align: justify;">Mr. Abbas received a B.A. in Economics and Government from Clark University. He currently serves as a director of Currencies Direct, NIBC, The Northview Group, Hipgnosis and Lombard International, and was formerly a director of Rothesay Life.</p>
-      `,
+         <p style="text-align: justify;">Born and raised in Bielefeld, Germany, Niklas has enriched his academic journey by studying in the United States, becoming proficient in both German and English. This bilingual and bicultural background enables him to communicate effectively and professionally in diverse environments, a highly valuable skill in the global business arena.</p><br>
+  <p style="text-align: justify;">Niklas is an ambitious graduate student-athlete at St. Thomas University, currently pursuing an MBA in International Business and Finance. He previously earned a Bachelor's degree in Business Administration with a concentration in Management and a minor in Economics from Presbyterian College. Alongside his academic achievements, Niklas has gained professional experience in technological solutions consulting and project management.</p><br>
+  <p style="text-align: justify;">Niklas aims to harness his technological, linguistic, quantitative analytical, and economic expertise to build a successful career in business development and innovative economic strategy. His enthusiasm for understanding disparities in economic growth across different regions drives his interest in contributing to the future economy.</p><br>
+  <p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
+`,
     },
 
     {
-      name: "Abbas",
-      title: " Director",
+      name: "Patrick (Alex) Wroe",
+      title: " Junior Analyst",
       business: "Tactical",
       location: "Dallas",
-      href: "https://www.blackstone.com/people/qasim-abbas/",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
-      imgSrc:
-        "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      imgAlt: "Abbas",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
       description: `
-        <p style="text-align: justify;">Before joining Blackstone in 2012, Mr. Abbas was a Portfolio Manager with Trafalgar Asset Managers (a European credit-focused hedge fund), where he invested and traded in European Asset-Backed and Mortgage-Backed Securities across a range of asset classes. Prior to that, he was responsible for establishing a Europe-focused mortgage loan portfolio trading and investment desk at UBS AG in London, and previously spent eight years at Citigroup in emerging markets, securitization, and asset-backed special situations roles.</p>
-        <p style="text-align: justify;">Mr. Abbas received a B.A. in Economics and Government from Clark University. He currently serves as a director of Currencies Direct, NIBC, The Northview Group, Hipgnosis and Lombard International, and was formerly a director of Rothesay Life.</p>
-      `,
+       <p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+`,
+    },
+
+    {
+      name: "Parmi Pandya",
+      title: " Junior Marketing Associate",
+      business: "Tactical",
+      location: "Dallas",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+      <p style="text-align: justify;">Parmi Pandya recently joined 3UM as a Junior Marketing Associate, bringing a wealth of experience in site merchandising, marketing operations, and project management. Parmi's career is marked by significant achievements, including roles at Amazon Business and Afterpay x Square. In these roles, she successfully revamped web page layouts, led end-to-end campaigns, and optimized digital content strategies.</p><br>
+      <p style="text-align: justify;">With a Master of Science in Integrated Marketing from New York University and a background in Business Management and Project Management, Parmi possesses a robust skill set in driving innovative marketing strategies and enhancing customer engagement.</p><br>
+      <p style="text-align: justify;">At 3UM, Parmi is enthusiastic about contributing to 3UM's mission to revolutionize access to cutting-edge technologies. Her dedication to optimizing digital content and fostering strategic marketing initiatives aligns perfectly with 3UM's commitment to innovation and transformation in the tech industry.</p><br>
+ `,
+    },
+
+    {
+      name: "Igor Nazarenko",
+      title: " Product Designer",
+      business: "Tactical",
+      location: "Dallas",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+            <p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.<br></p>
+
+`,
+    },
+
+    {
+      name: "Andronikki (Nikki) Gerohrsitodoulos",
+      title: " Junior researcher and team leader",
+      business: "Tactical",
+      location: "Dallas",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+            <p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. <br></p>
+
+`,
+    },
+
+    {
+      name: "Brian Brueggert",
+      title: " Principal Engineer",
+      business: "Tactical",
+      location: "Dallas",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+      <p style="text-align: justify;">Brian Brueggert is a physicist, mathematician and software developer/engineer with over 20 years of experience across government research, academia and the private sector. His experience includes both theoretical and experimental
+quantum physics, quantum computing (gate-based and adiabatic), quantum
+cryptography, algebraic modeling, mathematical optimization, architecting and developing pioneering solutions for complex, dynamical systems, and utilizing high-tech software stacks to prescribe valuable actions and derive meaningful
+insights from large volumes of data, in an automated, optimized, dynamized and scalable manner. He has worked extensively in cloud, fog and edge solutions, centralized databases (relational/non-relational), decentralized distributed ledger technology, data science, Al, ML (regular and federated), data engineering (ETL/ELT pipelines), devops and APl's, among other related and non-related areas.
+.<br></p>
+`,
+    },
+
+    {
+      name: "Silpa Vijayan Geetha",
+      title: " Frontend Developer",
+      business: "Tactical",
+      location: "Dallas",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+<p style="text-align: justify;">Silpa Vijayan Geetha recently joined 3UM as a Frontend Developer, endowed with an impressive track record of spearheading web development initiatives and enhancing software functionalities across various high-stakes industries. Silpa's career showcases remarkable achievements, notably during her tenure at Diaconia, where she led the development of an advanced interactive application, and at IBS Software, where she played a crucial role in streamlining operations and enhancing security protocols for the aviation sector.<br></p>
+
+<p style="text-align: justify;">With a Master of Science in Computer Science, focusing on Artificial Intelligence and Database (Cloud Computing) from the University of Texas at Arlington, Silpa possesses a robust skill set in implementing cutting-edge technologies and developing scalable web solutions. Beyond her frontend expertise, she is a seasoned full stack developer, adept at backend technologies which amplifies her capacity to handle comprehensive software solutions. Her educational and professional journey has equipped her with a unique blend of strategic insight and practical expertise, which she adeptly applies to her projects.<br></p>
+
+<p style="text-align: justify;">At 3UM, Silpa is excited to contribute to the company's vision of transforming the technological landscape. Her commitment to excellence and her strategic approach to software development are in perfect harmony with 3UM's objectives of driving innovation and leading transformative changes in the tech industry.<br></p>
+`,
     },
     // Add more bios here...
   ];
@@ -524,17 +610,14 @@ const page = () => {
     { value: "Senior Operating Partner", label: "Senior Operating Partner" },
   ];
   const description1 = `
-    <p style="text-align: justify;">Dontae X. Y. López is the CEO, Chairman, and Co-Founder of 3UM, as well as one of the builders of SuperDAO. Known as the "Boy Genius" in tech circles and 3UM, Mr. López has been the driving force behind 3UM's groundbreaking advancements in AI, quantum computing, and decentralized systems.</p><br>
-    <p style="text-align: justify;">With an insatiable curiosity and a prodigious intellect, Mr. López has been instrumental in every aspect of 3UM's development since its inception. His multifaceted expertise spans artificial intelligence, quantum algorithms, blockchain architecture, and ethical AI governance, making him a rare polymath in the tech industry.</p><br>
-    <p style="text-align: justify;">Prior to founding 3UM, Mr. López distinguished himself in the world of venture capital, where he established and led the Denver office for IØTA. In this role, he demonstrated an exceptional ability to bridge international investors with innovative portfolio companies, with a particular focus on Web3 technologies. His strategic vision and network-building skills were pivotal in attracting significant global investment to cutting-edge projects.</p><br>
-    <p style="text-align: justify;">Mr. López's business acumen extends beyond the tech sector. In his tenure at a firm, he orchestrated over $1 billion in transactions, showcasing his ability to navigate complex financial landscapes and deliver substantial results.</p><br>
-    <p style="text-align: justify;">Currently pursuing a degree in Liberal Arts at the esteemed Harvard Extension School, Mr. López embodies the Renaissance ideal of broad, interdisciplinary knowledge. This educational background complements his technological expertise, allowing him to approach problems with a unique, holistic perspective.</p><br>
-    <p style="text-align: justify;">At 3UM, Mr. López wears multiple hats with remarkable efficacy. He sits on the Compliance Board, ensuring that the company's innovations align with regulatory standards while pushing the boundaries of what's possible. As a key member of the Board of Directors, he guides the company's strategic direction, leveraging his deep understanding of both technology and market dynamics.</p><br>
-    <p style="text-align: justify;">Beyond 3UM, Mr. López's expertise is highly sought after in the broader tech ecosystem. He serves on the boards of several companies in the fields of technology, supply chain management, Web3, and quantum computing, further cementing his status as a cross-industry thought leader.</p><br>
-    <p style="text-align: justify;">A dedicated philanthropist, Mr. López is committed to leveraging technology for social good. His charitable initiatives focus on bridging the digital divide and promoting STEM education in underserved communities, reflecting his belief in the transformative power of technology to create positive societal change.</p><br>
-    <p style="text-align: justify;">Mr. López's visionary leadership and technical brilliance have positioned 3UM at the vanguard of the AI revolution. His ability to synthesize complex concepts across disciplines – from quantum physics to ethical AI deployment – has been crucial in developing 3UM's pioneering technologies.</p><br>
-    <p style="text-align: justify;">A sought-after speaker and thought leader, Mr. López continues to shape the future of technology, driving innovations that promise to redefine the intersection of AI, quantum computing, and blockchain technology, while simultaneously working to ensure these advancements benefit society at large.</p><br>
-  `;
+<p style="text-align: justify;">Dontae López is the CEO and Co-Founder of 3UM, He is the creator of 3UM-ID, 3UM-Fortuna, and Genesis as well as one of the builders of SuperDAO. Mr. López has been the driving force behind 3UM's groundbreaking advancements in AI, quantum computing, and decentralized systems.</p><br>
+
+<p style="text-align: justify;">His multifaceted expertise spans artificial intelligence, quantum algorithms, blockchain architecture, and ethical AI governance, making him a rare polymath in the tech industry. His ability to synthesize complex concepts across disciplines – from quantum physics to ethical AI deployment – has been crucial in developing 3UM's pioneering technologies.</p><br>
+
+<p style="text-align: justify;">Before founding 3UM, Mr. López distinguished himself in the world of venture capital, where he established and led the Denver office for IØTA, attracting significant global investment to cutting-edge projects. He also orchestrated over $1 billion in transactions, showcasing his ability to navigate complex financial landscapes and deliver substantial results.</p><br>
+
+<p style="text-align: justify;">Beyond 3UM, Mr. López's expertise is highly sought after in the broader tech ecosystem. He serves on the boards of several companies in the fields of technology, supply chain management, Web3, and quantum computing, further cementing his status as a cross-industry thought leader. He is also an approved mentor and member of the ForbesBLK.</p><br>
+`;
 
   const description2 = `
   <p style="text-align: justify;">Juan Carlos Portilla Jaimes serves as the Head of Compliance at 3UM, bringing a wealth of expertise in international financial law, anti-money laundering, and financial crime prevention to this critical role.</p><br>
@@ -552,6 +635,10 @@ const page = () => {
   <p style="text-align: justify;">Mr. Spencer's educational background is equally impressive, holding a Master's degree in Computer Science and a Finance degree from Cornell University. This unique combination of technical expertise and financial acumen allows him to bridge the gap between technological innovation and business strategy, making him an indispensable asset to 3UM's leadership team.</p><br>
   <p style="text-align: justify;">As CTO of 3UM, Mr. Spencer continues to explore emerging technologies, positioning the company at the cutting edge of innovation in quantum-inspired AI, blockchain integration, and decentralized systems. His strategic vision and technical prowess are driving 3UM's efforts to develop next-generation solutions that promise to reshape the landscape of AI-driven decision-making and data processing.</p><br>
   <p style="text-align: justify;">Under Mr. Spencer's technological leadership, 3UM is poised to push the boundaries of what's possible in the realms of AI, quantum computing, and blockchain technology. His unparalleled expertise and forward-thinking approach ensure that 3UM remains at the vanguard of the technological revolution, consistently delivering innovative solutions that address the complex challenges of our rapidly evolving digital world.</p><br>
+`;
+
+const description4 = `
+<p style="text-align: justify;">Lawrence W. Sinnott, MBA, CPA, CGMA, is an accomplished Chief Financial Officer with a proven track record of driving financial excellence and strategic growth in technology firms and government sectors. With extensive experience in financial leadership, contract management, and operational enhancement, Lawrence leverages his expertise to optimize revenue, reduce costs, and secure substantial contracts, consistently propelling organizational success and expansion.</p><br>
 `;
 
   const description5 = `
@@ -602,29 +689,27 @@ const page = () => {
   <p style="text-align: justify;">As a sought-after speaker and thought leader, Chuck continues to shape the future of digital health and technology standards, ensuring that 3UM remains at the forefront of innovation in the rapidly evolving tech landscape.</p><br>
 `;
 
-const description11 = `
+  const description11 = `
   <p style="text-align: justify;">Sherry Chi is a dedicated Data Analyst with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. Sherry has developed expertise in building up Python-based ETL pipelines, applying Machine Learning techniques for predictive analytics, and transforming datasets into business insights for stakeholders.</p><br>
   <p style="text-align: justify;">As a Data Scientist in VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train the Transformer model, which surpassed GPT-2 benchmarks. To ensure customer satisfaction, she developed a CRM system for fraud detection, saving users $16,000 in losses. Additionally, Sherry leveraged data storytelling skills to promote the Chatbot products to different audiences. To persuade professionals, she explained the models and algorithms behind the Chatbot in detail and compared it with GPT-2 based on effectiveness and accuracy. To persuade non-technical audiences, she used relatable analogies and interactive activities to keep them engaged, highlighting the user-friendly features.</p><br>
   <p style="text-align: justify;">Sherry’s internship at AXA Investment Managers further honed her skills in financial modeling and data analysis. To increase efficiency, she automated the Python-based ETL pipeline and completed the data migration from a local server to MongoDB, saving the team 6 hours of manual work on reports and improving data retrieval time by 15%. She also volunteered to collaborate with the Fraud Detection team to assess the performance of Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
   <p style="text-align: justify;">Sherry’s educational background in both Technology and Finance provides her with comprehensive insights. She always finds innovative ways to resolve old problems and maintains a balance between cost and efficiency. Her dedication to continuous learning and willingness for growth, combined with her proven track record, makes her a valuable asset to any data-driven team.</p><br>
 `;
 
-
-const description12 = `
+  const description12 = `
   <p style="text-align: justify;">Born and raised in Bielefeld, Germany, Niklas has enriched his academic journey by studying in the United States, becoming proficient in both German and English. This bilingual and bicultural background enables him to communicate effectively and professionally in diverse environments, a highly valuable skill in the global business arena.</p><br>
   <p style="text-align: justify;">Niklas is an ambitious graduate student-athlete at St. Thomas University, currently pursuing an MBA in International Business and Finance. He previously earned a Bachelor's degree in Business Administration with a concentration in Management and a minor in Economics from Presbyterian College. Alongside his academic achievements, Niklas has gained professional experience in technological solutions consulting and project management.</p><br>
   <p style="text-align: justify;">Niklas aims to harness his technological, linguistic, quantitative analytical, and economic expertise to build a successful career in business development and innovative economic strategy. His enthusiasm for understanding disparities in economic growth across different regions drives his interest in contributing to the future economy.</p><br>
   <p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
 `;
 
-const description13 = `
+  const description13 = `
   <p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
 `;
 
-const description14 = `
+  const description14 = `
   <p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
 `;
-
 
   return (
     <div id="content" role="main" className="site-content">
@@ -635,15 +720,15 @@ const description14 = `
         <h4 className="wp-block-heading">Executive Officers</h4>
         <div className="bstn-bio-grid mb-small bstn-bio-grid--4-columns">
           <BioItem
-            name="Dontae X. Y. López"
-            jobTitle="Chairman, CEO, & Co-Founder"
+            name="Dontae López"
+            jobTitle="CEO & Co-Founder"
             dialogId="bio-dontae-x-y-lopez"
-            ariaLabel="Dontae X. Y. López"
+            ariaLabel="CEO & Co-Founder"
             description={description1}
           />
           <BioItem
             name="Jin Hong"
-            jobTitle="President & Chief Operating Officer"
+            jobTitle="COO & Co-Founder"
             dialogId="bio-jin-hong"
             ariaLabel="Jin Hong"
             description={description2}
@@ -660,8 +745,8 @@ const description14 = `
             jobTitle="Chief Financial Officer"
             dialogId="bio-lawrence-sinnott"
             ariaLabel="Lawrence W. Sinnott"
-            description="Stephen A. Schwarzman is the Chairman, CEO & Co-Founder of Blackstone. Since founding Blackstone, Mr. Schwarzman has been involved in all phases of the firm's development."
-          />
+            description={description4}
+            />
           <BioItem
             name="Collin Schwartz"
             jobTitle="Chief Legal Officer"
@@ -710,7 +795,7 @@ const description14 = `
           />
         </div>
 
-        <h3 className="wp-block-heading has-text-align-center mt-xxlarge">
+        {/* <h3 className="wp-block-heading has-text-align-center mt-xxlarge">
           Board Members
         </h3>
 
@@ -729,28 +814,8 @@ const description14 = `
             ariaLabel="Niklas Hoener"
             description={description12}
           />
-          <BioItem
-            name="Patrick (Alex) Wroe"
-            jobTitle="Junior Analyst"
-            dialogId="bio-Patrick-jackson"
-            ariaLabel="Patrick (Alex) Wroe"
-            description={description13}
-          />
-          <BioItem
-            name="Parmi Pandya"
-            jobTitle="Junior Marketing Associate"
-            dialogId="bio-parmi-pandya"
-            ariaLabel="Parmi Pandya"
-            description={description14}
-          />
-          <BioItem
-            name="Charles Parker"
-            jobTitle="Head of Business Development"
-            dialogId="bio-charles-parker"
-            ariaLabel="Charles Parker"
-            description={description10}
-          />
-        </div>
+          
+        </div> */}
 
         <h3 className="has-text-align-center">Directory</h3>
         <div id="people-directory" className="people-directory mb-xlarge">
