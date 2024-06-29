@@ -9,11 +9,13 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
-            <Header />
+        <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
             {children}
-            <Footer />
-        </div>
+        </main>
+        <Footer />
+    </div>
 
 
     );

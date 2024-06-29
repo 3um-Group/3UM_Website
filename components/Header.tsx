@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import three_um_logo from '@/public/assets/3UM-light.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,47 +7,55 @@ import navItems from '@/utils/nav-items';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        handleResize(); // Set initial width
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isMenuOpen ? 'hidden' : 'unset';
     };
 
     return (
         <>
-            <nav className="sticky top-0 z-50 bg-white shadow-md">
-                <div className="relative flex flex-row items-center border-b border-gray-100 xl:bg-white-700 xl:backdrop-blur-md">
-                    <div className="relative z-30 mx-auto flex w-full flex-row items-center justify-between px-6 py-4 xl:max-w-7xl xl:px-0">
-                        <div className="flex w-[162px] justify-start">
+            <nav className="sticky top-0 z-50 bg-white shadow-md w-full">
+                <div className="relative flex items-center border-b border-gray-100 xl:bg-white-700 xl:backdrop-blur-md">
+                    <div className="relative z-30 mx-auto flex w-full items-center justify-between px-4 sm:px-6 py-4 xl:max-w-7xl xl:px-0">
+                        <div className="flex justify-start">
                             <Link href='/'>
-
                                 <Image
                                     src={three_um_logo}
                                     alt='company logo'
                                     width={50}
                                     height={50}
-                                    className='z-30 h-fit w-fullr'
+                                    className='z-30 h-auto w-auto max-h-[40px]'
                                 />
-
                             </Link>
                         </div>
 
-                        <div className="hidden flex-row items-center gap-4 xl:flex">
+                        <div className="hidden xl:flex flex-row items-center gap-4">
                             {navItems.map((item) => (
                                 <div key={item.id} className="font-label-size-200 group flex items-center gap-1 font-semibold">
                                     <div className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
-                                    <Link href={item.href}>
-                                        {item.label}
-                                    </Link>
+                                        <Link href={item.href}>
+                                            {item.label}
+                                        </Link>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        <div className="z-30 hidden items-center gap-2 xl:flex">
-                            <button className="font-button-size-100 px-4 py-3 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all">
+                        <div className="z-30 hidden xl:flex items-center gap-2">
+                            <button className="font-button-size-100 px-4 py-2 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all">
                                 Contact sales
                             </button>
-                            <button className="font-button-size-100 px-4 py-3 bg-gradient-to-br from-gradient-vibrant-blue-100 to-gradient-vibrant-blue-200 text-white-950 rounded-lg transition-all hover:shadow-gray-lg">
+                            <button className="font-button-size-100 px-4 py-2 bg-gradient-to-br from-gradient-vibrant-blue-100 to-gradient-vibrant-blue-200 text-white-950 rounded-lg transition-all hover:shadow-gray-lg">
                                 Sign in
                             </button>
                         </div>
@@ -69,13 +77,21 @@ const Header = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed inset-x-0 top-[72px] bg-white z-40 transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'translate-y-0 h-[calc(100vh-72px)]' : '-translate-y-full h-0'
-                    } overflow-hidden`}
-                style={{ top: '72px' }} // Adjust this value to match your header height
+                className={`fixed inset-0 bg-white z-40 transition-all duration-300 ease-in-out ${
+                    isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+                } overflow-y-auto`}
+                style={{ top: '72px', height: 'calc(100vh - 72px)' }}
             >
-                <div className="flex flex-col items-center gap-4 p-4">
-                    {['Test 1', 'Test 2', 'Test 3'].map((item) => (
-                        <a key={item} href="#" className="text-gray-950 text-lg font-semibold py-2">{item}</a>
+                <div className="flex flex-col items-center gap-4 p-4 w-full">
+                    {navItems.map((item) => (
+                        <Link 
+                            key={item.id} 
+                            href={item.href} 
+                            className="text-gray-950 text-lg font-semibold py-2 w-full text-center"
+                            onClick={toggleMenu}
+                        >
+                            {item.label}
+                        </Link>
                     ))}
                     <button className="mt-4 font-button-size-100 px-4 py-3 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all w-full">
                         Contact sales
