@@ -1,4 +1,5 @@
 import three_um_logo from '@/public/assets/3UM-dark.png';
+import footerItems from '@/utils/footer-items';
 import { FacebookFilled } from "@ant-design/icons"
 import { LinkedinFilled } from '@ant-design/icons';
 import { YoutubeFilled } from '@ant-design/icons';
@@ -40,13 +41,19 @@ const Footer = () => {
 
           {/* Link Columns */}
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-12 xl:gap-16 mt-8 lg:mt-0">
-            {['Products', 'Developers', 'Community', 'Company', 'Contact'].map((category) => (
+            {['Comapany'].map((category) => (
               <div key={category} className="flex flex-col gap-4">
-                <h5 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h5>
+                {/* <h5 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h5> */}
                 <ul className="flex flex-col gap-2">
                   {/* Add your specific links here */}
-                  <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 1</a></li>
-                  <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">Link 2</a></li>
+                  {footerItems.map((item) => (
+                    <>
+                      <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li>
+                      {/* <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li> */}
+                    </>
+
+                  ))}
+
                   {/* Add more list items as needed */}
                 </ul>
               </div>
@@ -59,7 +66,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-7xl mt-8 pt-4 border-t border-gray-800">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <p className="font-paragraph-size-100 text-gray-200 text-sm sm:text-base">
-          Copyright© 2024 3UM. All rights reserved <a href="#" className="hover:underline">Terms of service</a>
+            Copyright© 2024 3UM. All rights reserved <a href="#" className="hover:underline">Terms of service</a>
           </p>
           <a href="#" className="font-button-size-100 mt-4 sm:mt-0 rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-700 sm:py-3 sm:text-base">
             Powered by 3UM
