@@ -248,7 +248,7 @@ export default function Home() {
         <section
           data-testid="heading-section-PdI721gFTOG_V3UBemfINg"
           id="heading-complete-developer-platform"
-          className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24 bg-gradient-to-b from-white-950 to-transparent"
+          className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24 "
         >
           <div className="relative z-10 flex flex-col">
             <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
@@ -469,7 +469,7 @@ export default function Home() {
                 <p></p>
               </div>
             </div>
-            <a data-testid="navigation-link" className="w-full sm:w-fit" href="https://dashboard.alchemy.com/signup/?a=">
+            <a data-testid="navigation-link" className="w-full sm:w-fit" href="">
               <div data-testid="cta-conversion-panel-section" className="group relative h-full rounded-lg transition-all focus:shadow-purple w-full sm:w-fit">
                 <span className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg text-lg lg:text-xl px-4 py-3 lg:px-3.5 lg:py-3">Get your API key</span>
               </div>
