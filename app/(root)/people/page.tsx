@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 // import "../../../public/assets/styles/style.css";
 import "./page.css";
+import backgroundImage from '../../../public/assets/img3.jpg'; 
+
 
 interface BioItemProps {
   name: string;
@@ -417,10 +419,119 @@ const page = () => {
 
   const bios = [
     {
+      name: "Luis Jorge",
+      title: "Software Engineer II",
+      business: "Technology",
+      location: "New York",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+
+      description: `
+ <br><p style="text-align: justify;">Luis is a Software Engineer II at 3UM, a first-generation Dominican American deeply passionate about technology and its transformative potential. With over 8 years of hands-on experience in Python development, specializing in Django and Flask APIs, he is adept in multiple programming languages including C++, C#, C, Python, Java, and JavaScript.</p><br>
+<p style="text-align: justify;">Luis's technical expertise is bolstered by his AWS Developer Associate certification and extensive knowledge in networking and security (CCNA). He has led backend development projects and contributed significantly to system architecture and project management as a Software Engineering Fellow with Hack.Diversity. Additionally, he is enhancing his full-stack development skills at Flatiron School Coding Bootcamp. Luis aims to revolutionize enterprise infrastructure, making it more efficient and sustainable while constantly staying at the forefront of emerging technologies through continuous learning and collaboration.</p><br>
+`,
+    },
+
+    {
+      name: "Ganesh Sarakadam",
+      title: "Frontend Engineer",
+      business: "Technology",
+      location: "Athens",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+
+      description: `
+ <br><p style="text-align: justify;">Ganesh Sarakadam is a Frontend Engineer at 3UM with over four years of experience in building scalable, high-quality solutions. With a strong foundation in JavaScript and Python, Ganesh is adept in frameworks such as React, Redux, and Node.js. His technical expertise extends to various databases including MySQL, PostgreSQL, Elasticsearch, and MongoDB, and he is proficient in tools like Docker, Kubernetes, and CI/CD.</p><br>
+<p style="text-align: justify;">Ganesh's professional experience includes significant roles such as a Research Assistant at Ohio University, where he pioneered a real-time weather data archive and developed a Python scheduler for efficient data processing. At Berkadia, he played a key role in developing RESTful Web APIs and microservices architecture, optimizing resource allocation on AWS ECS, and enhancing the efficiency of ticket processing operations.</p><br>
+<p style="text-align: justify;">In his projects, Ganesh has demonstrated his ability to design responsive web applications and engineer robust workflow systems, achieving high levels of performance and efficiency. He holds a Master of Science in Computer Science from Ohio University.</p><br>
+<p style="text-align: justify;">At 3UM, Ganesh applies his frontend engineering skills to drive the development of innovative solutions in AI, blockchain, and quantum computing, contributing to the company's mission of advancing technology and creating an intelligent ecosystem.</p><br>
+`,
+    },
+
+    {
+      name: "Silpa Vijayan Geetha",
+      title: "Frontend Engineer",
+      business: "Technology",
+      location: "Carrollton",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+<br><p style="text-align: justify;">Silpa Vijayan Geetha is a Frontend Developer at 3UM, bringing a strong track record of leading web development projects and enhancing software functionalities across various high-stakes industries. Her career highlights include developing an advanced interactive application at Diaconia and streamlining operations and enhancing security protocols for the aviation sector at IBS Software.</p><br>
+
+<p style="text-align: justify;">Silpa holds a Master of Science in Computer Science with a focus on Artificial Intelligence and Database (Cloud Computing) from the University of Texas at Arlington. She is skilled in implementing cutting-edge technologies and developing scalable web solutions. Beyond her frontend expertise, Silpa is also proficient in backend technologies, allowing her to manage comprehensive software solutions effectively.</p><br>
+
+<p style="text-align: justify;">At 3UM, Silpa is dedicated to contributing to the company's vision of transforming the technological landscape. Her strategic approach to software development and commitment to excellence align with 3UM's objectives of driving innovation and leading transformative changes in the tech industry.</p><br>
+`,
+    },
+
+    {
+      name: "Sumanth Sadu",
+      title: "Generative AI Engineer",
+      business: "Research & Development",
+      location: "Los Angeles",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+<br><p style="text-align: justify;">Venkata Sai Sumanth Sadu is a Generative AI Engineer at 3UM with a strong background in data science, machine learning, and AI development. He holds a Master of Science in Computer Science from the University of Southern California and a Bachelor's in Computer Science and Engineering from the Indian Institute of Information Technology.</p><br>
+
+<p style="text-align: justify;">Sumanth has extensive experience across various roles and industries. At USC, he developed dashboards and APIs for risk management. At Reliance Jio, he worked on image quality assessment using advanced AI models. At Swiggy, he implemented comprehensive data pipelines and machine learning models to improve data accuracy and operational efficiency. His tenure at DRDO involved deploying object detection and tracking models for defense applications, and he also developed an audio emotion recognition system.</p><br>
+
+<p style="text-align: justify;">He has also served as a Machine Learning Cloud Engineer at FEBA Technologies, where he designed machine learning courses and developed video analytics systems for fraud detection. Sumanth's technical expertise includes Python, Java, SQL, TensorFlow, PyTorch, and cloud platforms like AWS and GCP.</p><br>
+
+<p style="text-align: justify;">At 3UM, Sumanth leverages his skills in generative AI and machine learning to drive innovation and integrate cutting-edge AI solutions, making significant contributions to the company's mission.</p><br>
+`,
+    },
+
+    {
+      name: "Kargi Chauhan",
+      title: "Generative AI Engineer",
+      business: "Research & Development",
+      location: "Tucson",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+<br><p style="text-align: justify;">Kargi Chauhan is a Generative AI Engineer at 3UM, bringing a rich background in data science, machine learning, and AI from her extensive experience in research and development. She is currently completing her BS in Information Science (Data Science) and Game Design at the University of Arizona. Kargi has a strong foundation in implementing advanced AI solutions, with a focus on scalability and reliability.</p><br>
+
+<p style="text-align: justify;">At SpaceTrex, Kargi designed attitude estimation and lighting systems for CubeSat Satellites, integrating advanced machine learning algorithms and managing large datasets. Her role at Mining Engineering saw her spearhead a project to develop a virtual replica of the St. Xavier Mine, utilizing immersive learning technologies to enhance educational tools for students.</p><br>
+
+<p style="text-align: justify;">Kargi's experience extends to Aerospace Engineering, where she improved prediction accuracy in aerospace research through Bayesian models. She has also played a pivotal role in developing production infrastructures at Tech Core and contributed to the Summer of Code program by creating tools for seamless rendering in 3D environments.</p><br>
+
+<p style="text-align: justify;">Her technical proficiency spans languages such as Python, C/C++, and R, and she has expertise in big data machine learning tools like Spark and Hadoop. Kargi's dedication to pushing the boundaries of AI technology makes her an invaluable asset to the 3UM team.</p><br>
+`,
+    },
+
+    {
+      name: "Vahini Walia",
+      title: "Generative AI Intern",
+      business: "Research & Development",
+      location: "Edison",
+      // href: "https://www.blackstone.com/people/qasim-abbas/",
+      dialogId: "bio-lightbox-5479",
+      // imgSrc:
+      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+      // imgAlt: "Abbas",
+      description: `
+<br><p style="text-align: justify;">Vahini Walia is a Generative AI Intern at 3UM, contributing her strong background in statistics, machine learning, and software development to the company’s AI projects. Currently pursuing her Bachelor’s degree in Statistics and Machine Learning at Carnegie Mellon University, Vahini has demonstrated exceptional skills in programming and data analysis through various academic and extracurricular activities.</p><br>
+
+<p style="text-align: justify;">Her experience includes working on projects related to financial modeling, environmental awareness, and cybersecurity. Vahini has developed applications using Python, Java, C++, and other programming languages, showcasing her ability to tackle complex problems and deliver innovative solutions. Her involvement in initiatives like Smart Women Securities and the Green Cause highlights her commitment to applying her technical skills for positive social impact.</p><br>
+
+<p style="text-align: justify;">At 3UM, Vahini is excited to continue learning and contributing to the development of cutting-edge AI technologies, driven by her passion for technology and its transformative potential.</p><br>
+`,
+    },
+    {
       name: "Xiangyuan (Sherry) Chi",
       title: "Data Analyst",
-      business: "Tactical Opportunities",
-      location: "London",
+      business: "Technology",
+      location: "Los Angeles",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
 
@@ -433,9 +544,9 @@ const page = () => {
     },
     {
       name: "Niklas Hoener",
-      title: " Business Development Executive",
-      business: "Tactical",
-      location: "Dallas",
+      title: "Data Analyst",
+      business: "Technology",
+      location: "Los Angeles",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
       // imgSrc:
@@ -451,7 +562,7 @@ const page = () => {
 
     {
       name: "Patrick (Alex) Wroe",
-      title: " Junior Analyst",
+      title: "Junior Analyst",
       business: "Tactical",
       location: "Dallas",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
@@ -466,7 +577,7 @@ const page = () => {
 
     {
       name: "Parmi Pandya",
-      title: " Junior Marketing Associate",
+      title: "Junior Marketing Associate",
       business: "Tactical",
       location: "Dallas",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
@@ -483,7 +594,7 @@ const page = () => {
 
     {
       name: "Igor Nazarenko",
-      title: " Product Designer",
+      title: "Product Designer",
       business: "Tactical",
       location: "Dallas",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
@@ -499,7 +610,7 @@ const page = () => {
 
     {
       name: "Andronikki (Nikki) Gerohrsitodoulos",
-      title: " Junior researcher and team leader",
+      title: "Junior Researcher and Team Leader",
       business: "Tactical",
       location: "Dallas",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
@@ -515,7 +626,7 @@ const page = () => {
 
     {
       name: "Brian Brueggert",
-      title: " Principal Engineer",
+      title: "Principal Engineer",
       business: "Tactical",
       location: "Dallas",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
@@ -532,24 +643,6 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
 `,
     },
 
-    {
-      name: "Silpa Vijayan Geetha",
-      title: " Frontend Developer",
-      business: "Tactical",
-      location: "Dallas",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-<br><p style="text-align: justify;">Silpa Vijayan Geetha recently joined 3UM as a Frontend Developer, endowed with an impressive track record of spearheading web development initiatives and enhancing software functionalities across various high-stakes industries. Silpa's career showcases remarkable achievements, notably during her tenure at Diaconia, where she led the development of an advanced interactive application, and at IBS Software, where she played a crucial role in streamlining operations and enhancing security protocols for the aviation sector.</p><br>
-
-<p style="text-align: justify;">With a Master of Science in Computer Science, focusing on Artificial Intelligence and Database (Cloud Computing) from the University of Texas at Arlington, Silpa possesses a robust skill set in implementing cutting-edge technologies and developing scalable web solutions. Beyond her frontend expertise, she is a seasoned full stack developer, adept at backend technologies which amplifies her capacity to handle comprehensive software solutions. Her educational and professional journey has equipped her with a unique blend of strategic insight and practical expertise, which she adeptly applies to her projects.</p><br>
-
-<p style="text-align: justify;">At 3UM, Silpa is excited to contribute to the company's vision of transforming the technological landscape. Her commitment to excellence and her strategic approach to software development are in perfect harmony with 3UM's objectives of driving innovation and leading transformative changes in the tech industry.</p><br>
-`,
-    },
     // Add more bios here...
   ];
   //search feature
@@ -576,36 +669,35 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
 
   const titleOptions = [
     { value: "All", label: "All" },
-    { value: "Sr. Managing Director", label: "Sr. Managing Director" },
-    { value: "Managing Director", label: "Managing Director" },
-    { value: "Operating Partner", label: "Operating Partner" },
-    { value: "Chairman", label: "Chairman" },
-    { value: "Vice Chairman", label: "Vice Chairman" },
-    { value: "Senior Advisory Director", label: "Senior Advisory Director" },
-    { value: "Chair Of Blackstone Japan", label: "Chair Of Blackstone Japan" },
-    { value: "Senior Operating Partner", label: "Senior Operating Partner" },
+    { value: "Software Engineer II", label: "Software Engineer II" },
+    { value: "Frontend Engineer", label: "Frontend Engineer" },
+    { value: "Generative AI Engineer", label: "Generative AI Engineer" },
+    { value: "Generative AI Intern", label: "Generative AI Intern" },
+    { value: "Data Analyst", label: "Data Analyst" },
+    { value: "Junior Analyst", label: "Junior Analyst" },
+    { value: "Junior Marketing Associate", label: "Junior Marketing Associate" },
+    { value: "Product Designer", label: "Product Designer" },
+    { value: "Junior Researcher and Team Leader", label: "Junior Researcher and Team Leader" },
+    { value: "Principal Engineer", label: "Principal Engineer" },
   ];
 
   const buOptions = [
     { value: "All", label: "All" },
-    { value: "Sr. Managing Director", label: "Sr. Managing Director" },
-    { value: "Managing Director", label: "Managing Director" },
+    { value: "Technology", label: "Technology" },
+    { value: "Research & Development", label: "Research & Development" },
     { value: "Operating Partner", label: "Operating Partner" },
     { value: "Chairman", label: "Chairman" },
-    { value: "Vice Chairman", label: "Vice Chairman" },
-    { value: "Senior Advisory Director", label: "Senior Advisory Director" },
-    { value: "Chair Of Blackstone Japan", label: "Chair Of Blackstone Japan" },
-    { value: "Senior Operating Partner", label: "Senior Operating Partner" },
+ 
   ];
 
   const locOptions = [
     { value: "All", label: "All" },
-    { value: "Sr. Managing Director", label: "Sr. Managing Director" },
-    { value: "Managing Director", label: "Managing Director" },
-    { value: "Operating Partner", label: "Operating Partner" },
-    { value: "Chairman", label: "Chairman" },
-    { value: "Vice Chairman", label: "Vice Chairman" },
-    { value: "Senior Advisory Director", label: "Senior Advisory Director" },
+    { value: "New York", label: "New York" },
+    { value: "Athens", label: "Athens" },
+    { value: "Carrollton", label: "Carrollton" },
+    { value: "Los Angeles", label: "Los Angeles" },
+    { value: "Tucson", label: "Tucson" },
+    { value: "Edison", label: "Edison" },
     { value: "Chair Of Blackstone Japan", label: "Chair Of Blackstone Japan" },
     { value: "Senior Operating Partner", label: "Senior Operating Partner" },
   ];
@@ -713,6 +805,20 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
   return (
     <div id="content" role="main" className="site-content">
       <div className="container-fluid">
+      <section
+      className="py-16 md:py-32"
+      style={{
+        backgroundImage: 'url(/assets/img3.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <h1 className="text-white font-bold text-4xl md:text-6xl leading-tight mb-6">
+          Our People
+        </h1>
+      </div>
+    </section>
         <h3 className="wp-block-heading has-text-align-center mt-xxlarge">
           Leadership
         </h3>

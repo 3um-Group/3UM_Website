@@ -1,5 +1,7 @@
 // import "./page.css";
-import img1 from '@/public/assets/img11.jpeg';
+import img1 from '@/public/assets/img1.png';
+import img2 from '@/public/assets/img2.jpeg';
+
 import Image from 'next/image';
 
 
@@ -43,7 +45,7 @@ const ImageSection: React.FC = () => {
             <div className="grid overflow-hidden rounded-xl">
             <Image
               src={img1}
-              alt="Firefighter"
+              alt="Stock Market"
             />
             </div>
         </div>
@@ -87,10 +89,9 @@ const InstitutionalInvestorsSection: React.FC<InstitutionalInvestorsProps> = ({
         </div>
         <div className="grid lg:gap-8 lg:grid-cols-2 py-12 lg:items-center">
           <div className="mt-10 lg:mt-0">
-            <img
-              className="mx-auto rounded-lg shadow-lg dark-bg-gray-500"
-              src="https://blackstone.scene7.com/is/image/blackstone/Firefighter?wid=960&hei=1280"
-              alt="Firefighter"
+          <Image
+              src={img2}
+              alt="Stock"
             />
           </div>
 
