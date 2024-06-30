@@ -1,88 +1,83 @@
-import empower from '@/public/assets/empower.png'
-import brain from '@/public/assets/brain_image.png'
-import road_map from '@/public/assets/road_map.png'
-import logo from '@/public/assets/IMG_0701 1.png'
+import Image from 'next/image';
+import React from 'react';
+
+import empower from '@/public/assets/empower.png';
+import brain from '@/public/assets/brain_image.png';
+import road_map from '@/public/assets/road_map.png';
+import logo from '@/public/assets/IMG_0701 1.png';
 
 import Form from '@/components/company_components/Form';
 import Career from '@/components/company_components/Career';
 import Media from '@/components/company_components/Media';
 
-import Image from 'next/image';
-import Link from 'next/link';
-
-
-const page = () => {
+const CompanyPage: React.FC = () => {
   return (
-    <>
-      <header className='flex flex-col'>
-        <div className=' flex flex-row my-10 justify-center'>
-          <div className='image-container rounded-xl'>
-            <Image alt='empower' src={empower} className="sm:object-contain bg-blend-darken rounded-3xl brightness-75 image min-h-28" />
-            <div className='text-white absolute self-center text-2xl font-bold left-[10%] sm:top-[30%] top-[10%] z-10 w-2/3'>3UM empowers its <br />interconnected community</div>
+    <div className="min-h-screen bg-white text-black pb-0">
+      <section className="px-8 py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex flex-col justify-center md:col-span-1">
+          <h1 className="text-4xl font-bold mb-4">The Company</h1>
+          <p className="text-lg mb-4">
+            At 3UM, we are revolutionizing the future with our intelligent infrastructure. Our mission is to build groundbreaking businesses across key technologies, AI, blockchain, and quantum computing, providing investors and industry with advanced tools and solutions. We aim to create an intelligent ecosystem that empowers users to connect, learn, and grow, driving sustainable progress and creating new opportunities.
+          </p>
+          <p className="text-lg">
+            We are committed to leveraging the key technology spheres: human-centric AI, blockchain that creates a connected infrastructure, and the next age of quantum computing. From finance and healthcare to smart cities and beyond, our tailored experiences, driven by advanced technology, aim to develop cutting-edge solutions that are secure, scalable, and user-friendly.
+          </p>
+        </div>
+        <div className="flex justify-center md:justify-end md:col-span-1">
+        <div className="relative w-full max-w-full h-auto">
+          <Image
+            src={brain}
+            alt="Company Meeting"
+            layout="responsive"
+            width={75}
+            height={75}
+            objectFit="cover"
+            className="rounded-lg"
+          />
+        </div>
+        </div>
+      </section>
+
+      <section className="bg-black text-white py-16 px-8">
+        <h3 className="text-2xl font-bold mb-8">
+          3UM revolutionizes industries by integrating AI, <span className="bg-yellow-500 text-black">Blockchain</span>, and quantum computing, empowering innovation and sustainable growth through our intelligent infrastructure and ecosystem.
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex justify-center md:col-span-1">
+            <div className="relative w-full h-0 pb-[56.25%]"> {/* Aspect ratio container */}
+              <Image
+                src={road_map}
+                alt="Technology"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+          <div className="flex flex-col space-y-4">
+            <div>
+              <h4 className="text-xl font-semibold">Build financial security</h4>
+              <p>
+                We seek to deliver outstanding performance for institutional and individual investors by stewarding their capital with integrity and conviction.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold">Build your career</h4>
+              <p>
+                We offer an environment where exceptional talent can build lasting careers. To work at 3UM means being at the forefront of emerging trends and setting the standards for our industry.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold">Build strong businesses</h4>
+              <p>
+                We equip businesses with an extensive range of tools and capabilities they need to grow.
+              </p>
+            </div>
           </div>
         </div>
-
-        <div className='sm:flex hidden flex-row justify-center gap-16 opacity-70'>
-          <Link href='#about' className='text-blue-700 font-bold'>About us</Link>
-          <Link href='#mission'>Mission & Vision</Link>
-          <Link href='#roadmap'>Roadmap</Link>
-          <Link href='#career'>Career</Link>
-          <Link href='#media'>Press & Media</Link>
-          <Link href='#contact'>Contact us</Link>
-        </div>
-      </header>
-
-      <section id="about" className='flex flex-col my-16 sm:my-16 items-center'>
-        <div className='text-2xl font-bold opacity-75'>About 3UM</div>
-        <span className='opacity-75 text-center w-5/6 my-6'>3UM is a groundbreaking technology company revolutionizing how people interact with cutting-edge technologies such as Web3, AI, and quantum computing. As we prepare for our Series A funding and upcoming token launch, our primary focus is to raise capital for a global expansion and attract investors. To achieve this, we need to establish a robust online presence that demonstrates our commitment to making advanced technologies accessible and user-friendly. Our main objective is to create a website that not only showcases our innovative solutions but also provides an exceptional user experience through intuitive interface design and engaging content.</span>
-        <Image alt='brain' src={brain} width={250} />
       </section>
+    </div>
+  );
+};
 
-      <section id="mission" className='flex flex-col my-16 items-center'>
-        <div className='text-2xl font-bold opacity-75'>Mission & Vision</div>
-        <span className='opacity-75 text-center w-5/6 my-6'>To achieve this, we need to establish a robust online presence that demonstrates our commitment to making advanced technologies accessible and user-friendly. Our main objective is to create a website that not only showcases our innovative solutions but also provides an exceptional user experience through intuitive interface design and engaging content.</span>
-      </section>
-
-      <section id="roadmap" className='flex flex-col my-16 items-center'>
-        <div className='text-2xl font-bold opacity-75'>Roadmap</div>
-        <span className='opacity-75 text-center w-5/6 my-6'>To achieve this, we need to establish a robust online presence that demonstrates our commitment to making advanced technologies accessible and user-friendly. Our main objective is to create a website that not only showcases our innovative solutions but also provides an exceptional user experience through intuitive interface design and engaging content.</span>
-        <Image alt='roadmap' src={road_map} className='w-2/3' />
-      </section>
-
-      <Career />
-
-
-      <section id="media" className='flex flex-col my-16 items-center'>
-        <div className='text-2xl font-bold opacity-75'>Press & Media</div>
-
-        {/*Mobile */}
-        <div className='sm:hidden flex flex-col w-3/5 items-center mb-20'>
-          <Image alt='logo' src={logo} width={100} className='object-contain mt-10' />
-          <span className=' text-blue-700 text-center cursor-pointer'>Download 3UM Logo Files</span>
-          <span className='opacity-75 text-center my-6'>Download the 3UM logo including blue, white, and black versions. The blue version is preferred with the other colors available for readability on different backgrounds.</span>
-        </div>
-
-
-        {/*Desktop */}
-        <div className='sm:flex hidden flex-row w-3/5 justify-between mb-20'>
-          <span className='opacity-75 text-start w-2/3 my-6 relative'>Download the 3UM logo including blue, white, and black versions. The blue version is preferred with the other colors available for readability on different backgrounds.
-            <span className='absolute text-blue-700 -bottom-8 -right-5 cursor-pointer'>Download 3UM Logo Files</span>
-          </span>
-          <Image alt='logo' src={logo} width={100} className='object-contain' />
-        </div>
-
-        <Media />
-      </section>
-
-      <section id="contact" className='flex flex-col my-16 items-center'>
-        <div className='text-2xl font-bold opacity-75'>Contact us</div>
-        <span className='opacity-75 text-center sm:w-2/3 w-full my-6'>Thank you for your interest in 3UM.  Please use the form below to submit your inquiry, and our team will respond as soon as we can.</span>
-        <Form />
-      </section>
-
-
-    </>
-  )
-}
-
-export default page
+export default CompanyPage;
