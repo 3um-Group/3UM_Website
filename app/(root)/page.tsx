@@ -6,7 +6,7 @@ import Product from '@/components/home_components/Product';
 
 import stone from '@/public/assets/stone.png'
 // import three_UM from '@/public/assets/IMG_0701 1.png';
-import three_UM from '@/public/assets/3UM-hero.jpg';
+import three_UM from '@/public/assets/3UM-hero-new.png';
 import three_UM_DOA from '@/public/assets/3UM-superDOA.png';
 import three_UM_brain from '@/public/assets/3UM-brain.jpg';
 
@@ -242,6 +242,9 @@ export default function Home() {
 
       <div className='relative'>
         {/* Second section */}
+        <div className="bg-gradient-to-tl from-white to-blue-50">
+
+        
         <section
           data-testid="heading-section-PdI721gFTOG_V3UBemfINg"
           id="heading-complete-developer-platform"
@@ -260,14 +263,14 @@ export default function Home() {
 
         <section
           id="home-alchemy-supernode"
-          className="px-6 py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-blue-50"
+          className="px-6 py-16 md:py-24 lg:py-32 "
         >
           <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-16">
             <div className="lg:w-1/2 flex flex-col gap-8">
               <div className="flex items-center gap-4">
                 {/* Placeholder for supernode icon - replace with actual icon */}
                 {/* <div className="w-12 h-12 bg-blue-500 rounded-full"></div> */}
-                <h2 className="text-4xl font-bold">SuperDOA</h2>
+                <h2 className="text-4xl font-bold">SuperDAO</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-xl">
                 Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, amd interact with the infrastructure exactly as you want
@@ -309,8 +312,13 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </div>
 
-        <section className="py-16 px-4 bg-gray-50">
+
+<div className='bg-gradient-to-tl from-white to-blue-50'>
+
+
+        <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Intelligent Solutions for Every Use Case</h2>
             <p className="text-xl text-gray-700">
@@ -325,7 +333,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 py-16">
+        <section className="relative overflow-hidden py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-12">Powering web3 growth</h2>
 
@@ -341,7 +349,7 @@ export default function Home() {
             <div className="flex justify-center mt-8 space-x-4">
               <button
                 onClick={handlePrevSlide}
-                className={`block ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`block  hover:text-3UM-color ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
                 aria-label="Previous slide"
                 disabled={currentSlide === 0}
               >
@@ -353,7 +361,7 @@ export default function Home() {
 
               <button
                 onClick={handleNextSlide}
-                className={`block ${currentSlide === useCases.length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`block  hover:text-3UM-color ${currentSlide === useCases.length - 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                 aria-label="Next slide"
                 disabled={currentSlide === useCases.length - 1}
               >
@@ -382,8 +390,8 @@ export default function Home() {
                 <button
                   key={index}
                   className={`whitespace-nowrap px-4 py-2 font-medium text-lg ${activeTab === index
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'text-3UM-color border-b-2 3UM-color'
+                    : 'text-gray-600 hover:3UM-color-900'
                     }`}
                   onClick={() => setActiveTab(index)}
                 >
@@ -422,8 +430,8 @@ export default function Home() {
             >
               <div className="md:w-1/2">
                 <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4">
-                    <h3 className="font-bold text-xl">{tabs[activeTab].name}</h3>
+                  <div className="bg-gradient-to-br from-3UM-color to-black p-4">
+                    <h3 className="font-bold text-xl text-white">{tabs[activeTab].name}</h3>
                   </div>
                   <div className="p-4">
                     <p className="text-lg">{tabs[activeTab].content}</p>
@@ -447,31 +455,32 @@ export default function Home() {
           </AnimatePresence>
         </section>
 
-
-
-        <section id="conversion-panel-center-blockchain-magic-home" data-testid="conversion-panel-section" className="relative flex flex-col items-center gap-14 overflow-hidden px-6 py-12 md:px-28 md:py-16 lg:flex-row lg:py-24 xl:px-0 bg-gradient-to-r from-black to-blue-900">
-          <div className="mx-auto flex w-full max-w-4xl items-center gap-8 flex-col">
-            <div className="flex flex-col gap-8 items-center">
-              <div className="flex max-w-xl flex-col items-center gap-4  text-center">
-                <h2 data-testid="title-conversion-panel-section" className="text-white text-6xl font-extrabold">
-                  <span className="">Build blockchain magic</span>
-                </h2>
-                <div data-testid="description-conversion-panel-section" className="text-white text-2xl md:text-3xl lg:text-4xl">
-                  <p></p>
-                </div>
-              </div>
-              <a data-testid="navigation-link" className="w-full sm:w-fit" href="https://dashboard.alchemy.com/signup/?a=">
-                <div data-testid="cta-conversion-panel-section" className="group relative h-full rounded-lg transition-all focus:shadow-purple w-full sm:w-fit">
-                  <span className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg text-lg lg:text-xl px-4 py-3 lg:px-3.5 lg:py-3">Get your API key</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-
-
-
       </div>
+      </div>
+
+      <section id="conversion-panel-center-blockchain-magic-home" data-testid="conversion-panel-section" className="relative flex flex-col items-center gap-14 overflow-hidden px-6 py-12 md:px-28 md:py-16 lg:flex-row lg:py-24 xl:px-0 bg-gradient-to-r from-black to-blue-900">
+        <div className="mx-auto flex w-full max-w-4xl items-center gap-8 flex-col">
+          <div className="flex flex-col gap-8 items-center">
+            <div className="flex max-w-xl flex-col items-center gap-4  text-center">
+              <h2 data-testid="title-conversion-panel-section" className="text-white text-6xl font-extrabold">
+                <span className="">Build blockchain magic</span>
+              </h2>
+              <div data-testid="description-conversion-panel-section" className="text-white text-2xl md:text-3xl lg:text-4xl">
+                <p></p>
+              </div>
+            </div>
+            <a data-testid="navigation-link" className="w-full sm:w-fit" href="https://dashboard.alchemy.com/signup/?a=">
+              <div data-testid="cta-conversion-panel-section" className="group relative h-full rounded-lg transition-all focus:shadow-purple w-full sm:w-fit">
+                <span className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg text-lg lg:text-xl px-4 py-3 lg:px-3.5 lg:py-3">Get your API key</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+
+
 
     </>
 

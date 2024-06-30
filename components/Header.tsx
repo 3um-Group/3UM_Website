@@ -32,9 +32,9 @@ const Header = () => {
                                 <Image
                                     src={three_um_logo}
                                     alt='company logo'
-                                    width={50}
-                                    height={50}
-                                    className='z-30 h-auto w-auto max-h-[40px]'
+                                    width={80}
+                                    height={80}
+                                    className='z-30 h-auto w-auto max-h-[50px]'
                                 />
                             </Link>
                         </div>
