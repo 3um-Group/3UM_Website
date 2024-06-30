@@ -1730,8 +1730,8 @@ html {
     --c-announce-shadow: rgba(0, 0, 0, 0.62353);
     --c-subtle-background-border: #707070;
     --bp-medium-js: 48em;
-    --f-sans: "Guardian TextSans Web", sans-serif;
-    --f-serif: "Sanomat Web", serif;
+    /* --f-sans: "Guardian TextSans Web", sans-serif;
+    --f-serif: "Sanomat Web", serif; */
     --fw-light: 300;
     --fw-bold: 500;
     --fs-h1-lg: 72px;
@@ -1844,7 +1844,7 @@ html {
     --fs-xlg: 30px;
   }
   
-  :root[lang="ja"] {
+  /* :root[lang="ja"] {
     --f-sans: YuGothic, "Yu Gothic", "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ ProN",
       "Hiragino Kaku Gothic ProN", "æ¸¸ã‚´ã‚·ãƒƒã‚¯", "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“",
       "ãƒ¡ã‚¤ãƒªã‚ª", Meiryo, "ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯", "MS Gothic", HiraKakuProN-W3,
@@ -1854,7 +1854,7 @@ html {
       "Hiragino Mincho ProN", "æ¸¸æ˜Žæœ", "æ¸¸æ˜Žæœä½“", "ï¼­ï¼³ æ˜Žæœ",
       "MS Mincho", HiraMinProN-W3, "TakaoExæ˜Žæœ", TakaoExMincho, "MotoyaLCedar",
       "Droid Sans Japanese", serif;
-  }
+  } */
   
   :root {
     --h-header-offset-top: 4px;
@@ -3433,8 +3433,8 @@ html {
     color: var(--c-accent);
     content: counter(number-counter) ". ";
     display: inline-block;
-    font-family: Sanomat Web, serif;
-    font-family: var(--f-serif);
+    /* font-family: Sanomat Web, serif; */
+    /* font-family: var(--f-serif); */
     font-size: 1.875rem;
     height: 2.125rem;
     margin-right: 0.75rem;
@@ -3465,8 +3465,8 @@ html {
   
   ol.is-style-bold-spaced-out,
   ul.is-style-bold-spaced-out {
-    font-family: Sanomat Web, serif;
-    font-family: var(--f-serif);
+    /* font-family: Sanomat Web, serif; */
+    /* font-family: var(--f-serif); */
     font-size: 1.625rem;
   }
   
@@ -3612,8 +3612,8 @@ html {
     color: #000;
     color: var(--c-black);
     cursor: pointer;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--ff-input);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--ff-input); */
     font-size: 1pc;
     font-size: var(--fs-input);
     height: 100%;
@@ -3669,8 +3669,8 @@ html {
     color: #000;
     color: var(--c-input-text);
     display: block;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--ff-input);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--ff-input); */
     font-size: 1pc;
     font-size: var(--fs-input);
     font-weight: 400;
@@ -3790,8 +3790,8 @@ html {
   .registration-input-group .custom-select {
     border: 0;
     border-radius: 0;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--ff-input);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--ff-input); */
     font-weight: 400;
     font-weight: var(--fw-body);
     width: 100%;
@@ -4527,8 +4527,8 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--f-sans);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--f-sans); */
     font-size: 15px;
     font-weight: 300;
     font-weight: var(--fw-body-2);
@@ -4544,8 +4544,8 @@ html {
       align-items: flex-end;
       border-left: 1px solid #fff;
       border-left: 1px solid var(--c-header-link-alt);
-      font-family: Sanomat Web, serif;
-      font-family: var(--f-serif);
+      /* font-family: Sanomat Web, serif; */
+      /* font-family: var(--f-serif); */
       font-size: 19px;
       font-weight: 400;
       font-weight: var(--fw-body);
@@ -5155,8 +5155,8 @@ html {
     color: #fff;
     color: var(--c-header-link-alt);
     display: block;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--ff-h6);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--ff-h6); */
     font-size: 17px;
     font-size: var(--fs-h6-sm);
     font-weight: 400;
@@ -29438,8 +29438,8 @@ html {
     border: 4px solid transparent;
     cursor: pointer;
     display: inline-block;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--ff-body);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--ff-body); */
     font-weight: 300;
     font-weight: var(--fw-body-2);
     outline: 0;
@@ -30634,8 +30634,8 @@ html {
   }
   
   .wp-block-blackstone-portfolio-company-title {
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--ff-body);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--ff-body); */
     font-size: 22px;
     font-size: var(--fs-body-sm);
     letter-spacing: 0.5px;
@@ -31943,8 +31943,8 @@ html {
   }
   
   .wp-block-blackstone-vertical-carousel__nav-title {
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--f-sans);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--f-sans); */
     font-size: 20px;
     font-size: var(--fs-body);
     font-weight: 300;
@@ -33778,8 +33778,8 @@ html {
   
   .breit.has-performance-data-block .hero__inner .hero__description {
     color: currentColor;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--f-sans);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--f-sans); */
     font-size: 18px;
     font-weight: 400;
     font-weight: var(--fw-body);
@@ -33883,8 +33883,8 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-family: Guardian TextSans Web, sans-serif;
-    font-family: var(--f-sans);
+    /* font-family: Guardian TextSans Web, sans-serif; */
+    /* font-family: var(--f-sans); */
     font-size: 15px;
     font-weight: 300;
     font-weight: var(--fw-body-2);
