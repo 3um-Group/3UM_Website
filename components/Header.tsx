@@ -39,7 +39,7 @@ const Header = () => {
                             </Link>
                         </div>
 
-                        <div className="hidden xl:flex flex-row items-center gap-4">
+                        <div className="hidden xl:flex flex-row items-center gap-4 justify-center mx-auto">
                             {navItems.map((item) => (
                                 <div key={item.id} className="font-label-size-200 group flex items-center gap-1 font-semibold">
                                     <div className="z-30 cursor-pointer items-center rounded-lg px-2 py-1.5 text-gray-950 transition-all group-hover:bg-gray-100 group-hover:text-gray-900">
@@ -50,6 +50,7 @@ const Header = () => {
                                 </div>
                             ))}
                         </div>
+
 
                         <div className="z-30 hidden xl:flex items-center gap-2">
                             <button className="font-button-size-100 px-4 py-2 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all">
@@ -77,16 +78,15 @@ const Header = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed inset-0 bg-white z-40 transition-all duration-300 ease-in-out ${
-                    isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-                } overflow-y-auto`}
+                className={`fixed inset-0 bg-white z-40 transition-all duration-300 ease-in-out ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+                    } overflow-y-auto`}
                 style={{ top: '72px', height: 'calc(100vh - 72px)' }}
             >
                 <div className="flex flex-col items-center gap-4 p-4 w-full">
                     {navItems.map((item) => (
-                        <Link 
-                            key={item.id} 
-                            href={item.href} 
+                        <Link
+                            key={item.id}
+                            href={item.href}
                             className="text-gray-950 text-lg font-semibold py-2 w-full text-center"
                             onClick={toggleMenu}
                         >

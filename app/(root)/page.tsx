@@ -158,11 +158,11 @@ export default function Home() {
 
   return (
     <>
-      <div className='relative'>
+      <div className='relative bg-gradient-to-br from-3UM-color via-white to-white'>
 
         <div className="pt-16 lg:pt-20"></div>
         {/* First section - Hero Section */}
-        <section className="overflow-hidden p-6 xl:pt-6 relative">
+        <section className="overflow-hidden p-6 xl:pt-6 relative ">
           <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-10 lg:flex-row lg:gap-8">
             {/* Left side content */}
             <div className="max-w-[670px] relative flex w-full flex-col gap-6 lg:w-1/2">
@@ -176,15 +176,21 @@ export default function Home() {
                 Build, deploy, and scale your applications with our powerful infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/signup" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
-                  Explore the Ecosystem
-                </a>
-                <a href="/docs" className="text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center">
-                  View docs
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
+                <a href="" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Explore the Ecosystem</a>
+
+                <div className="group relative cursor-default">
+                  <a href="" className="text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center pointer-events-none">
+                    View docs
+                    <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                  <div className="absolute top-0 left-0 mt-12 ml-3 p-2 bg-black text-white text-xs rounded invisible group-hover:visible">
+                    Coming soon
+                  </div>
+                </div>
+
+
               </div>
             </div>
 
@@ -243,16 +249,12 @@ export default function Home() {
         >
           <div className="relative z-10 flex flex-col">
             <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
-              <h2
-                className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl"
-                data-testid="title-heading-section"
-              >
+              <h2 className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl" data-testid="title-heading-section">
                 <span className="block">The First </span>
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Intelligent Ecosystem
-                </span>
+                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">Intelligent Ecosystem</span>
               </h2>
             </div>
+
           </div>
         </section>
 
@@ -448,24 +450,24 @@ export default function Home() {
 
 
         <section id="conversion-panel-center-blockchain-magic-home" data-testid="conversion-panel-section" className="relative flex flex-col items-center gap-14 overflow-hidden px-6 py-12 md:px-28 md:py-16 lg:flex-row lg:py-24 xl:px-0 bg-gradient-to-r from-black to-blue-900">
-      <div className="mx-auto flex w-full max-w-4xl items-center gap-8 flex-col">
-        <div className="flex flex-col gap-8 items-center">
-          <div className="flex max-w-xl flex-col items-center gap-4  text-center">
-            <h2 data-testid="title-conversion-panel-section" className="text-white text-6xl font-extrabold">
-              <span className="">Build blockchain magic</span>
-            </h2>
-            <div data-testid="description-conversion-panel-section" className="text-white text-2xl md:text-3xl lg:text-4xl">
-              <p></p>
+          <div className="mx-auto flex w-full max-w-4xl items-center gap-8 flex-col">
+            <div className="flex flex-col gap-8 items-center">
+              <div className="flex max-w-xl flex-col items-center gap-4  text-center">
+                <h2 data-testid="title-conversion-panel-section" className="text-white text-6xl font-extrabold">
+                  <span className="">Build blockchain magic</span>
+                </h2>
+                <div data-testid="description-conversion-panel-section" className="text-white text-2xl md:text-3xl lg:text-4xl">
+                  <p></p>
+                </div>
+              </div>
+              <a data-testid="navigation-link" className="w-full sm:w-fit" href="https://dashboard.alchemy.com/signup/?a=">
+                <div data-testid="cta-conversion-panel-section" className="group relative h-full rounded-lg transition-all focus:shadow-purple w-full sm:w-fit">
+                  <span className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg text-lg lg:text-xl px-4 py-3 lg:px-3.5 lg:py-3">Get your API key</span>
+                </div>
+              </a>
             </div>
           </div>
-          <a data-testid="navigation-link" className="w-full sm:w-fit" href="https://dashboard.alchemy.com/signup/?a=">
-            <div data-testid="cta-conversion-panel-section" className="group relative h-full rounded-lg transition-all focus:shadow-purple w-full sm:w-fit">
-              <span className="flex h-full flex-row items-center justify-center gap-2 rounded-lg transition-all bg-gray-100 text-gray-700 hover:text-gray-500 active:bg-gray-50 active:bg-gradient-to-br active:from-gradient-vibrant-blue-100 active:to-gradient-vibrant-blue-200 active:bg-clip-text active:text-transparent active:shadow-gray-lg text-lg lg:text-xl px-4 py-3 lg:px-3.5 lg:py-3">Get your API key</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+        </section>
 
 
 
