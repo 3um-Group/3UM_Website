@@ -10042,7 +10042,7 @@ html {
   }
   
   .bstn-bio-grid__item button:hover svg {
-    color: #0d0e4e;
+    color: #144c71;
     color: var(--c-blue-700);
     -webkit-transform: translateX(1em);
     transform: translateX(1em);
