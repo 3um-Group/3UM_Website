@@ -536,11 +536,11 @@ const page = () => {
       dialogId: "bio-lightbox-5479",
 
       description: `
-        <br><p style="text-align: justify;">Sherry Chi is a dedicated Data Analyst with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. Sherry has developed expertise in building up Python-based ETL pipelines, applying Machine Learning techniques for predictive analytics, and transforming datasets into business insights for stakeholders.</p><br>
-  <p style="text-align: justify;">As a Data Scientist in VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train the Transformer model, which surpassed GPT-2 benchmarks. To ensure customer satisfaction, she developed a CRM system for fraud detection, saving users $16,000 in losses. Additionally, Sherry leveraged data storytelling skills to promote the Chatbot products to different audiences. To persuade professionals, she explained the models and algorithms behind the Chatbot in detail and compared it with GPT-2 based on effectiveness and accuracy. To persuade non-technical audiences, she used relatable analogies and interactive activities to keep them engaged, highlighting the user-friendly features.</p><br>
-  <p style="text-align: justify;">Sherry’s internship at AXA Investment Managers further honed her skills in financial modeling and data analysis. To increase efficiency, she automated the Python-based ETL pipeline and completed the data migration from a local server to MongoDB, saving the team 6 hours of manual work on reports and improving data retrieval time by 15%. She also volunteered to collaborate with the Fraud Detection team to assess the performance of Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
-  <p style="text-align: justify;">Sherry’s educational background in both Technology and Finance provides her with comprehensive insights. She always finds innovative ways to resolve old problems and maintains a balance between cost and efficiency. Her dedication to continuous learning and willingness for growth, combined with her proven track record, makes her a valuable asset to any data-driven team.</p><br>
-   `,
+        <br><p style="text-align: justify;">Sherry Chi is a Data Analyst at 3UM with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. She has developed expertise in building Python-based ETL pipelines, applying machine learning techniques for predictive analytics, and transforming datasets into actionable business insights.</p><br>
+<p style="text-align: justify;">In her role as a Data Scientist at VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train a Transformer model that surpassed GPT-2 benchmarks. She also developed a CRM system for fraud detection, saving users $16,000 in losses. Her data storytelling skills were instrumental in promoting Chatbot products to diverse audiences, effectively communicating complex models to professionals and engaging non-technical audiences with relatable analogies and interactive activities.</p><br>
+<p style="text-align: justify;">During her internship at AXA Investment Managers, Sherry honed her financial modeling and data analysis skills. She automated a Python-based ETL pipeline and migrated data from a local server to MongoDB, saving the team 6 hours of manual work and improving data retrieval time by 15%. She also collaborated with the Fraud Detection team to assess Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
+<p style="text-align: justify;">Sherry’s educational background in technology and finance provides her with comprehensive insights. Her innovative approach to problem-solving and balancing cost and efficiency, combined with her dedication to continuous learning, make her a valuable asset to the data-driven team at 3UM.</p><br>
+`,
     },
     {
       name: "Niklas Hoener",
@@ -560,26 +560,26 @@ const page = () => {
 `,
     },
 
-    {
-      name: "Patrick (Alex) Wroe",
-      title: "Junior Analyst",
-      business: "Tactical",
-      location: "Dallas",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-       <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
-`,
-    },
+//     {
+//       name: "Patrick (Alex) Wroe",
+//       title: "Junior Analyst",
+//       business: "Tactical",
+//       location: "Dallas",
+//       // href: "https://www.blackstone.com/people/qasim-abbas/",
+//       dialogId: "bio-lightbox-5479",
+//       // imgSrc:
+//       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+//       // imgAlt: "Abbas",
+//       description: `
+//        <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+// `,
+//     },
 
     {
       name: "Parmi Pandya",
-      title: "Junior Marketing Associate",
-      business: "Tactical",
-      location: "Dallas",
+      title: "Marketing Associate",
+      business: "Marketing",
+      location: "New York",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
       // imgSrc:
@@ -592,43 +592,43 @@ const page = () => {
  `,
     },
 
-    {
-      name: "Igor Nazarenko",
-      title: "Product Designer",
-      business: "Tactical",
-      location: "Dallas",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-            <br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>
+//     {
+//       name: "Igor Nazarenko",
+//       title: "Product Designer",
+//       business: "Tactical",
+//       location: "Dallas",
+//       // href: "https://www.blackstone.com/people/qasim-abbas/",
+//       dialogId: "bio-lightbox-5479",
+//       // imgSrc:
+//       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+//       // imgAlt: "Abbas",
+//       description: `
+//             <br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>
 
-`,
-    },
+// `,
+//     },
 
-    {
-      name: "Andronikki (Nikki) Gerohrsitodoulos",
-      title: "Junior Researcher and Team Leader",
-      business: "Tactical",
-      location: "Dallas",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-            <br><p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. </p><br>
+//     {
+//       name: "Andronikki (Nikki) Gerohrsitodoulos",
+//       title: "Junior Researcher and Team Leader",
+//       business: "Tactical",
+//       location: "Dallas",
+//       // href: "https://www.blackstone.com/people/qasim-abbas/",
+//       dialogId: "bio-lightbox-5479",
+//       // imgSrc:
+//       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+//       // imgAlt: "Abbas",
+//       description: `
+//             <br><p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. </p><br>
 
-`,
-    },
+// `,
+//     },
 
     {
       name: "Brian Brueggert",
-      title: "Principal Engineer",
-      business: "Tactical",
-      location: "Dallas",
+      title: "Head of Research & Development",
+      business: "Research & Development",
+      location: "Crawfordsville",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
       // imgSrc:
@@ -675,19 +675,17 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
     { value: "Generative AI Intern", label: "Generative AI Intern" },
     { value: "Data Analyst", label: "Data Analyst" },
     { value: "Junior Analyst", label: "Junior Analyst" },
-    { value: "Junior Marketing Associate", label: "Junior Marketing Associate" },
+    { value: "Marketing Associate", label: "Marketing Associate" },
     { value: "Product Designer", label: "Product Designer" },
     { value: "Junior Researcher and Team Leader", label: "Junior Researcher and Team Leader" },
-    { value: "Principal Engineer", label: "Principal Engineer" },
+    { value: "Head of Research & Development", label: "Head of Research & Development" },
   ];
 
   const buOptions = [
     { value: "All", label: "All" },
     { value: "Technology", label: "Technology" },
     { value: "Research & Development", label: "Research & Development" },
-    { value: "Operating Partner", label: "Operating Partner" },
-    { value: "Chairman", label: "Chairman" },
- 
+    { value: "Marketing", label: "Marketing" },
   ];
 
   const locOptions = [
@@ -698,7 +696,7 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
     { value: "Los Angeles", label: "Los Angeles" },
     { value: "Tucson", label: "Tucson" },
     { value: "Edison", label: "Edison" },
-    { value: "Chair Of Blackstone Japan", label: "Chair Of Blackstone Japan" },
+    { value: "Crawfordsville", label: "Crawfordsville" },
     { value: "Senior Operating Partner", label: "Senior Operating Partner" },
   ];
   const description1 = `
@@ -719,13 +717,13 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
 `;
 
   const description3 = `
-  <br><p style="text-align: justify;">Dwight Spencer serves as the Chief Technology Officer (CTO) of 3UM, bringing over 20 years of exceptional experience in IT service delivery and software leadership to the company's cutting-edge technological initiatives. As a visionary technology leader, Mr. Spencer plays a crucial role in driving 3UM's innovation and operational excellence, with a particular focus on architecting and delivering robust solutions across cloud-based infrastructure, DevOps, and full-stack development.</p><br>
-  <p style="text-align: justify;">At 3UM, Mr. Spencer leverages his extensive background to spearhead the integration of quantum computing, artificial intelligence, and blockchain technologies into the company's core offerings. His deep commitment to incorporating cutting-edge technologies and best practices has been instrumental in positioning 3UM at the forefront of technological innovation.</p><br>
-  <p style="text-align: justify;">Mr. Spencer's career is distinguished by his ability to navigate complex technological landscapes and align IT strategies with business objectives, consistently delivering tangible outcomes. His expertise in information security and automation has been pivotal in enhancing 3UM's data governance compliance and operational efficiency, ensuring the company maintains the highest standards of security in its groundbreaking work.</p><br>
-  <p style="text-align: justify;">Prior to joining 3UM, Mr. Spencer fostered successful partnerships with prominent clients such as Fidelity, Lockheed Martin, New York Times, Verizon, CapitalOne, and IBM. This experience in delivering tailored solutions to address critical business challenges and drive digital transformation has proved invaluable in 3UM's mission to revolutionize decision-making processes through advanced AI and quantum technologies.</p><br>
-  <p style="text-align: justify;">Mr. Spencer's educational background is equally impressive, holding a Master's degree in Computer Science and a Finance degree from Cornell University. This unique combination of technical expertise and financial acumen allows him to bridge the gap between technological innovation and business strategy, making him an indispensable asset to 3UM's leadership team.</p><br>
-  <p style="text-align: justify;">As CTO of 3UM, Mr. Spencer continues to explore emerging technologies, positioning the company at the cutting edge of innovation in quantum-inspired AI, blockchain integration, and decentralized systems. His strategic vision and technical prowess are driving 3UM's efforts to develop next-generation solutions that promise to reshape the landscape of AI-driven decision-making and data processing.</p><br>
-  <p style="text-align: justify;">Under Mr. Spencer's technological leadership, 3UM is poised to push the boundaries of what's possible in the realms of AI, quantum computing, and blockchain technology. His unparalleled expertise and forward-thinking approach ensure that 3UM remains at the vanguard of the technological revolution, consistently delivering innovative solutions that address the complex challenges of our rapidly evolving digital world.</p><br>
+  <br><p style="text-align: justify;">Dwight Spencer is the Chief Technology Officer (CTO) of 3UM, bringing over 20 years of experience in IT service delivery and software leadership. As a technology leader, Dwight drives 3UM's innovation, focusing on architecting solutions across cloud-based infrastructure, DevOps, and full-stack development.</p><br>
+
+<p style="text-align: justify;">At 3UM, Dwight integrates quantum computing, artificial intelligence, and blockchain technologies into the company's offerings. His expertise in information security and automation enhances 3UM's data governance and operational efficiency, ensuring top-tier security standards.</p><br>
+
+<p style="text-align: justify;">Dwight has partnered with clients such as Fidelity, Lockheed Martin, New York Times, Verizon, CapitalOne, and IBM, delivering solutions that drive digital transformation. His educational background includes a Master's degree in Computer Science and a Finance degree from Cornell University, allowing him to bridge technological innovation and business strategy.</p><br>
+
+<p style="text-align: justify;">As CTO, Dwight explores emerging technologies, positioning 3UM at the forefront of quantum-inspired AI, blockchain integration, and decentralized systems. His strategic vision and technical expertise drive 3UM's efforts to develop next-generation solutions, reshaping AI-driven decision-making and data processing. Under his leadership, 3UM is poised to push the boundaries of AI, quantum computing, and blockchain technology.</p><br>
 `;
 
   const description4 = `
@@ -759,32 +757,27 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
   <p style="text-align: justify;">Juan Carlos's thought leadership in the field is evident through his publications on transnational financial crime and his ability to translate complex regulatory requirements into effective operational strategies. His expertise continues to shape industry standards and contribute to the evolving dialogue on global financial compliance.</p><br>
 `;
   const description8 = `
-  <br><p style="text-align: justify;">Matthew Jackson is an analytical professional with over 13 years of experience in data analysis, digital marketing, and business intelligence. His expertise includes delivering insights, strategic recommendations, and developing data-driven narratives to enhance marketing performance.</p><br>
-  <p style="text-align: justify;">Matthew is highly skilled in translating complex data into actionable insights, with a focus on improving efficiency and driving targeted advertising touch points. He has extensive experience in the Biotech, Pharma, CPG, and Digital Marketing industries, with a strong foundation in statistical analysis, data strategy, business intelligence, experimental design, and data visualization.</p><br>
+  <br><p style="text-align: justify;">Matthew Jackson is an analytical professional with over 13 years of experience in data analysis, digital marketing, and business intelligence. His expertise includes delivering insights, strategic recommendations, and developing data-driven narratives to enhance marketing performance.Matthew is highly skilled in translating complex data into actionable insights, with a focus on improving efficiency and driving targeted advertising touch points. He has extensive experience in the Biotech, Pharma, CPG, and Digital Marketing industries, with a strong foundation in statistical analysis, data strategy, business intelligence, experimental design, and data visualization.</p><br>
+ 
 `;
 
   const description9 = `
-  <br><p style="text-align: justify;">Gregory Betz serves as our Head of Blockchain at 3UM, is a pioneering force in the distributed ledger technology landscape. With nearly a decade of hands-on experience, he has been at the forefront of blockchain innovation since its early days.</p><br>
-  <p style="text-align: justify;">His journey began with mastering the intricacies of the Bitcoin Core source code, establishing a foundation that would propel him to the cutting edge of blockchain development. As a Senior Blockchain Engineer at Duality Solutions, Greg played a pivotal role in architecting both Proof of Work and Proof of Stake cryptocurrencies, showcasing his versatility and deep understanding of consensus mechanisms.</p><br>
-  <p style="text-align: justify;">Greg's expertise extends beyond cryptocurrencies to the realm of smart contracts. His tenure at ConsenSys, a global leader in blockchain technology, saw him contribute to the Ethereum ecosystem during critical moments, including the aftermath of the DAO hack. This experience solidified his reputation as a problem-solver in high-stakes blockchain environments.</p><br>
-  <p style="text-align: justify;">A polymath in the Web3 space, Greg's skillset spans the entire blockchain development lifecycle. From conceptualizing and drafting comprehensive whitepapers to designing robust tokenomics models, he brings a holistic approach to blockchain projects. His proficiency in C++ and Solidity, combined with his strategic insight, makes him an invaluable asset in bridging the gap between technical innovation and practical application.</p><br>
-  <p style="text-align: justify;">Greg's contributions to the field have established him as a thought leader in blockchain technology, sought after for his ability to navigate the complex intersection of cryptography, distributed systems, and economic models. At 3UM, he continues to push the boundaries of what's possible in the decentralized digital landscape, driving our blockchain initiatives with unparalleled expertise and vision.</p><br>
+  <br><p style="text-align: justify;">Gregory Betz is the Head of Blockchain at 3UM. With nearly a decade of experience, he has been a leading figure in blockchain innovation since its inception. Greg began his career by mastering the Bitcoin Core source code, which laid the groundwork for his future in blockchain development. As a Senior Blockchain Engineer at Duality Solutions, he played a key role in creating both Proof of Work and Proof of Stake cryptocurrencies, demonstrating his deep understanding of consensus mechanisms.</p><br>
+<p style="text-align: justify;">At ConsenSys, Greg contributed significantly to the Ethereum ecosystem, particularly during the aftermath of the DAO hack, cementing his reputation as a problem-solver in critical blockchain environments. His expertise spans the entire blockchain development lifecycle, including smart contracts and tokenomics models.</p><br>
+<p style="text-align: justify;">Greg's skills in C++ and Solidity, along with his strategic insight, make him a vital asset in bridging technical innovation and practical application. His contributions have positioned him as a thought leader in blockchain technology, known for navigating the complexities of cryptography, distributed systems, and economic models. At 3UM, Greg drives blockchain initiatives with his extensive knowledge and vision.</p><br>
 `;
 
   const description10 = `
-  <br><p style="text-align: justify;">Charles "Chuck" Parker, Head of Business Development at 3UM, is a visionary leader with over two decades of experience at the intersection of AI, healthcare, and technology standards. His career is marked by a series of groundbreaking initiatives that have shaped the landscape of digital health and interoperability.</p><br>
-  <p style="text-align: justify;">As the former Executive Director of the Continua Health Alliance, Chuck spearheaded global efforts to establish interoperability standards for personal health devices, working with industry giants like Qualcomm, Samsung, and IBM. His leadership at Xcertia, in collaboration with the American Medical Association and HIMSS, set the benchmark for healthcare app standards, addressing critical areas such as privacy, security, and functionality.</p><br>
-  <p style="text-align: justify;">Chuck's expertise extends to AI in healthcare, having served on FDA committees to develop frameworks for qualifying and certifying AI as medical devices. His work with IEEE, Bluetooth, GSMA, and ITU has positioned him as a global authority on technology standards and their practical implementation.</p><br>
-  <p style="text-align: justify;">At 3UM, Chuck leverages his extensive network and deep industry knowledge to forge strategic partnerships and drive business growth. His unique blend of technical acumen and business savvy enables him to identify emerging opportunities at the convergence of blockchain, AI, and healthcare technologies.</p><br>
-  <p style="text-align: justify;">Chuck's academic background includes a Master of Science in Healthcare Informatics from Northeastern University, complementing his practical experience with a solid theoretical foundation. His ability to bridge the gap between complex technical concepts and real-world business applications makes him an invaluable asset to 3UM's leadership team.</p><br>
-  <p style="text-align: justify;">As a sought-after speaker and thought leader, Chuck continues to shape the future of digital health and technology standards, ensuring that 3UM remains at the forefront of innovation in the rapidly evolving tech landscape.</p><br>
+  <br><p style="text-align: justify;">Charles "Chuck" Parker is the Head of Business Development at 3UM. With over two decades of experience in AI, healthcare, and technology standards, Chuck has significantly influenced digital health and interoperability.</p><br>
+<p style="text-align: justify;">As the former Executive Director of the Continua Health Alliance, he led global efforts to establish interoperability standards for personal health devices, collaborating with companies like Qualcomm, Samsung, and IBM. At Xcertia, working with the American Medical Association and HIMSS, he developed healthcare app standards focusing on privacy, security, and functionality. Chuck's expertise includes serving on FDA committees for AI in healthcare, contributing to frameworks for qualifying and certifying AI as medical devices. He has worked with IEEE, Bluetooth, GSMA, and ITU, establishing himself as a global authority on technology standards.</p><br>
+<p style="text-align: justify;">At 3UM, Chuck leverages his industry knowledge and network to create strategic partnerships and drive business growth. He holds a Master of Science in Healthcare Informatics from Northeastern University, enhancing his practical experience with a strong theoretical foundation. As a recognized speaker and thought leader, Chuck continues to shape the future of digital health and technology standards.</p><br>
 `;
 
   const description11 = `
-  <br><p style="text-align: justify;">Sherry Chi is a dedicated Data Analyst with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. Sherry has developed expertise in building up Python-based ETL pipelines, applying Machine Learning techniques for predictive analytics, and transforming datasets into business insights for stakeholders.</p><br>
-  <p style="text-align: justify;">As a Data Scientist in VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train the Transformer model, which surpassed GPT-2 benchmarks. To ensure customer satisfaction, she developed a CRM system for fraud detection, saving users $16,000 in losses. Additionally, Sherry leveraged data storytelling skills to promote the Chatbot products to different audiences. To persuade professionals, she explained the models and algorithms behind the Chatbot in detail and compared it with GPT-2 based on effectiveness and accuracy. To persuade non-technical audiences, she used relatable analogies and interactive activities to keep them engaged, highlighting the user-friendly features.</p><br>
-  <p style="text-align: justify;">Sherry’s internship at AXA Investment Managers further honed her skills in financial modeling and data analysis. To increase efficiency, she automated the Python-based ETL pipeline and completed the data migration from a local server to MongoDB, saving the team 6 hours of manual work on reports and improving data retrieval time by 15%. She also volunteered to collaborate with the Fraud Detection team to assess the performance of Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
-  <p style="text-align: justify;">Sherry’s educational background in both Technology and Finance provides her with comprehensive insights. She always finds innovative ways to resolve old problems and maintains a balance between cost and efficiency. Her dedication to continuous learning and willingness for growth, combined with her proven track record, makes her a valuable asset to any data-driven team.</p><br>
+  <br><p style="text-align: justify;">Sherry Chi is a Data Analyst at 3UM with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. She has developed expertise in building Python-based ETL pipelines, applying machine learning techniques for predictive analytics, and transforming datasets into actionable business insights.<br></p>
+<p style="text-align: justify;">In her role as a Data Scientist at VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train a Transformer model that surpassed GPT-2 benchmarks. She also developed a CRM system for fraud detection, saving users $16,000 in losses. Her data storytelling skills were instrumental in promoting Chatbot products to diverse audiences, effectively communicating complex models to professionals and engaging non-technical audiences with relatable analogies and interactive activities.<br></p>
+<p style="text-align: justify;">During her internship at AXA Investment Managers, Sherry honed her financial modeling and data analysis skills. She automated a Python-based ETL pipeline and migrated data from a local server to MongoDB, saving the team 6 hours of manual work and improving data retrieval time by 15%. She also collaborated with the Fraud Detection team to assess Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.<br></p>
+<p style="text-align: justify;">Sherry’s educational background in technology and finance provides her with comprehensive insights. Her innovative approach to problem-solving and balancing cost and efficiency, combined with her dedication to continuous learning, make her a valuable asset to the data-driven team at 3UM.<br></p>
 `;
 
   const description12 = `
@@ -794,13 +787,13 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
   <p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
 `;
 
-  const description13 = `
-  <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
-`;
+//   const description13 = `
+//   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+// `;
 
-  const description14 = `
-  <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
-`;
+//   const description14 = `
+//   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+// `;
 
   return (
     <div id="content" role="main" className="site-content">
