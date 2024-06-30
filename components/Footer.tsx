@@ -54,7 +54,7 @@ const Footer = () => {
                   {/* Add your specific links here */}
                   {footerItems.map((item) => (
                     <>
-                      <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li>
+                      <li><a href={item.href} className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li>
                       {/* <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li> */}
                     </>
 
