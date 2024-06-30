@@ -436,7 +436,7 @@ const page = () => {
       name: "Ganesh Sarakadam",
       title: "Frontend Engineer",
       business: "Technology",
-      location: "Athens",
+      location: "Columbus",
       // href: "https://www.blackstone.com/people/qasim-abbas/",
       dialogId: "bio-lightbox-5479",
 
@@ -691,7 +691,7 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
   const locOptions = [
     { value: "All", label: "All" },
     { value: "New York", label: "New York" },
-    { value: "Athens", label: "Athens" },
+    { value: "Columbus", label: "Columbus" },
     { value: "Carrollton", label: "Carrollton" },
     { value: "Los Angeles", label: "Los Angeles" },
     { value: "Tucson", label: "Tucson" },

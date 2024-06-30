@@ -1589,7 +1589,7 @@ html {
     --c-copper-400: #a95228;
     --c-blue-300: #80b1c8;
     --c-blue-400: #006492;
-    --c-blue-700: #2f3d49;
+    --c-blue-700: #144c71;
     --c-khaki-400: #b7ad7b;
     --c-khaki-600: #5d6565;
     --c-green-700: #1b5e5c;
@@ -2944,11 +2944,11 @@ html {
     text-decoration: none;
   }
   
-  a:focus,
+  /* a:focus,
   a:hover {
     color: #000;
     color: var(--c-link-hover);
-  }
+  } */
   
   a.is-style-cta {
     display: inline-block;
@@ -10042,8 +10042,8 @@ html {
   }
   
   .bstn-bio-grid__item button:hover svg {
-    color: #a95228;
-    color: var(--c-copper-400);
+    color: #0d0e4e;
+    color: var(--c-blue-700);
     -webkit-transform: translateX(1em);
     transform: translateX(1em);
   }
