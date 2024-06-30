@@ -1,5 +1,6 @@
 import three_um_logo from '@/public/assets/3UM-dark.png';
 import footerItems from '@/utils/footer-items';
+import socials from '@/utils/social-links';
 import { FacebookFilled } from "@ant-design/icons"
 import { LinkedinFilled } from '@ant-design/icons';
 import { YoutubeFilled } from '@ant-design/icons';
@@ -28,6 +29,11 @@ const Footer = () => {
             </Link>
             <p className="font-paragraph-size-200 font-medium">The web3 development platform</p>
             <div className="flex flex-wrap gap-3">
+              {socials.map((social, index) => (
+                <a key={index} href={social.url} target="_blank" rel="noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-all hover:text-gray-500">
+                  <img alt={social.alt} loading="lazy" width="16" height="16" decoding="async" data-nimg="1" className="h-4 w-fit" style={{ color: 'transparent' }} src={social.img} />
+                </a>
+              ))}
               {/* Social media icons */}
             </div>
             <div className="mt-6">
