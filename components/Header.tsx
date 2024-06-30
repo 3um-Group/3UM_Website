@@ -24,8 +24,8 @@ const Header = () => {
 
     return (
         <>
-            <nav className="sticky top-0 z-50 bg-white shadow-md w-full">
-                <div className="relative flex items-center border-b border-gray-100 xl:bg-white-700 xl:backdrop-blur-md">
+            <nav className="sticky top-0 z-50 shadow-md w-full">
+                <div className="relative flex flex-row items-center border-b border-gray-100 bg-transparent xl:bg-white-700 xl:backdrop-blur-md">
                     <div className="relative z-30 mx-auto flex w-full items-center justify-between px-4 sm:px-6 py-4 xl:max-w-7xl xl:px-0">
                         <div className="flex justify-start">
                             <Link href='/'>
