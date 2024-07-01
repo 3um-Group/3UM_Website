@@ -2,9 +2,244 @@
 import React, { useState } from "react";
 // import "../../../public/assets/styles/style.css";
 import "./page.css";
-import backgroundImage from '../../../public/assets/img3.jpg'; 
+import backgroundImage from "../../../public/assets/img3.jpg";
 
+interface Bio {
+  dialogId: string;
+  business: string;
+  name: string;
+  title: string;
+  location: string;
+  description: string;
+}
+const bios = [
+  {
+    name: "Luis Jorge",
+    title: "Software Engineer II",
+    business: "Technology",
+    location: "New York",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
 
+    description: `
+<br><p style="text-align: justify;">Luis is a Software Engineer II at 3UM, a first-generation Dominican American deeply passionate about technology and its transformative potential. With over 8 years of hands-on experience in Python development, specializing in Django and Flask APIs, he is adept in multiple programming languages including C++, C#, C, Python, Java, and JavaScript.</p><br>
+<p style="text-align: justify;">Luis's technical expertise is bolstered by his AWS Developer Associate certification and extensive knowledge in networking and security (CCNA). He has led backend development projects and contributed significantly to system architecture and project management as a Software Engineering Fellow with Hack.Diversity. Additionally, he is enhancing his full-stack development skills at Flatiron School Coding Bootcamp. Luis aims to revolutionize enterprise infrastructure, making it more efficient and sustainable while constantly staying at the forefront of emerging technologies through continuous learning and collaboration.</p><br>
+`,
+  },
+
+  {
+    name: "Ganesh Sarakadam",
+    title: "Frontend Engineer",
+    business: "Technology",
+    location: "Columbus",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+
+    description: `
+<br><p style="text-align: justify;">Ganesh Sarakadam is a Frontend Engineer at 3UM with over four years of experience in building scalable, high-quality solutions. With a strong foundation in JavaScript and Python, Ganesh is adept in frameworks such as React, Redux, and Node.js. His technical expertise extends to various databases including MySQL, PostgreSQL, Elasticsearch, and MongoDB, and he is proficient in tools like Docker, Kubernetes, and CI/CD.</p><br>
+<p style="text-align: justify;">Ganesh's professional experience includes significant roles such as a Research Assistant at Ohio University, where he pioneered a real-time weather data archive and developed a Python scheduler for efficient data processing. At Berkadia, he played a key role in developing RESTful Web APIs and microservices architecture, optimizing resource allocation on AWS ECS, and enhancing the efficiency of ticket processing operations.</p><br>
+<p style="text-align: justify;">In his projects, Ganesh has demonstrated his ability to design responsive web applications and engineer robust workflow systems, achieving high levels of performance and efficiency. He holds a Master of Science in Computer Science from Ohio University.</p><br>
+<p style="text-align: justify;">At 3UM, Ganesh applies his frontend engineering skills to drive the development of innovative solutions in AI, blockchain, and quantum computing, contributing to the company's mission of advancing technology and creating an intelligent ecosystem.</p><br>
+`,
+  },
+
+  {
+    name: "Silpa Vijayan Geetha",
+    title: "Frontend Engineer",
+    business: "Technology",
+    location: "Carrollton",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+<br><p style="text-align: justify;">Silpa Vijayan Geetha is a Frontend Developer at 3UM, bringing a strong track record of leading web development projects and enhancing software functionalities across various high-stakes industries. Her career highlights include developing an advanced interactive application at Diaconia and streamlining operations and enhancing security protocols for the aviation sector at IBS Software.</p><br>
+
+<p style="text-align: justify;">Silpa holds a Master of Science in Computer Science with a focus on Artificial Intelligence and Database (Cloud Computing) from the University of Texas at Arlington. She is skilled in implementing cutting-edge technologies and developing scalable web solutions. Beyond her frontend expertise, Silpa is also proficient in backend technologies, allowing her to manage comprehensive software solutions effectively.</p><br>
+
+<p style="text-align: justify;">At 3UM, Silpa is dedicated to contributing to the company's vision of transforming the technological landscape. Her strategic approach to software development and commitment to excellence align with 3UM's objectives of driving innovation and leading transformative changes in the tech industry.</p><br>
+`,
+  },
+
+  {
+    name: "Sumanth Sadu",
+    title: "Generative AI Engineer",
+    business: "Research & Development",
+    location: "Los Angeles",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+<br><p style="text-align: justify;">Venkata Sai Sumanth Sadu is a Generative AI Engineer at 3UM with a strong background in data science, machine learning, and AI development. He holds a Master of Science in Computer Science from the University of Southern California and a Bachelor's in Computer Science and Engineering from the Indian Institute of Information Technology.</p><br>
+
+<p style="text-align: justify;">Sumanth has extensive experience across various roles and industries. At USC, he developed dashboards and APIs for risk management. At Reliance Jio, he worked on image quality assessment using advanced AI models. At Swiggy, he implemented comprehensive data pipelines and machine learning models to improve data accuracy and operational efficiency. His tenure at DRDO involved deploying object detection and tracking models for defense applications, and he also developed an audio emotion recognition system.</p><br>
+
+<p style="text-align: justify;">He has also served as a Machine Learning Cloud Engineer at FEBA Technologies, where he designed machine learning courses and developed video analytics systems for fraud detection. Sumanth's technical expertise includes Python, Java, SQL, TensorFlow, PyTorch, and cloud platforms like AWS and GCP.</p><br>
+
+<p style="text-align: justify;">At 3UM, Sumanth leverages his skills in generative AI and machine learning to drive innovation and integrate cutting-edge AI solutions, making significant contributions to the company's mission.</p><br>
+`,
+  },
+
+  {
+    name: "Kargi Chauhan",
+    title: "Generative AI Engineer",
+    business: "Research & Development",
+    location: "Tucson",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+<br><p style="text-align: justify;">Kargi Chauhan is a Generative AI Engineer at 3UM, bringing a rich background in data science, machine learning, and AI from her extensive experience in research and development. She is currently completing her BS in Information Science (Data Science) and Game Design at the University of Arizona. Kargi has a strong foundation in implementing advanced AI solutions, with a focus on scalability and reliability.</p><br>
+
+<p style="text-align: justify;">At SpaceTrex, Kargi designed attitude estimation and lighting systems for CubeSat Satellites, integrating advanced machine learning algorithms and managing large datasets. Her role at Mining Engineering saw her spearhead a project to develop a virtual replica of the St. Xavier Mine, utilizing immersive learning technologies to enhance educational tools for students.</p><br>
+
+<p style="text-align: justify;">Kargi's experience extends to Aerospace Engineering, where she improved prediction accuracy in aerospace research through Bayesian models. She has also played a pivotal role in developing production infrastructures at Tech Core and contributed to the Summer of Code program by creating tools for seamless rendering in 3D environments.</p><br>
+
+<p style="text-align: justify;">Her technical proficiency spans languages such as Python, C/C++, and R, and she has expertise in big data machine learning tools like Spark and Hadoop. Kargi's dedication to pushing the boundaries of AI technology makes her an invaluable asset to the 3UM team.</p><br>
+`,
+  },
+
+  {
+    name: "Vahini Walia",
+    title: "Generative AI Intern",
+    business: "Research & Development",
+    location: "Edison",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+<br><p style="text-align: justify;">Vahini Walia is a Generative AI Intern at 3UM, contributing her strong background in statistics, machine learning, and software development to the company’s AI projects. Currently pursuing her Bachelor’s degree in Statistics and Machine Learning at Carnegie Mellon University, Vahini has demonstrated exceptional skills in programming and data analysis through various academic and extracurricular activities.</p><br>
+
+<p style="text-align: justify;">Her experience includes working on projects related to financial modeling, environmental awareness, and cybersecurity. Vahini has developed applications using Python, Java, C++, and other programming languages, showcasing her ability to tackle complex problems and deliver innovative solutions. Her involvement in initiatives like Smart Women Securities and the Green Cause highlights her commitment to applying her technical skills for positive social impact.</p><br>
+
+<p style="text-align: justify;">At 3UM, Vahini is excited to continue learning and contributing to the development of cutting-edge AI technologies, driven by her passion for technology and its transformative potential.</p><br>
+`,
+  },
+  {
+    name: "Xiangyuan (Sherry) Chi",
+    title: "Data Analyst",
+    business: "Technology",
+    location: "Los Angeles",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+
+    description: `
+      <br><p style="text-align: justify;">Sherry Chi is a Data Analyst at 3UM with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. She has developed expertise in building Python-based ETL pipelines, applying machine learning techniques for predictive analytics, and transforming datasets into actionable business insights.</p><br>
+<p style="text-align: justify;">In her role as a Data Scientist at VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train a Transformer model that surpassed GPT-2 benchmarks. She also developed a CRM system for fraud detection, saving users $16,000 in losses. Her data storytelling skills were instrumental in promoting Chatbot products to diverse audiences, effectively communicating complex models to professionals and engaging non-technical audiences with relatable analogies and interactive activities.</p><br>
+<p style="text-align: justify;">During her internship at AXA Investment Managers, Sherry honed her financial modeling and data analysis skills. She automated a Python-based ETL pipeline and migrated data from a local server to MongoDB, saving the team 6 hours of manual work and improving data retrieval time by 15%. She also collaborated with the Fraud Detection team to assess Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
+<p style="text-align: justify;">Sherry’s educational background in technology and finance provides her with comprehensive insights. Her innovative approach to problem-solving and balancing cost and efficiency, combined with her dedication to continuous learning, make her a valuable asset to the data-driven team at 3UM.</p><br>
+`,
+  },
+  {
+    name: "Niklas Hoener",
+    title: "Data Analyst",
+    business: "Technology",
+    location: "Los Angeles",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+       <br><p style="text-align: justify;">Born and raised in Bielefeld, Germany, Niklas has enriched his academic journey by studying in the United States, becoming proficient in both German and English. This bilingual and bicultural background enables him to communicate effectively and professionally in diverse environments, a highly valuable skill in the global business arena.</p><br>
+<p style="text-align: justify;">Niklas is an ambitious graduate student-athlete at St. Thomas University, currently pursuing an MBA in International Business and Finance. He previously earned a Bachelor's degree in Business Administration with a concentration in Management and a minor in Economics from Presbyterian College. Alongside his academic achievements, Niklas has gained professional experience in technological solutions consulting and project management.</p><br>
+<p style="text-align: justify;">Niklas aims to harness his technological, linguistic, quantitative analytical, and economic expertise to build a successful career in business development and innovative economic strategy. His enthusiasm for understanding disparities in economic growth across different regions drives his interest in contributing to the future economy.</p><br>
+<p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
+`,
+  },
+
+  //     {
+  //       name: "Patrick (Alex) Wroe",
+  //       title: "Junior Analyst",
+  //       business: "Tactical",
+  //       location: "Dallas",
+  //       // href: "https://www.blackstone.com/people/qasim-abbas/",
+  //       dialogId: "bio-lightbox-5479",
+  //       // imgSrc:
+  //       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+  //       // imgAlt: "Abbas",
+  //       description: `
+  //        <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+  // `,
+  //     },
+
+  {
+    name: "Parmi Pandya",
+    title: "Marketing Associate",
+    business: "Marketing",
+    location: "New York",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+    <br><p style="text-align: justify;">Parmi Pandya recently joined 3UM as a Junior Marketing Associate, bringing a wealth of experience in site merchandising, marketing operations, and project management. Parmi's career is marked by significant achievements, including roles at Amazon Business and Afterpay x Square. In these roles, she successfully revamped web page layouts, led end-to-end campaigns, and optimized digital content strategies.</p><br>
+    <p style="text-align: justify;">With a Master of Science in Integrated Marketing from New York University and a background in Business Management and Project Management, Parmi possesses a robust skill set in driving innovative marketing strategies and enhancing customer engagement.</p><br>
+    <p style="text-align: justify;">At 3UM, Parmi is enthusiastic about contributing to 3UM's mission to revolutionize access to cutting-edge technologies. Her dedication to optimizing digital content and fostering strategic marketing initiatives aligns perfectly with 3UM's commitment to innovation and transformation in the tech industry.</p><br>
+`,
+  },
+
+  //     {
+  //       name: "Igor Nazarenko",
+  //       title: "Product Designer",
+  //       business: "Tactical",
+  //       location: "Dallas",
+  //       // href: "https://www.blackstone.com/people/qasim-abbas/",
+  //       dialogId: "bio-lightbox-5479",
+  //       // imgSrc:
+  //       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+  //       // imgAlt: "Abbas",
+  //       description: `
+  //             <br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>
+
+  // `,
+  //     },
+
+  //     {
+  //       name: "Andronikki (Nikki) Gerohrsitodoulos",
+  //       title: "Junior Researcher and Team Leader",
+  //       business: "Tactical",
+  //       location: "Dallas",
+  //       // href: "https://www.blackstone.com/people/qasim-abbas/",
+  //       dialogId: "bio-lightbox-5479",
+  //       // imgSrc:
+  //       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+  //       // imgAlt: "Abbas",
+  //       description: `
+  //             <br><p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. </p><br>
+
+  // `,
+  //     },
+
+  {
+    name: "Brian Brueggert",
+    title: "Head of Research & Development",
+    business: "Research & Development",
+    location: "Crawfordsville",
+    // href: "https://www.blackstone.com/people/qasim-abbas/",
+    dialogId: "bio-lightbox-5479",
+    // imgSrc:
+    //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
+    // imgAlt: "Abbas",
+    description: `
+    <br><p style="text-align: justify;">Brian Brueggert is a physicist, mathematician and software developer/engineer with over 20 years of experience across government research, academia and the private sector. His experience includes both theoretical and experimental
+quantum physics, quantum computing (gate-based and adiabatic), quantum
+cryptography, algebraic modeling, mathematical optimization, architecting and developing pioneering solutions for complex, dynamical systems, and utilizing high-tech software stacks to prescribe valuable actions and derive meaningful
+insights from large volumes of data, in an automated, optimized, dynamized and scalable manner. He has worked extensively in cloud, fog and edge solutions, centralized databases (relational/non-relational), decentralized distributed ledger technology, data science, Al, ML (regular and federated), data engineering (ETL/ELT pipelines), devops and APl's, among other related and non-related areas.
+.</p><br>
+`,
+  },
+
+  // Add more bios here...
+];
 interface BioItemProps {
   name: string;
   jobTitle: string;
@@ -123,7 +358,6 @@ const BioItem: React.FC<BioItemProps> = ({
             className="dialog-content dialog-content--bio "
             aria-label={name}
             role="dialog"
-            open=""
           >
             <button
               className="dialog-close-button"
@@ -230,16 +464,6 @@ interface DirectoryBioProps {
   title: string;
   business: string;
   location: string;
-  href: string;
-  dialogId: string;
-}
-
-interface DirectoryBioProps {
-  name: string;
-  title: string;
-  business: string;
-  location: string;
-  href: string;
   dialogId: string;
   onClick: () => void;
 }
@@ -249,7 +473,6 @@ const DirectoryBio: React.FC<DirectoryBioProps> = ({
   title,
   business,
   location,
-  href,
   dialogId,
   onClick,
 }) => {
@@ -299,11 +522,8 @@ const DirectoryBio: React.FC<DirectoryBioProps> = ({
 
 interface DirectoryBioLightboxProps {
   dialogId: string;
-  ariaLabel: string;
-  imgSrc: string;
-  imgAlt: string;
   name: string;
-  jobTitle: string;
+  title: string;
   location: string;
   description: string;
   isOpen: boolean;
@@ -312,11 +532,8 @@ interface DirectoryBioLightboxProps {
 
 const DirectoryBioLightbox: React.FC<DirectoryBioLightboxProps> = ({
   dialogId,
-  ariaLabel,
-  imgSrc,
-  imgAlt,
   name,
-  jobTitle,
+  title,
   location,
   description,
   isOpen,
@@ -340,7 +557,6 @@ const DirectoryBioLightbox: React.FC<DirectoryBioLightboxProps> = ({
 
       <div
         className="dialog-content dialog-content--bio"
-        aria-label={ariaLabel}
         role="dialog"
       >
         <button
@@ -384,7 +600,7 @@ const DirectoryBioLightbox: React.FC<DirectoryBioLightboxProps> = ({
               {name}
             </h3>
             <p className="bstn-bio__job-title mt-zero" itemProp="jobTitle">
-              {jobTitle}
+              {title}
             </p>
             <p className="bstn-bio__job-title mt-zero">{location}</p>
             <div dangerouslySetInnerHTML={{ __html: description }} />
@@ -399,11 +615,9 @@ const page = () => {
   const [isLightboxOpen, setLightboxOpen] = useState(false);
   const [currentBio, setCurrentBio] = useState({
     dialogId: "",
-    ariaLabel: "",
-    imgSrc: "",
-    imgAlt: "",
+    business: "",
     name: "",
-    jobTitle: "",
+    title: "",
     location: "",
     description: "",
   });
@@ -412,239 +626,11 @@ const page = () => {
   const [selectedBusinessUnit, setSelectedBusinessUnit] = useState("All");
   const [selectedLocation, setSelectedLocation] = useState("All");
 
-  const handleBioClick = (bio) => {
+  const handleBioClick = (bio: Bio) => {
     setCurrentBio(bio);
     setLightboxOpen(true);
   };
 
-  const bios = [
-    {
-      name: "Luis Jorge",
-      title: "Software Engineer II",
-      business: "Technology",
-      location: "New York",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-
-      description: `
- <br><p style="text-align: justify;">Luis is a Software Engineer II at 3UM, a first-generation Dominican American deeply passionate about technology and its transformative potential. With over 8 years of hands-on experience in Python development, specializing in Django and Flask APIs, he is adept in multiple programming languages including C++, C#, C, Python, Java, and JavaScript.</p><br>
-<p style="text-align: justify;">Luis's technical expertise is bolstered by his AWS Developer Associate certification and extensive knowledge in networking and security (CCNA). He has led backend development projects and contributed significantly to system architecture and project management as a Software Engineering Fellow with Hack.Diversity. Additionally, he is enhancing his full-stack development skills at Flatiron School Coding Bootcamp. Luis aims to revolutionize enterprise infrastructure, making it more efficient and sustainable while constantly staying at the forefront of emerging technologies through continuous learning and collaboration.</p><br>
-`,
-    },
-
-    {
-      name: "Ganesh Sarakadam",
-      title: "Frontend Engineer",
-      business: "Technology",
-      location: "Columbus",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-
-      description: `
- <br><p style="text-align: justify;">Ganesh Sarakadam is a Frontend Engineer at 3UM with over four years of experience in building scalable, high-quality solutions. With a strong foundation in JavaScript and Python, Ganesh is adept in frameworks such as React, Redux, and Node.js. His technical expertise extends to various databases including MySQL, PostgreSQL, Elasticsearch, and MongoDB, and he is proficient in tools like Docker, Kubernetes, and CI/CD.</p><br>
-<p style="text-align: justify;">Ganesh's professional experience includes significant roles such as a Research Assistant at Ohio University, where he pioneered a real-time weather data archive and developed a Python scheduler for efficient data processing. At Berkadia, he played a key role in developing RESTful Web APIs and microservices architecture, optimizing resource allocation on AWS ECS, and enhancing the efficiency of ticket processing operations.</p><br>
-<p style="text-align: justify;">In his projects, Ganesh has demonstrated his ability to design responsive web applications and engineer robust workflow systems, achieving high levels of performance and efficiency. He holds a Master of Science in Computer Science from Ohio University.</p><br>
-<p style="text-align: justify;">At 3UM, Ganesh applies his frontend engineering skills to drive the development of innovative solutions in AI, blockchain, and quantum computing, contributing to the company's mission of advancing technology and creating an intelligent ecosystem.</p><br>
-`,
-    },
-
-    {
-      name: "Silpa Vijayan Geetha",
-      title: "Frontend Engineer",
-      business: "Technology",
-      location: "Carrollton",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-<br><p style="text-align: justify;">Silpa Vijayan Geetha is a Frontend Developer at 3UM, bringing a strong track record of leading web development projects and enhancing software functionalities across various high-stakes industries. Her career highlights include developing an advanced interactive application at Diaconia and streamlining operations and enhancing security protocols for the aviation sector at IBS Software.</p><br>
-
-<p style="text-align: justify;">Silpa holds a Master of Science in Computer Science with a focus on Artificial Intelligence and Database (Cloud Computing) from the University of Texas at Arlington. She is skilled in implementing cutting-edge technologies and developing scalable web solutions. Beyond her frontend expertise, Silpa is also proficient in backend technologies, allowing her to manage comprehensive software solutions effectively.</p><br>
-
-<p style="text-align: justify;">At 3UM, Silpa is dedicated to contributing to the company's vision of transforming the technological landscape. Her strategic approach to software development and commitment to excellence align with 3UM's objectives of driving innovation and leading transformative changes in the tech industry.</p><br>
-`,
-    },
-
-    {
-      name: "Sumanth Sadu",
-      title: "Generative AI Engineer",
-      business: "Research & Development",
-      location: "Los Angeles",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-<br><p style="text-align: justify;">Venkata Sai Sumanth Sadu is a Generative AI Engineer at 3UM with a strong background in data science, machine learning, and AI development. He holds a Master of Science in Computer Science from the University of Southern California and a Bachelor's in Computer Science and Engineering from the Indian Institute of Information Technology.</p><br>
-
-<p style="text-align: justify;">Sumanth has extensive experience across various roles and industries. At USC, he developed dashboards and APIs for risk management. At Reliance Jio, he worked on image quality assessment using advanced AI models. At Swiggy, he implemented comprehensive data pipelines and machine learning models to improve data accuracy and operational efficiency. His tenure at DRDO involved deploying object detection and tracking models for defense applications, and he also developed an audio emotion recognition system.</p><br>
-
-<p style="text-align: justify;">He has also served as a Machine Learning Cloud Engineer at FEBA Technologies, where he designed machine learning courses and developed video analytics systems for fraud detection. Sumanth's technical expertise includes Python, Java, SQL, TensorFlow, PyTorch, and cloud platforms like AWS and GCP.</p><br>
-
-<p style="text-align: justify;">At 3UM, Sumanth leverages his skills in generative AI and machine learning to drive innovation and integrate cutting-edge AI solutions, making significant contributions to the company's mission.</p><br>
-`,
-    },
-
-    {
-      name: "Kargi Chauhan",
-      title: "Generative AI Engineer",
-      business: "Research & Development",
-      location: "Tucson",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-<br><p style="text-align: justify;">Kargi Chauhan is a Generative AI Engineer at 3UM, bringing a rich background in data science, machine learning, and AI from her extensive experience in research and development. She is currently completing her BS in Information Science (Data Science) and Game Design at the University of Arizona. Kargi has a strong foundation in implementing advanced AI solutions, with a focus on scalability and reliability.</p><br>
-
-<p style="text-align: justify;">At SpaceTrex, Kargi designed attitude estimation and lighting systems for CubeSat Satellites, integrating advanced machine learning algorithms and managing large datasets. Her role at Mining Engineering saw her spearhead a project to develop a virtual replica of the St. Xavier Mine, utilizing immersive learning technologies to enhance educational tools for students.</p><br>
-
-<p style="text-align: justify;">Kargi's experience extends to Aerospace Engineering, where she improved prediction accuracy in aerospace research through Bayesian models. She has also played a pivotal role in developing production infrastructures at Tech Core and contributed to the Summer of Code program by creating tools for seamless rendering in 3D environments.</p><br>
-
-<p style="text-align: justify;">Her technical proficiency spans languages such as Python, C/C++, and R, and she has expertise in big data machine learning tools like Spark and Hadoop. Kargi's dedication to pushing the boundaries of AI technology makes her an invaluable asset to the 3UM team.</p><br>
-`,
-    },
-
-    {
-      name: "Vahini Walia",
-      title: "Generative AI Intern",
-      business: "Research & Development",
-      location: "Edison",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-<br><p style="text-align: justify;">Vahini Walia is a Generative AI Intern at 3UM, contributing her strong background in statistics, machine learning, and software development to the company’s AI projects. Currently pursuing her Bachelor’s degree in Statistics and Machine Learning at Carnegie Mellon University, Vahini has demonstrated exceptional skills in programming and data analysis through various academic and extracurricular activities.</p><br>
-
-<p style="text-align: justify;">Her experience includes working on projects related to financial modeling, environmental awareness, and cybersecurity. Vahini has developed applications using Python, Java, C++, and other programming languages, showcasing her ability to tackle complex problems and deliver innovative solutions. Her involvement in initiatives like Smart Women Securities and the Green Cause highlights her commitment to applying her technical skills for positive social impact.</p><br>
-
-<p style="text-align: justify;">At 3UM, Vahini is excited to continue learning and contributing to the development of cutting-edge AI technologies, driven by her passion for technology and its transformative potential.</p><br>
-`,
-    },
-    {
-      name: "Xiangyuan (Sherry) Chi",
-      title: "Data Analyst",
-      business: "Technology",
-      location: "Los Angeles",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-
-      description: `
-        <br><p style="text-align: justify;">Sherry Chi is a Data Analyst at 3UM with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. She has developed expertise in building Python-based ETL pipelines, applying machine learning techniques for predictive analytics, and transforming datasets into actionable business insights.</p><br>
-<p style="text-align: justify;">In her role as a Data Scientist at VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train a Transformer model that surpassed GPT-2 benchmarks. She also developed a CRM system for fraud detection, saving users $16,000 in losses. Her data storytelling skills were instrumental in promoting Chatbot products to diverse audiences, effectively communicating complex models to professionals and engaging non-technical audiences with relatable analogies and interactive activities.</p><br>
-<p style="text-align: justify;">During her internship at AXA Investment Managers, Sherry honed her financial modeling and data analysis skills. She automated a Python-based ETL pipeline and migrated data from a local server to MongoDB, saving the team 6 hours of manual work and improving data retrieval time by 15%. She also collaborated with the Fraud Detection team to assess Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.</p><br>
-<p style="text-align: justify;">Sherry’s educational background in technology and finance provides her with comprehensive insights. Her innovative approach to problem-solving and balancing cost and efficiency, combined with her dedication to continuous learning, make her a valuable asset to the data-driven team at 3UM.</p><br>
-`,
-    },
-    {
-      name: "Niklas Hoener",
-      title: "Data Analyst",
-      business: "Technology",
-      location: "Los Angeles",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-         <br><p style="text-align: justify;">Born and raised in Bielefeld, Germany, Niklas has enriched his academic journey by studying in the United States, becoming proficient in both German and English. This bilingual and bicultural background enables him to communicate effectively and professionally in diverse environments, a highly valuable skill in the global business arena.</p><br>
-  <p style="text-align: justify;">Niklas is an ambitious graduate student-athlete at St. Thomas University, currently pursuing an MBA in International Business and Finance. He previously earned a Bachelor's degree in Business Administration with a concentration in Management and a minor in Economics from Presbyterian College. Alongside his academic achievements, Niklas has gained professional experience in technological solutions consulting and project management.</p><br>
-  <p style="text-align: justify;">Niklas aims to harness his technological, linguistic, quantitative analytical, and economic expertise to build a successful career in business development and innovative economic strategy. His enthusiasm for understanding disparities in economic growth across different regions drives his interest in contributing to the future economy.</p><br>
-  <p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
-`,
-    },
-
-//     {
-//       name: "Patrick (Alex) Wroe",
-//       title: "Junior Analyst",
-//       business: "Tactical",
-//       location: "Dallas",
-//       // href: "https://www.blackstone.com/people/qasim-abbas/",
-//       dialogId: "bio-lightbox-5479",
-//       // imgSrc:
-//       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-//       // imgAlt: "Abbas",
-//       description: `
-//        <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
-// `,
-//     },
-
-    {
-      name: "Parmi Pandya",
-      title: "Marketing Associate",
-      business: "Marketing",
-      location: "New York",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-      <br><p style="text-align: justify;">Parmi Pandya recently joined 3UM as a Junior Marketing Associate, bringing a wealth of experience in site merchandising, marketing operations, and project management. Parmi's career is marked by significant achievements, including roles at Amazon Business and Afterpay x Square. In these roles, she successfully revamped web page layouts, led end-to-end campaigns, and optimized digital content strategies.</p><br>
-      <p style="text-align: justify;">With a Master of Science in Integrated Marketing from New York University and a background in Business Management and Project Management, Parmi possesses a robust skill set in driving innovative marketing strategies and enhancing customer engagement.</p><br>
-      <p style="text-align: justify;">At 3UM, Parmi is enthusiastic about contributing to 3UM's mission to revolutionize access to cutting-edge technologies. Her dedication to optimizing digital content and fostering strategic marketing initiatives aligns perfectly with 3UM's commitment to innovation and transformation in the tech industry.</p><br>
- `,
-    },
-
-//     {
-//       name: "Igor Nazarenko",
-//       title: "Product Designer",
-//       business: "Tactical",
-//       location: "Dallas",
-//       // href: "https://www.blackstone.com/people/qasim-abbas/",
-//       dialogId: "bio-lightbox-5479",
-//       // imgSrc:
-//       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-//       // imgAlt: "Abbas",
-//       description: `
-//             <br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>
-
-// `,
-//     },
-
-//     {
-//       name: "Andronikki (Nikki) Gerohrsitodoulos",
-//       title: "Junior Researcher and Team Leader",
-//       business: "Tactical",
-//       location: "Dallas",
-//       // href: "https://www.blackstone.com/people/qasim-abbas/",
-//       dialogId: "bio-lightbox-5479",
-//       // imgSrc:
-//       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-//       // imgAlt: "Abbas",
-//       description: `
-//             <br><p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. </p><br>
-
-// `,
-//     },
-
-    {
-      name: "Brian Brueggert",
-      title: "Head of Research & Development",
-      business: "Research & Development",
-      location: "Crawfordsville",
-      // href: "https://www.blackstone.com/people/qasim-abbas/",
-      dialogId: "bio-lightbox-5479",
-      // imgSrc:
-      //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-      // imgAlt: "Abbas",
-      description: `
-      <br><p style="text-align: justify;">Brian Brueggert is a physicist, mathematician and software developer/engineer with over 20 years of experience across government research, academia and the private sector. His experience includes both theoretical and experimental
-quantum physics, quantum computing (gate-based and adiabatic), quantum
-cryptography, algebraic modeling, mathematical optimization, architecting and developing pioneering solutions for complex, dynamical systems, and utilizing high-tech software stacks to prescribe valuable actions and derive meaningful
-insights from large volumes of data, in an automated, optimized, dynamized and scalable manner. He has worked extensively in cloud, fog and edge solutions, centralized databases (relational/non-relational), decentralized distributed ledger technology, data science, Al, ML (regular and federated), data engineering (ETL/ELT pipelines), devops and APl's, among other related and non-related areas.
-.</p><br>
-`,
-    },
-
-    // Add more bios here...
-  ];
   //search feature
   const filteredBios = bios.filter((bio) => {
     const matchesSearchTerm =
@@ -677,8 +663,14 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
     { value: "Junior Analyst", label: "Junior Analyst" },
     { value: "Marketing Associate", label: "Marketing Associate" },
     { value: "Product Designer", label: "Product Designer" },
-    { value: "Junior Researcher and Team Leader", label: "Junior Researcher and Team Leader" },
-    { value: "Head of Research & Development", label: "Head of Research & Development" },
+    {
+      value: "Junior Researcher and Team Leader",
+      label: "Junior Researcher and Team Leader",
+    },
+    {
+      value: "Head of Research & Development",
+      label: "Head of Research & Development",
+    },
   ];
 
   const buOptions = [
@@ -787,31 +779,31 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
   <p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
 `;
 
-//   const description13 = `
-//   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
-// `;
+  //   const description13 = `
+  //   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+  // `;
 
-//   const description14 = `
-//   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
-// `;
+  //   const description14 = `
+  //   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+  // `;
 
   return (
     <div id="content" role="main" className="site-content">
       <div className="container-fluid">
-      <section
-      className="py-16 md:py-32"
-      style={{
-        backgroundImage: 'url(/assets/img3.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className="container mx-auto px-4 md:px-8 text-center">
-        <h1 className="text-white font-bold text-4xl md:text-6xl leading-tight mb-6">
-          Our People
-        </h1>
-      </div>
-    </section>
+        <section
+          className="py-16 md:py-32"
+          style={{
+            backgroundImage: "url(/assets/img3.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="container mx-auto px-4 md:px-8 text-center">
+            <h1 className="text-white font-bold text-4xl md:text-6xl leading-tight mb-6">
+              Our People
+            </h1>
+          </div>
+        </section>
         <h3 className="wp-block-heading has-text-align-center mt-xxlarge">
           Leadership
         </h3>
@@ -973,9 +965,8 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
                 key={index}
                 name={bio.name}
                 title={bio.title}
-                business={bio.business}
+                business={bio.business} // Adjust if necessary
                 location={bio.location}
-                href={bio.href}
                 dialogId={bio.dialogId}
                 onClick={() => handleBioClick(bio)}
               />
@@ -984,11 +975,8 @@ insights from large volumes of data, in an automated, optimized, dynamized and s
             {/* //dynamic popup , no change */}
             <DirectoryBioLightbox
               dialogId={currentBio.dialogId}
-              ariaLabel={currentBio.name}
-              imgSrc={currentBio.imgSrc}
-              imgAlt={currentBio.imgAlt}
               name={currentBio.name}
-              jobTitle={currentBio.jobTitle}
+              title={currentBio.title}
               location={currentBio.location}
               description={currentBio.description}
               isOpen={isLightboxOpen}
