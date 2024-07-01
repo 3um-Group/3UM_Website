@@ -3,7 +3,7 @@ name: "🐞 Bug Report"
 about: "Report an issue to help the project improve."
 title: "(bug) "
 labels: "Type: Bug"
-assignees: @frontend-developers
+assignees: frontend-developers
 
 ---
 
