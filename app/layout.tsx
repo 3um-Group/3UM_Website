@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Provider from "@/components/Provider";
+import HubspotChatbot from "@/components/Hubspot"
 import { 
   ClerkProvider,
   SignInButton,
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Provider>
           <body className={inter.className}>
             {children}
+            <HubspotChatbot></HubspotChatbot>
           </body>
         </Provider>
       </html>
