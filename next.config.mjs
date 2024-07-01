@@ -4,6 +4,7 @@ const nextConfig = {
     images: {
         unoptimized: true,  // <=== disables image optimization for static exports
     },
+    distDir: 'out',
 };
 
 export default nextConfig;
