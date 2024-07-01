@@ -53,12 +53,12 @@ const Header = () => {
 
 
                         <div className="z-30 hidden xl:flex items-center gap-2">
-                            <button className="font-button-size-100 px-4 py-2 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all">
+                            {/* <button className="font-button-size-100 px-4 py-2 bg-transparent text-gray-950 hover:bg-gray-100 rounded-lg transition-all">
                                 Contact
                             </button>
                             <button className="font-button-size-100 px-4 py-2 bg-gradient-to-br from-gradient-vibrant-blue-100 to-gradient-vibrant-blue-200 text-white-950 rounded-lg transition-all hover:shadow-gray-lg">
                                 Sign in
-                            </button>
+                            </button> */}
                         </div>
 
                         <button
