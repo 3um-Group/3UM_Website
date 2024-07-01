@@ -1,4 +1,6 @@
-import three_um_logo from '@/public/assets/white_logo.png';
+import three_um_logo from '@/public/assets/3UM-dark.png';
+import footerItems from '@/utils/footer-items';
+import socials from '@/utils/social-links';
 import { FacebookFilled } from "@ant-design/icons"
 import { LinkedinFilled } from '@ant-design/icons';
 import { YoutubeFilled } from '@ant-design/icons';
@@ -6,98 +8,79 @@ import { YoutubeFilled } from '@ant-design/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
+
 const Footer = () => {
   return (
-    <footer className='flex flex-col items-center mt-12 w-full bg-black text-white'>
+    <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14">
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-12">
+          {/* Logo and Newsletter Section */}
+          <div className="flex flex-col gap-5 lg:w-1/4">
+            <Link href='/'>
 
+              <Image
+                src={three_um_logo}
+                alt='company logo'
+                width={100}
+                height={100}
+                className='z-30 h-fit w-fullr'
+              />
+            </Link>
+            <p className="font-paragraph-size-200 font-medium">The web3 development platform</p>
+            <div className="flex flex-wrap gap-3">
+              {socials.map((social, index) => (
+                <a key={index} href={social.url} target="_blank" rel="noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-all hover:text-gray-500">
+                  <img alt={social.alt} loading="lazy" width="16" height="16" decoding="async" data-nimg="1" className="h-4 w-fit" style={{ color: 'transparent' }} src={social.img} />
+                </a>
+              ))}
+              {/* Social media icons */}
+            </div>
+            <div className="mt-6">
+              <h5 className="font-heading-size-100 font-extrabold text-gray-50">Supercharge your inbox</h5>
+              <p className="font-paragraph-size-200 pb-3 pt-1 font-medium">Sign up for our developer newsletter.</p>
+              <button className="group relative w-full rounded-lg bg-gray-100 text-gray-700 px-4 py-3 transition-all hover:text-gray-500">
+                Subscribe
+              </button>
+            </div>
+          </div>
 
+          {/* Link Columns */}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-12 xl:gap-16 mt-8 lg:mt-0">
+            {['Comapany'].map((category) => (
+              <div key={category} className="flex flex-col gap-4">
+                {/* <h5 className="font-eyebrow-size-100 font-bold text-gray-50">{category}</h5> */}
+                <ul className="flex flex-col gap-2">
+                  {/* Add your specific links here */}
+                  {footerItems.map((item) => (
+                    <>
+                      <li><a href={item.href} className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li>
+                      {/* <li><a href="#" className="font-paragraph-size-200 w-fit font-medium text-gray-200 transition-all hover:text-gray-400">{item.label}</a></li> */}
+                    </>
 
-      <div className='sm:flex hidden flex-row w-full justify-around mt-12'>
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Company</span>
-          <span>About Us</span>
-          <span>Mission & Vision</span>
-          <span>Roadmap</span>
-          <span>Careers</span>
-          <span>Press & Media</span>
-          <span>Contact Us</span>
-        </div>
+                  ))}
 
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Econsystem</span>
-          <span>3UM.ID</span>
-          <span>3UM Finance</span>
-          <span>3UM Genesis</span>
-          <span>ABQ Protocol</span>
-          <span>3UM Verse</span>
-          <span>Real World Projects</span>
-          <span>Pilot Prpgrams</span>
-          <span>Learning Academy</span>
-          <span>Partner</span>
-        </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Community</span>
-          <span>Community Home</span>
-          <span>3UM for StartUps</span>
-          <span>3UM for Developers</span>
-          <span>3UM x Creators</span>
-          <span>Governance</span>
-          <span>Events</span>
-          <span>Local Chapters</span>
-          <span>Ecosystem Jobs</span>
-        </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Resources</span>
-          <span>Documentation</span>
-          <span>Tutorials & Guides</span>
-          <span>Blog</span>
-          <span>FAQs</span>
-          <span>Support Center</span>
-          <span>Case Studies</span>
-          <span>Apple For Research</span>
-          <span>Study</span>
-        </div>
-
-        <div className='flex flex-col gap-5'>
-          <span className='font-bold text-xl'>Legal</span>
-          <span>Legal Home</span>
-          <span>Terms of Use</span>
-          <span>Privacy Policy</span>
-        </div>
-
-      </div>
-
-      {/*Desktop version */}
-      <div className='sm:flex hidden flex-row justify-between w-full'>
-        <div className='flex flex-row  my-5 mx-20 mb-10 items-center gap-7'>
-          <Image alt='3UM Logo' src={three_um_logo} className='object-contain' />
-          <div className='opacity-75'>Copyright© 2024 3UM. All rights reserved.</div>
-        </div>
-        <div className='flex flex-row gap-5 my-5 mx-20 mb-10'>
-
-          <FacebookFilled className='text-4xl opacity-80' />
-          <LinkedinFilled className='text-4xl opacity-80' />
-          <YoutubeFilled className='text-4xl opacity-80' />
+                  {/* Add more list items as needed */}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/*Mobile Version */}
-      <div className='flex flex-row items-center sm:hidden pt-5 w-full'>
-        <Image alt='3UM Logo' src={three_um_logo} className='object-contain ml-5 mr-auto' />
-
-        <div className='flex flex-row mr-5 ml-auto gap-3 '>
-          <FacebookFilled className='text-4xl opacity-80' />
-          <LinkedinFilled className='text-4xl opacity-80' />
-          <YoutubeFilled className='text-4xl opacity-80' />
+      {/* Footer Bottom */}
+      <div className="mx-auto w-full max-w-7xl mt-8 pt-4 border-t border-gray-800">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-paragraph-size-100 text-gray-200 text-sm sm:text-base">
+            Copyright© 2024 3UM. All rights reserved <a href="#" className="hover:underline">Terms of service</a>
+          </p>
+          <a href="#" className="font-button-size-100 mt-4 sm:mt-0 rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-700 sm:py-3 sm:text-base">
+            Powered by 3UM
+          </a>
         </div>
       </div>
-      <div className='opacity-75 mb-4 mt-2'>Copyright© 2024 3UM. All rights reserved.</div>
-
-
     </footer>
-  )
+  );
 }
 
 export default Footer
