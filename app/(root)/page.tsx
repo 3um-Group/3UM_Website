@@ -273,7 +273,7 @@ export default function Home() {
                 <h2 className="text-4xl font-bold">SuperDAO</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-xl">
-                Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, amd interact with the infrastructure exactly as you want
+                Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, and interact with the infrastructure exactly as you want.
 
               </p>
               {/* <div className="flex flex-row gap-4">

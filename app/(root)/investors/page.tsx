@@ -19,12 +19,12 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, description }) => {
         <div>
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full lg:w-1/2">
-              <h1 className="text-3xl text-center md:lg:text-left sm:text-5xl">
+              <h1 className="text-3xl text-center font-bold md:lg:text-left sm:text-5xl">
                 Welcome Investors
               </h1>
             </div>
             <div className="w-full  lg:w-1/2">
-              <p className="max-w-3xl mx-auto mt-4 text-lg text-justify">
+              <p className="max-w-3xl mx-auto mt-4 text-base text-justify">
                 Join us in shaping the future with our groundbreaking
                 intelligent ecosystem. Discover opportunities for investment and
                 growth within the 3UM ecosystem.
