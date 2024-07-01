@@ -58,6 +58,7 @@ interface InstitutionalInvestorsProps {
   eyebrow: string;
   title: string;
   description: string;
+  firstTitle:string;
   returnsTitle: string;
   returnsDescription: string;
   alignmentTitle: string;
