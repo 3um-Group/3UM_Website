@@ -184,24 +184,25 @@ const bios = [
     <br><p style="text-align: justify;">Parmi Pandya recently joined 3UM as a Junior Marketing Associate, bringing a wealth of experience in site merchandising, marketing operations, and project management. Parmi's career is marked by significant achievements, including roles at Amazon Business and Afterpay x Square. In these roles, she successfully revamped web page layouts, led end-to-end campaigns, and optimized digital content strategies.</p><br>
     <p style="text-align: justify;">With a Master of Science in Integrated Marketing from New York University and a background in Business Management and Project Management, Parmi possesses a robust skill set in driving innovative marketing strategies and enhancing customer engagement.</p><br>
     <p style="text-align: justify;">At 3UM, Parmi is enthusiastic about contributing to 3UM's mission to revolutionize access to cutting-edge technologies. Her dedication to optimizing digital content and fostering strategic marketing initiatives aligns perfectly with 3UM's commitment to innovation and transformation in the tech industry.</p><br>
-`,
-  },
-
-  //     {
-  //       name: "Igor Nazarenko",
-  //       title: "Product Designer",
-  //       business: "Tactical",
-  //       location: "Dallas",
-  //       // href: "https://www.blackstone.com/people/qasim-abbas/",
-  //       dialogId: "bio-lightbox-5479",
-  //       // imgSrc:
-  //       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-  //       // imgAlt: "Abbas",
-  //       description: `
-  //             <br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>
-
-  // `,
-  //     },
+`}, {
+    name: "Chandana Srinivasa Yatisha",
+    title: "Generative AI Engineer",
+    business: "Technology",
+    location: "New York",
+    dialogId: "bio-lightbox-5479",
+    description: `<br><p style="text-align: justify;">Chandana Srinivasa Yatisha with a Master’s degree in Computer Engineering from New York University, Chandana leverages her diverse background in data science, machine learning, and software development as a Software Analyst in Machine Learning at 3um. Her experiences include designing workflows for a psychology lab, consulting as a software engineer at Accenture, and crafting machine learning algorithms for a space startup.
+Chandana is a staunch advocate for women and minorities in tech, and she is deeply passionate about the ethical use of AI and data. She's an active participant in organizations and events like The Grace Hopper Conference and the WomenTech Network, striving to foster inclusive and equitable tech communities. She has a proven track record of developing innovative solutions using Python, Java, SQL, and other technologies.
+At 3um, Chandana is dedicated to harnessing her skills in AI and data science to drive forward-thinking solutions and make a positive impact. She is committed to contributing to projects that not only advance technological capabilities but also uphold ethical standards.
+</p><br>`
+}, {
+  name: "Igor Nazarenko",
+  title: "Product Designer",
+  business: "Tactical",
+  location: "Dallas",
+  // href: "https://www.blackstone.com/people/qasim-abbas/",
+  dialogId: "bio-lightbox-5479",
+  description: `<br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>`,
+ },
 
   //     {
   //       name: "Andronikki (Nikki) Gerohrsitodoulos",
@@ -215,6 +216,7 @@ const bios = [
   //       // imgAlt: "Abbas",
   //       description: `
   //             <br><p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. </p><br>
+
 
   // `,
   //     },
