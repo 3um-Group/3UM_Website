@@ -12,6 +12,7 @@ import {
 
 
 import "./globals.css";
+import PrivacyControls from "@/components/PrivacyCookieManger";
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Provider>
           <body className={inter.className}>
             {children}
+            <PrivacyControls/>
             <HubspotChatbot></HubspotChatbot>
           </body>
         </Provider>
