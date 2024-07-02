@@ -187,7 +187,7 @@ const bios = [
 `,
   }, {
     name: "Chandana Srinivasa Yatisha",
-    title: "Software Analysis in Machine Learning",
+    title: "Generative AI Engineer",
     business: "Technology",
     location: "New York",
     dialogId: "bio-lightbox-5479",
@@ -195,7 +195,7 @@ const bios = [
 Chandana is a staunch advocate for women and minorities in tech, and she is deeply passionate about the ethical use of AI and data. She's an active participant in organizations and events like The Grace Hopper Conference and the WomenTech Network, striving to foster inclusive and equitable tech communities. She has a proven track record of developing innovative solutions using Python, Java, SQL, and other technologies.
 At 3um, Chandana is dedicated to harnessing her skills in AI and data science to drive forward-thinking solutions and make a positive impact. She is committed to contributing to projects that not only advance technological capabilities but also uphold ethical standards.
 </p><br>`
-  }
+  },
 
   //     {
   //       name: "Igor Nazarenko",
