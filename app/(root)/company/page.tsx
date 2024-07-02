@@ -1,36 +1,29 @@
+// src/app/(root)/company/page.tsx
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import QuantumCube from '@/components/3DModel/QuantumCube';
 import ClientOnly from '@/components/3DModel/ClientOnly';
+import { KeyTechnologiesSection, TeamSection } from './utils';
 
 const PageTitle: React.FC<{ title: string }> = ({ title }) => {
   return (
-    <div className="text-center">
+    <div className="text-center fixed top-40 left-1/2 transform -translate-x-1/2 z-20">
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
-    </div>
-  );
-};
-
-const PlaceholderSection: React.FC = () => {
-  return (
-    <div className="placeholder-section bg-gray-200 p-8 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-4">Placeholder Section</h2>
-      <p className="text-lg">This is a placeholder for the new section that will appear when the 3D model translates fully to the left.</p>
     </div>
   );
 };
 
 const PageDescriptionAndModel: React.FC<{ description: string }> = ({ description }) => {
   const [translateX, setTranslateX] = useState(0);
-  const [isInteractingWith3D, setIsInteractingWith3D] = useState(false);
-  const [showPlaceholder, setShowPlaceholder] = useState(false);
+  const [isAbsolute, setIsAbsolute] = useState(true);
+  const mainDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
-      if (!isInteractingWith3D) {
+      if (mainDivRef.current?.contains(event.target as Node)) {
         if (event.deltaY > 0) {
-          setTranslateX((prev) => Math.min(prev + 120, window.innerWidth / 2));
+          setTranslateX((prev) => Math.min(prev + 120, 4000));
         } else {
           setTranslateX((prev) => Math.max(prev - 120, 0));
         }
@@ -42,26 +35,43 @@ const PageDescriptionAndModel: React.FC<{ description: string }> = ({ descriptio
     return () => {
       window.removeEventListener('wheel', handleScroll);
     };
-  }, [isInteractingWith3D]);
+  }, []);
 
   useEffect(() => {
-    if (translateX >= window.innerWidth / 2) {
-      setShowPlaceholder(true);
-    } else if (translateX === 0) {
-      setShowPlaceholder(false);
+    if (translateX >= 4000) {
+      document.body.style.overflowY = 'scroll';
+    } else {
+      document.body.style.overflowY = 'hidden';
     }
   }, [translateX]);
 
-  const handleMouseEnter = () => {
-    setIsInteractingWith3D(true);
-  };
+  useEffect(() => {
+    const handleScrollReset = () => {
+      if (window.scrollY === 0) {
+        setTranslateX(0);
+      }
 
-  const handleMouseLeave = () => {
-    setIsInteractingWith3D(false);
-  };
+      const mainDivHeight = mainDivRef.current?.scrollHeight || 0;
+      if (window.scrollY + window.innerHeight >= mainDivHeight - 100) {
+        setIsAbsolute(false);
+      } else {
+        setIsAbsolute(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollReset);
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollReset);
+    };
+  }, []);
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 px-8 overflow-hidden">
+    <div
+      className="relative flex flex-col md:flex-row items-center justify-between gap-8 px-8 pt-32"
+      style={{ position: isAbsolute ? 'absolute' : 'relative' }}
+      ref={mainDivRef}
+    >
       <div
         className="Company-Description md:w-1/2"
         style={{
@@ -75,30 +85,42 @@ const PageDescriptionAndModel: React.FC<{ description: string }> = ({ descriptio
       <div
         className="3D-Container md:w-1/2 flex justify-center md:justify-end"
         style={{
-          transform: `translateX(-${showPlaceholder ? translateX - window.innerWidth / 5 : translateX * 2.5 / 4}px)`,
+          transform: `translateX(-${translateX / 3}px)`,
           transition: 'transform 0.8s ease-in-out',
         }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         <ClientOnly>
           <QuantumCube />
         </ClientOnly>
       </div>
-      {showPlaceholder && (
+      {translateX >= window.innerWidth / 2 && (
         <div
-          className="Placeholder md:w-1/2 flex justify-center items-center"
+          className="Placeholder md:w-1/2 flex justify-center items-center pt-32"
           style={{
             position: 'absolute',
             right: 0,
-            top: 0,
-            transform: `translateX(${showPlaceholder ? '0%' : '100%'})`,
+            top: '50%',
+            transform: `translateY(-50%) translateX(0)`,
             transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out',
-            opacity: showPlaceholder ? 1 : 0,
+            opacity: 1,
             height: '100%',
           }}
         >
-          <PlaceholderSection />
+          <KeyTechnologiesSection />
+        </div>
+      )}
+      {translateX >= 3000 && (
+        <div
+          className="TeamSection md:w-full flex justify-center items-center pt-32"
+          style={{
+            position: 'absolute',
+            left: '50%',
+            transform: `translateX(-50%)`,
+            transition: 'opacity 0.8s ease-in-out',
+            opacity: 1,
+          }}
+        >
+          <TeamSection />
         </div>
       )}
     </div>
@@ -106,16 +128,35 @@ const PageDescriptionAndModel: React.FC<{ description: string }> = ({ descriptio
 };
 
 const CompanyPage: React.FC = () => {
+  const [scrollEnabled, setScrollEnabled] = useState(true);
+
+  const handleMouseEnter = () => {
+    setScrollEnabled(false);
+  };
+
+  const handleMouseLeave = () => {
+    setScrollEnabled(true);
+  };
+
+  useEffect(() => {
+    document.body.style.overflowY = scrollEnabled ? 'scroll' : 'hidden';
+  }, [scrollEnabled]);
+
   return (
-    <div className="min-h-screen bg-white text-black pb-0">
-      <section className="px-6 py-16 md:py-24 lg:py-32">
-        <div className="mx-auto max-w-container relative md:lg:max-w-6xl lg:max-w-6xl">
+    <div
+      className="main-div min-h-[10000px] bg-white text-black pb-0 overflow-hidden"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <section className="px-6 py-16 md:py-24 lg:py-32 fixed w-full top-0 left-0">
+        <div className="relative mx-auto max-w-container md:lg:max-w-6xl lg:max-w-6xl">
           <PageTitle title="The Company" />
           <PageDescriptionAndModel
             description="At 3UM, we are revolutionizing the future with our intelligent infrastructure. Our mission is to build groundbreaking businesses across key technologies, AI, blockchain, and quantum computing, providing investors and industry with advanced tools and solutions. We aim to create an intelligent ecosystem that empowers users to connect, learn, and grow, driving sustainable progress and creating new opportunities."
           />
         </div>
       </section>
+      <section className="min-h-screen"></section>
     </div>
   );
 };
