@@ -1,79 +1,119 @@
-import Image from 'next/image';
-import React from 'react';
+'use client';
 
-import empower from '@/public/assets/empower.png';
-import brain from '@/public/assets/brain_image.png';
-import road_map from '@/public/assets/road_map.png';
-import logo from '@/public/assets/IMG_0701 1.png';
+import React, { useState, useEffect } from 'react';
+import QuantumCube from '@/components/3DModel/QuantumCube';
+import ClientOnly from '@/components/3DModel/ClientOnly';
 
-import Form from '@/components/company_components/Form';
-import Career from '@/components/company_components/Career';
-import Media from '@/components/company_components/Media';
+const PageTitle: React.FC<{ title: string }> = ({ title }) => {
+  return (
+    <div className="text-center">
+      <h1 className="text-4xl font-bold mb-4">{title}</h1>
+    </div>
+  );
+};
+
+const PlaceholderSection: React.FC = () => {
+  return (
+    <div className="placeholder-section bg-gray-200 p-8 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-4">Placeholder Section</h2>
+      <p className="text-lg">This is a placeholder for the new section that will appear when the 3D model translates fully to the left.</p>
+    </div>
+  );
+};
+
+const PageDescriptionAndModel: React.FC<{ description: string }> = ({ description }) => {
+  const [translateX, setTranslateX] = useState(0);
+  const [isInteractingWith3D, setIsInteractingWith3D] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (event: WheelEvent) => {
+      if (!isInteractingWith3D) {
+        if (event.deltaY > 0) {
+          setTranslateX((prev) => Math.min(prev + 120, window.innerWidth / 2));
+        } else {
+          setTranslateX((prev) => Math.max(prev - 120, 0));
+        }
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+    };
+  }, [isInteractingWith3D]);
+
+  useEffect(() => {
+    if (translateX >= window.innerWidth / 2) {
+      setShowPlaceholder(true);
+    } else if (translateX === 0) {
+      setShowPlaceholder(false);
+    }
+  }, [translateX]);
+
+  const handleMouseEnter = () => {
+    setIsInteractingWith3D(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsInteractingWith3D(false);
+  };
+
+  return (
+    <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 px-8 overflow-hidden">
+      <div
+        className="Company-Description md:w-1/2"
+        style={{
+          transform: `translateX(-${translateX}px)`,
+          opacity: translateX > window.innerWidth / 5 ? 0 : 1,
+          transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out',
+        }}
+      >
+        <p className="text-lg mb-4 text-justify">{description}</p>
+      </div>
+      <div
+        className="3D-Container md:w-1/2 flex justify-center md:justify-end"
+        style={{
+          transform: `translateX(-${showPlaceholder ? translateX - window.innerWidth / 5 : translateX * 2.5 / 4}px)`,
+          transition: 'transform 0.8s ease-in-out',
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <ClientOnly>
+          <QuantumCube />
+        </ClientOnly>
+      </div>
+      {showPlaceholder && (
+        <div
+          className="Placeholder md:w-1/2 flex justify-center items-center"
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: 0,
+            transform: `translateX(${showPlaceholder ? '0%' : '100%'})`,
+            transition: 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out',
+            opacity: showPlaceholder ? 1 : 0,
+            height: '100%',
+          }}
+        >
+          <PlaceholderSection />
+        </div>
+      )}
+    </div>
+  );
+};
 
 const CompanyPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-white text-black pb-0">
-      <section className="px-8 py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col justify-center md:col-span-1">
-          <h1 className="text-4xl font-bold mb-4">The Company</h1>
-          <p className="text-lg mb-4">
-            At 3UM, we are revolutionizing the future with our intelligent infrastructure. Our mission is to build groundbreaking businesses across key technologies, AI, blockchain, and quantum computing, providing investors and industry with advanced tools and solutions. We aim to create an intelligent ecosystem that empowers users to connect, learn, and grow, driving sustainable progress and creating new opportunities.
-          </p>
-          <p className="text-lg">
-            We are committed to leveraging the key technology spheres: human-centric AI, blockchain that creates a connected infrastructure, and the next age of quantum computing. From finance and healthcare to smart cities and beyond, our tailored experiences, driven by advanced technology, aim to develop cutting-edge solutions that are secure, scalable, and user-friendly.
-          </p>
-        </div>
-        <div className="flex justify-center md:justify-end md:col-span-1">
-        <div className="relative w-full max-w-full h-auto">
-          <Image
-            src={brain}
-            alt="Company Meeting"
-            layout="responsive"
-            width={75}
-            height={75}
-            objectFit="cover"
-            className="rounded-lg"
+      <section className="px-6 py-16 md:py-24 lg:py-32">
+        <div className="mx-auto max-w-container relative md:lg:max-w-6xl lg:max-w-6xl">
+          <PageTitle title="The Company" />
+          <PageDescriptionAndModel
+            description="At 3UM, we are revolutionizing the future with our intelligent infrastructure. Our mission is to build groundbreaking businesses across key technologies, AI, blockchain, and quantum computing, providing investors and industry with advanced tools and solutions. We aim to create an intelligent ecosystem that empowers users to connect, learn, and grow, driving sustainable progress and creating new opportunities."
           />
-        </div>
-        </div>
-      </section>
-
-      <section className="bg-black text-white py-16 px-8">
-        <h3 className="text-2xl font-bold mb-8">
-          3UM revolutionizes industries by integrating AI, <span className="bg-yellow-500 text-black">Blockchain</span>, and quantum computing, empowering innovation and sustainable growth through our intelligent infrastructure and ecosystem.
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex justify-center md:col-span-1">
-            <div className="relative w-full h-0 pb-[56.25%]"> {/* Aspect ratio container */}
-              <Image
-                src={road_map}
-                alt="Technology"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col space-y-4">
-            <div>
-              <h4 className="text-xl font-semibold">Build financial security</h4>
-              <p>
-                We seek to deliver outstanding performance for institutional and individual investors by stewarding their capital with integrity and conviction.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold">Build your career</h4>
-              <p>
-                We offer an environment where exceptional talent can build lasting careers. To work at 3UM means being at the forefront of emerging trends and setting the standards for our industry.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold">Build strong businesses</h4>
-              <p>
-                We equip businesses with an extensive range of tools and capabilities they need to grow.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
     </div>
