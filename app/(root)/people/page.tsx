@@ -184,8 +184,7 @@ const bios = [
     <br><p style="text-align: justify;">Parmi Pandya recently joined 3UM as a Junior Marketing Associate, bringing a wealth of experience in site merchandising, marketing operations, and project management. Parmi's career is marked by significant achievements, including roles at Amazon Business and Afterpay x Square. In these roles, she successfully revamped web page layouts, led end-to-end campaigns, and optimized digital content strategies.</p><br>
     <p style="text-align: justify;">With a Master of Science in Integrated Marketing from New York University and a background in Business Management and Project Management, Parmi possesses a robust skill set in driving innovative marketing strategies and enhancing customer engagement.</p><br>
     <p style="text-align: justify;">At 3UM, Parmi is enthusiastic about contributing to 3UM's mission to revolutionize access to cutting-edge technologies. Her dedication to optimizing digital content and fostering strategic marketing initiatives aligns perfectly with 3UM's commitment to innovation and transformation in the tech industry.</p><br>
-`,
-  }, {
+`}, {
     name: "Chandana Srinivasa Yatisha",
     title: "Generative AI Engineer",
     business: "Technology",
@@ -195,23 +194,15 @@ const bios = [
 Chandana is a staunch advocate for women and minorities in tech, and she is deeply passionate about the ethical use of AI and data. She's an active participant in organizations and events like The Grace Hopper Conference and the WomenTech Network, striving to foster inclusive and equitable tech communities. She has a proven track record of developing innovative solutions using Python, Java, SQL, and other technologies.
 At 3um, Chandana is dedicated to harnessing her skills in AI and data science to drive forward-thinking solutions and make a positive impact. She is committed to contributing to projects that not only advance technological capabilities but also uphold ethical standards.
 </p><br>`
-  },
-
-  //     {
-  //       name: "Igor Nazarenko",
-  //       title: "Product Designer",
-  //       business: "Tactical",
-  //       location: "Dallas",
-  //       // href: "https://www.blackstone.com/people/qasim-abbas/",
-  //       dialogId: "bio-lightbox-5479",
-  //       // imgSrc:
-  //       //   "https://www.blackstone.com/wp-content/uploads/sites/2/2020/07/1075724-photo.jpg?v=1679936315",
-  //       // imgAlt: "Abbas",
-  //       description: `
-  //             <br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>
-
-  // `,
-  //     },
+}, {
+  name: "Igor Nazarenko",
+  title: "Product Designer",
+  business: "Tactical",
+  location: "Dallas",
+  // href: "https://www.blackstone.com/people/qasim-abbas/",
+  dialogId: "bio-lightbox-5479",
+  description: `<br><p style="text-align: justify;">Igor Nazarenko is a highly experienced and versatile product designer with a wide range of skills in illustration, web design, graphic design, UX and UI design, and design leadership. As a Senior Product Designer with several leadership roles, Igor has worked across various industries including biotech, healthcare, cyber security, and supply chain, showcasing his ability to adapt to different work environments and apply his skills effectively. He is passionate about creating intuitive and effective design solutions, and has a track record of delivering high-quality work that meets the needs of stakeholders and end users.</p><br>`,
+ },
 
   //     {
   //       name: "Andronikki (Nikki) Gerohrsitodoulos",
@@ -225,6 +216,7 @@ At 3um, Chandana is dedicated to harnessing her skills in AI and data science to
   //       // imgAlt: "Abbas",
   //       description: `
   //             <br><p style="text-align: justify;">Andronikki (Nikki) Gerohristodoulos is a cognitive neuroscientist specializing in extended reality (XR) and human factors engineering. Nikki's extensive experience includes research at NASA where she contributed to space mission projects aimed to enhance crew autonomy on long duration space flights using XR and AI methods, as well as the CUNY Graduate Center, where she investigated neurocognitive solutions to improve user experiences in virtual reality environments. Her innovative research and unique technical proficiency provide an essential foundation for neural network and machine learning research and development. </p><br>
+
 
   // `,
   //     },
@@ -701,8 +693,7 @@ const page = () => {
     { value: "Crawfordsville", label: "Crawfordsville" },
     { value: "Senior Operating Partner", label: "Senior Operating Partner" },
   ];
-  
-  const descriptions = [`
+  const description1 = `
 <br><p style="text-align: justify;">Dontae López is the CEO and Co-Founder of 3UM, He is the creator of 3UM-ID, 3UM-Fortuna, and Genesis as well as one of the builders of SuperDAO. Mr. López has been the driving force behind 3UM's groundbreaking advancements in AI, quantum computing, and decentralized systems.</p><br>
 
 <p style="text-align: justify;">His multifaceted expertise spans artificial intelligence, quantum algorithms, blockchain architecture, and ethical AI governance, making him a rare polymath in the tech industry. His ability to synthesize complex concepts across disciplines – from quantum physics to ethical AI deployment – has been crucial in developing 3UM's pioneering technologies.</p><br>
@@ -710,26 +701,38 @@ const page = () => {
 <p style="text-align: justify;">Before founding 3UM, Mr. López distinguished himself in the world of venture capital, where he established and led the Denver office for IØTA, attracting significant global investment to cutting-edge projects. He also orchestrated over $1 billion in transactions, showcasing his ability to navigate complex financial landscapes and deliver substantial results.</p><br>
 
 <p style="text-align: justify;">Beyond 3UM, Mr. López's expertise is highly sought after in the broader tech ecosystem. He serves on the boards of several companies in the fields of technology, supply chain management, Web3, and quantum computing, further cementing his status as a cross-industry thought leader. He is also an approved mentor and member of the ForbesBLK.</p><br>
-`,`
+`;
+
+  const description2 = `
 <br><p style="text-align: justify;">Jin Hong is the Chief Operating Officer, a co-founder of 3UM, and the creator of SuperDAO. With over 25 years of exemplary leadership experience, Mr. Hong is renowned for his ability to drive business operations with an unwavering focus on profitability and sustainable growth.</p><br>
 <p style="text-align: justify;">As the creator of SuperDAO, Mr. Hong has redefined AI in the blockchain space, incorporating advanced voting mechanisms and AI-driven analytics to enable more efficient and equitable decision-making models.</p><br>
 <p style="text-align: justify;">As a seasoned executive, Mr. Hong has consistently demonstrated his prowess in spearheading business expansion initiatives and establishing new divisions from inception to market dominance. His career is marked by impressive achievements across various industries, including AI technologies, finance, entertainment, information technology, F&B, and professional services, with senior positions at Management Consulting Group, Hyundai, DXC Technology, Fidelity National Financial, and Orion Group.</p><br>
 <p style="text-align: justify;">Under Mr. Hong's leadership, 3UM continues to push the boundaries of what's possible in the realms of AI, quantum computing, and blockchain technology. His unparalleled problem-solving skills, coupled with his commitment to innovation, position 3UM at the cutting edge of the next technological revolution.</p><br>
-`,`
-  <br><p style="text-align: justify;">Dwight Spencer is the Chief Technology Officer (CTO) of 3UM and co-founder, bringing over 20 years of experience in IT service delivery and software leadership. As a technology leader, Dwight drives 3UM's innovation, focusing on architecting solutions across cloud-based infrastructure, DevOps, and full-stack development.</p><br>
-  <p style="text-align: justify;">At 3UM, Dwight integrates quantum computing, artificial intelligence, and blockchain technologies into the company's offerings. His expertise in information security and automation enhances 3UM's data governance and operational efficiency, ensuring top-tier security standards.</p><br>
-  <p style="text-align: justify;">Dwight has partnered with clients such as Fidelity, Lockheed Martin, New York Times, Verizon, CapitalOne, and IBM, delivering solutions that drive digital transformation. His educational background includes a Master's degree in Computer Science and a Finance degree from Cornell University, allowing him to bridge technological innovation and business strategy.</p><br>
-  <p style="text-align: justify;">As CTO, Dwight explores emerging technologies, positioning 3UM at the forefront of quantum-inspired AI, blockchain integration, and decentralized systems. His strategic vision and technical expertise drive 3UM's efforts to develop next-generation solutions, reshaping AI-driven decision-making and data processing. Under his leadership, 3UM is poised to push the boundaries of AI, quantum computing, and blockchain technology.</p><br>
-`,`
+`;
+
+  const description3 = `
+  <br><p style="text-align: justify;">Dwight Spencer is the Chief Technology Officer (CTO) of 3UM, bringing over 20 years of experience in IT service delivery and software leadership. As a technology leader, Dwight drives 3UM's innovation, focusing on architecting solutions across cloud-based infrastructure, DevOps, and full-stack development.</p><br>
+
+<p style="text-align: justify;">At 3UM, Dwight integrates quantum computing, artificial intelligence, and blockchain technologies into the company's offerings. His expertise in information security and automation enhances 3UM's data governance and operational efficiency, ensuring top-tier security standards.</p><br>
+
+<p style="text-align: justify;">Dwight has partnered with clients such as Fidelity, Lockheed Martin, New York Times, Verizon, CapitalOne, and IBM, delivering solutions that drive digital transformation. His educational background includes a Master's degree in Computer Science and a Finance degree from Cornell University, allowing him to bridge technological innovation and business strategy.</p><br>
+
+<p style="text-align: justify;">As CTO, Dwight explores emerging technologies, positioning 3UM at the forefront of quantum-inspired AI, blockchain integration, and decentralized systems. His strategic vision and technical expertise drive 3UM's efforts to develop next-generation solutions, reshaping AI-driven decision-making and data processing. Under his leadership, 3UM is poised to push the boundaries of AI, quantum computing, and blockchain technology.</p><br>
+`;
+
+  const description4 = `
 <br><p style="text-align: justify;">Lawrence W. Sinnott, MBA, CPA, CGMA, is an accomplished Chief Financial Officer with a proven track record of driving financial excellence and strategic growth in technology firms and government sectors. With extensive experience in financial leadership, contract management, and operational enhancement, Lawrence leverages his expertise to optimize revenue, reduce costs, and secure substantial contracts, consistently propelling organizational success and expansion.</p><br>
-`,`
+`;
+
+  const description5 = `
   <br><p style="text-align: justify;">Collin Schwartz serves as the Chief Legal Officer of 3UM, bringing over two decades of expertise in regulatory compliance, financial services law, and corporate legal affairs. In this pivotal role, he guides 3UM through complex legal and regulatory landscapes while also serving on key internal committees.</p><br>
   <p style="text-align: justify;">At 3UM, Mr. Schwartz is an integral member of the Compliance Board, Ethics Committee, and Investment Board. These positions allow him to shape the company's strategic direction, ensure adherence to regulatory standards, and maintain the highest ethical practices across all operations.</p><br>
   <p style="text-align: justify;">With a Juris Doctor from New York Law School, Mr. Schwartz has built an impressive career spanning fintech startups, global financial institutions, and major corporations. His background includes key positions at companies like SoLo Funds Inc., TruSight, and MUFG Securities Americas Inc., where he honed his skills in managing legal teams, advising executives, and implementing robust compliance programs.</p><br>
   <p style="text-align: justify;">As Chief Legal Officer, Mr. Schwartz oversees all legal and regulatory matters at 3UM, drawing on his proven ability to navigate intricate regulatory environments, develop risk management strategies, and support business growth through sound legal counsel. His experience in both traditional finance and emerging technologies uniquely positions him to address the diverse legal challenges facing 3UM in today's rapidly evolving business landscape.</p><br>
   <p style="text-align: justify;">Mr. Schwartz’s expertise extends to areas such as fintech regulation, blockchain technology, and corporate governance. As a certified Blockchain Expert, he brings cutting-edge knowledge to 3UM's legal strategy and board discussions, ensuring the company remains at the forefront of legal and regulatory compliance in its field.</p><br>
   <p style="text-align: justify;">Through his multifaceted role at 3UM, Mr. Schwartz continues to drive the company's success by aligning legal strategies with business objectives while maintaining the highest standards of compliance and ethics.</p><br>
-`,`
+`;
+  const description6 = `
  <br><p style="text-align: justify;">Nathan E. Floyd is the Head of Corporate for 3UM, bringing over 15 years of distinguished experience in technology, consumer goods, social media, manufacturing, public sector, and sustainability spaces. His career is marked by a unique blend of legal expertise and strategic business acumen.</p><br>
   <p style="text-align: justify;">At 3UM, Mr. Floyd leverages his extensive background in emerging technologies and complex legal landscapes to guide the company's corporate strategy and legal affairs. His expertise encompasses areas such as the metaverse, infrastructure, automotive sector, and various cutting-edge projects, positioning 3UM at the forefront of technological innovation.</p><br>
   <p style="text-align: justify;">Prior to joining 3UM, Mr. Floyd served as Chief of Staff to the CEO at Suntory Holdings LLC, where he demonstrated exceptional leadership in global risk management, compliance, and strategic operations. His efforts led to significant cost reductions and a 5% year-over-year profitability increase through innovative business process re-engineering projects.</p><br>
@@ -738,36 +741,53 @@ const page = () => {
   <p style="text-align: justify;">Admitted to the California Bar and holding Japanese Highly-Skilled Worker status, Mr. Floyd is fluent in English and professionally proficient in Japanese. This linguistic capability, combined with his cross-cultural experience, makes him a valuable asset in global business environments.</p><br>
   <p style="text-align: justify;">Beyond his professional achievements, Mr. Floyd maintains a diverse set of interests, including social dance, hip-hop, martial arts (holding a black belt in Taekwondo), community service, mentorship, and sports. This well-rounded background contributes to his holistic approach to both legal and business challenges.</p><br>
   <p style="text-align: justify;">Nathan E. Floyd's career exemplifies the intersection of legal expertise, technological innovation, and global business strategy, positioning him as a leading figure in the evolving landscape of international corporate law and technology. His role at 3UM continues to build upon this impressive foundation, driving the company's growth and innovation in the tech sector.</p><br>
-`,`
+`;
+
+  const description7 = `
   <br><p style="text-align: justify;">Juan Carlos Portilla Jaimes serves as the Head of Compliance at 3UM, bringing a wealth of expertise in international financial law, anti-money laundering, and financial crime prevention to this critical role.</p><br>
   <p style="text-align: justify;">With an LL.M. in International Law and certifications in anti-money laundering (CAMS) and fraud examination (CFE), Juan Carlos is uniquely qualified to navigate the complex regulatory landscape. He is fluent in English and Spanish, with proficiency in Portuguese and French.</p><br>
   <p style="text-align: justify;">Juan Carlos's distinguished career includes positions at Wells Fargo, Wise Inc., and American Express, where he honed his skills in compliance and financial crime risk management. His academic contributions extend to lecturing on international financial law at Sabana University and publishing scholarly works in prestigious journals, including the Harvard International Law Journal and Cambridge Law Review.</p><br>
   <p style="text-align: justify;">At 3UM, Juan Carlos leads the compliance team in developing and implementing robust programs to ensure regulatory adherence, prevent financial crimes, and uphold the highest standards of ethical business conduct. His global perspective and deep understanding of emerging compliance challenges position 3UM at the forefront of responsible financial practices.</p><br>
   <p style="text-align: justify;">Juan Carlos's thought leadership in the field is evident through his publications on transnational financial crime and his ability to translate complex regulatory requirements into effective operational strategies. His expertise continues to shape industry standards and contribute to the evolving dialogue on global financial compliance.</p><br>
-`,`
+`;
+  const description8 = `
   <br><p style="text-align: justify;">Matthew Jackson is an analytical professional with over 13 years of experience in data analysis, digital marketing, and business intelligence. His expertise includes delivering insights, strategic recommendations, and developing data-driven narratives to enhance marketing performance.Matthew is highly skilled in translating complex data into actionable insights, with a focus on improving efficiency and driving targeted advertising touch points. He has extensive experience in the Biotech, Pharma, CPG, and Digital Marketing industries, with a strong foundation in statistical analysis, data strategy, business intelligence, experimental design, and data visualization.</p><br>
-`,`
+ 
+`;
+
+  const description9 = `
   <br><p style="text-align: justify;">Gregory Betz is the Head of Blockchain at 3UM. With nearly a decade of experience, he has been a leading figure in blockchain innovation since its inception. Greg began his career by mastering the Bitcoin Core source code, which laid the groundwork for his future in blockchain development. As a Senior Blockchain Engineer at Duality Solutions, he played a key role in creating both Proof of Work and Proof of Stake cryptocurrencies, demonstrating his deep understanding of consensus mechanisms.</p><br>
 <p style="text-align: justify;">At ConsenSys, Greg contributed significantly to the Ethereum ecosystem, particularly during the aftermath of the DAO hack, cementing his reputation as a problem-solver in critical blockchain environments. His expertise spans the entire blockchain development lifecycle, including smart contracts and tokenomics models.</p><br>
 <p style="text-align: justify;">Greg's skills in C++ and Solidity, along with his strategic insight, make him a vital asset in bridging technical innovation and practical application. His contributions have positioned him as a thought leader in blockchain technology, known for navigating the complexities of cryptography, distributed systems, and economic models. At 3UM, Greg drives blockchain initiatives with his extensive knowledge and vision.</p><br>
-`,`
+`;
+
+  const description10 = `
   <br><p style="text-align: justify;">Charles "Chuck" Parker is the Head of Business Development at 3UM. With over two decades of experience in AI, healthcare, and technology standards, Chuck has significantly influenced digital health and interoperability.</p><br>
 <p style="text-align: justify;">As the former Executive Director of the Continua Health Alliance, he led global efforts to establish interoperability standards for personal health devices, collaborating with companies like Qualcomm, Samsung, and IBM. At Xcertia, working with the American Medical Association and HIMSS, he developed healthcare app standards focusing on privacy, security, and functionality. Chuck's expertise includes serving on FDA committees for AI in healthcare, contributing to frameworks for qualifying and certifying AI as medical devices. He has worked with IEEE, Bluetooth, GSMA, and ITU, establishing himself as a global authority on technology standards.</p><br>
 <p style="text-align: justify;">At 3UM, Chuck leverages his industry knowledge and network to create strategic partnerships and drive business growth. He holds a Master of Science in Healthcare Informatics from Northeastern University, enhancing his practical experience with a strong theoretical foundation. As a recognized speaker and thought leader, Chuck continues to shape the future of digital health and technology standards.</p><br>
-`,`
+`;
+
+  const description11 = `
   <br><p style="text-align: justify;">Sherry Chi is a Data Analyst at 3UM with a Master’s degree in Data Science from the University of Southern California and a Bachelor’s degree in Financial Mathematics & Statistics from the University of California, Santa Barbara. She has developed expertise in building Python-based ETL pipelines, applying machine learning techniques for predictive analytics, and transforming datasets into actionable business insights.<br></p>
 <p style="text-align: justify;">In her role as a Data Scientist at VISIONARYAI, Sherry reconstructed over 110k question-answer pairs to train a Transformer model that surpassed GPT-2 benchmarks. She also developed a CRM system for fraud detection, saving users $16,000 in losses. Her data storytelling skills were instrumental in promoting Chatbot products to diverse audiences, effectively communicating complex models to professionals and engaging non-technical audiences with relatable analogies and interactive activities.<br></p>
 <p style="text-align: justify;">During her internship at AXA Investment Managers, Sherry honed her financial modeling and data analysis skills. She automated a Python-based ETL pipeline and migrated data from a local server to MongoDB, saving the team 6 hours of manual work and improving data retrieval time by 15%. She also collaborated with the Fraud Detection team to assess Random Forest and Boosting models, restricting over 400 abnormal transactions and enhancing annual revenue by 1%.<br></p>
 <p style="text-align: justify;">Sherry’s educational background in technology and finance provides her with comprehensive insights. Her innovative approach to problem-solving and balancing cost and efficiency, combined with her dedication to continuous learning, make her a valuable asset to the data-driven team at 3UM.<br></p>
-`,`
+`;
+
+  const description12 = `
   <br><p style="text-align: justify;">Born and raised in Bielefeld, Germany, Niklas has enriched his academic journey by studying in the United States, becoming proficient in both German and English. This bilingual and bicultural background enables him to communicate effectively and professionally in diverse environments, a highly valuable skill in the global business arena.</p><br>
   <p style="text-align: justify;">Niklas is an ambitious graduate student-athlete at St. Thomas University, currently pursuing an MBA in International Business and Finance. He previously earned a Bachelor's degree in Business Administration with a concentration in Management and a minor in Economics from Presbyterian College. Alongside his academic achievements, Niklas has gained professional experience in technological solutions consulting and project management.</p><br>
   <p style="text-align: justify;">Niklas aims to harness his technological, linguistic, quantitative analytical, and economic expertise to build a successful career in business development and innovative economic strategy. His enthusiasm for understanding disparities in economic growth across different regions drives his interest in contributing to the future economy.</p><br>
   <p style="text-align: justify;">Niklas’s diverse skill set and international experience make him a versatile and valuable asset in the field of international business.</p><br>
-`,`<br><p style="text-align: justify;">Chandana Srinivasa Yatisha with a Master’s degree in Computer Engineering from New York University, Chandana leverages her diverse background in data science, machine learning, and software development as a Software Analyst in Machine Learning at 3um. Her experiences include designing workflows for a psychology lab, consulting as a software engineer at Accenture, and crafting machine learning algorithms for a space startup.
-Chandana is a staunch advocate for women and minorities in tech, and she is deeply passionate about the ethical use of AI and data. She's an active participant in organizations and events like The Grace Hopper Conference and the WomenTech Network, striving to foster inclusive and equitable tech communities. She has a proven track record of developing innovative solutions using Python, Java, SQL, and other technologies.
-At 3um, Chandana is dedicated to harnessing her skills in AI and data science to drive forward-thinking solutions and make a positive impact. She is committed to contributing to projects that not only advance technological capabilities but also uphold ethical standards.
-</p><br>`;
+`;
+
+  //   const description13 = `
+  //   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+  // `;
+
+  //   const description14 = `
+  //   <br><p style="text-align: justify;">Alex Wroe is a dedicated Analyst with a passion for data analysis and strategic decision-making. Graduating with a Bachelor of Science in Sports Marketing and a minor in Data Analytics from the University of South Florida, Alex has honed a unique skill set that combines analytical prowess with industry knowledge. Alex also holds an Associate of Arts in Business Administration from Harford Community College, where he was a member of the Men's Lacrosse Team and achieved the distinction of being an Academic All-American. Alex's skill set extends beyond his academic and professional achievements. With a keen ability to network, solve problems, think critically, collaborate effectively, and adapt to diverse environments, he is a versatile professional poised to make significant contributions in the fields of finance, data analysis, and beyond. Driven by a passion for leveraging data insights to drive business success, Alex is committed to continuous learning and growth, seeking opportunities to apply his expertise in innovative ways and make a positive impact in the dynamic intersection of sports, analytics, and finance.</p><br>
+  // `;
 
   return (
     <div id="content" role="main" className="site-content">
@@ -796,35 +816,35 @@ At 3um, Chandana is dedicated to harnessing her skills in AI and data science to
             jobTitle="CEO & Co-Founder"
             dialogId="bio-dontae-x-y-lopez"
             ariaLabel="CEO & Co-Founder"
-            description={descriptions[1]}
+            description={description1}
           />
           <BioItem
             name="Jin Hong"
             jobTitle="COO & Co-Founder"
             dialogId="bio-jin-hong"
             ariaLabel="Jin Hong"
-            description={descriptions[2]}
+            description={description2}
           />
           <BioItem
             name="Dwight Spencer"
-            jobTitle="CTO & Co-Founder"
+            jobTitle="Chief Technology Officer"
             dialogId="bio-dwight-spencer"
             ariaLabel="Dwight Spencer"
-            description={description[3]}
+            description={description3}
           />
           <BioItem
             name="Lawrence W. Sinnott"
             jobTitle="Chief Financial Officer"
             dialogId="bio-lawrence-sinnott"
             ariaLabel="Lawrence W. Sinnott"
-            description={description[4]}
+            description={description4}
           />
           <BioItem
             name="Collin Schwartz"
             jobTitle="Chief Legal Officer"
             dialogId="bio-collin-schwartz"
             ariaLabel="Collin Schwartz"
-            description={description[5]}
+            description={description5}
           />
         </div>
 
@@ -835,35 +855,35 @@ At 3um, Chandana is dedicated to harnessing her skills in AI and data science to
             jobTitle="Head of Corporate"
             dialogId="bio-nathan-e-floyd"
             ariaLabel="Nathan E. Floyd"
-            description={descriptions[6]}
+            description={description6}
           />
           <BioItem
             name="Juan Carlos Portilla"
             jobTitle="Head of Compliance"
             dialogId="bio-juan-carlos-portilla"
             ariaLabel="Juan Carlos Portilla"
-            description={descriptions[7]}
+            description={description7}
           />
           <BioItem
             name="Matthew Jackson"
             jobTitle="Head of Data"
             dialogId="bio-matthew-jackson"
             ariaLabel="Matthew Jackson"
-            description={descriptions[8]}
+            description={description8}
           />
           <BioItem
             name="Gregory Betz"
             jobTitle="Head of Blockchain"
             dialogId="bio-gregory-betz"
             ariaLabel="Gregory Betz"
-            description={descriptions[9]}
+            description={description9}
           />
           <BioItem
             name="Charles Parker"
             jobTitle="Head of Business Development"
             dialogId="bio-charles-parker"
             ariaLabel="Charles Parker"
-            description={descriptions[10]}
+            description={description10}
           />
         </div>
 
