@@ -11,8 +11,13 @@ const getRandomColor = () => {
   return colors[Math.floor(Math.random() * colors.length)];
 };
 
+interface QuantumCubeProps {
+  zIndex?: number;
+  cameraPosition?: [number, number, number];
+}
+
 const QuantumCubeModel: React.FC = () => {
-  const { scene, animations } = useGLTF('/assets/3D/cubes_without_sphere.glb'); // Updated path to your GLB file
+  const { scene, animations } = useGLTF('/assets/3D/cubes_without_sphere.glb');
   const { actions } = useAnimations(animations, scene);
   const meshRefs = useRef<THREE.Mesh[]>([]);
   const mixerRef = useRef<THREE.AnimationMixer | null>(null);
@@ -20,19 +25,17 @@ const QuantumCubeModel: React.FC = () => {
 
   useEffect(() => {
     if (actions && Object.keys(actions).length > 0) {
-      // Create an AnimationMixer and play all animations
       const mixer = new THREE.AnimationMixer(scene);
       mixerRef.current = mixer;
 
       const totalAnimations = Object.values(actions).length;
       let loopCounter = 0;
 
-      // Set up event listener for when animations finish
       const onAnimationLoop = () => {
         loopCounter++;
         if (loopCounter === totalAnimations) {
           setCompletedLoops((prev) => prev + 1);
-          loopCounter = 0; // Reset the counter for the next cycle
+          loopCounter = 0;
         }
       };
 
@@ -45,7 +48,6 @@ const QuantumCubeModel: React.FC = () => {
 
       mixer.addEventListener('finished', onAnimationLoop);
 
-      // Store references to meshes
       scene.traverse((object) => {
         if (object.isMesh) {
           meshRefs.current.push(object);
@@ -63,16 +65,14 @@ const QuantumCubeModel: React.FC = () => {
 
   useEffect(() => {
     if (completedLoops > 0) {
-      // Restart all animations
       Object.values(actions).forEach((clipAction) => {
         const action = mixerRef.current?.clipAction(clipAction.getClip());
         action?.reset().play();
       });
 
-      // Change colors
-      meshRefs.current.forEach((mesh) => {
+      meshRefs.current.forEach((mesh, index) => {
         const material = mesh.material as THREE.MeshStandardMaterial;
-        material.color.set(getRandomColor());
+        material.color.set(index === 0 ? '#000000' : getRandomColor());
       });
     }
   }, [completedLoops, actions]);
@@ -86,11 +86,15 @@ const QuantumCubeModel: React.FC = () => {
   return <primitive object={scene} />;
 };
 
-useGLTF.preload('/assets/3D/cubes_without_sphere.glb'); // Preload the updated GLB file
+useGLTF.preload('/assets/3D/cubes_without_sphere.glb');
 
-const QuantumCube: React.FC = () => {
+const QuantumCube: React.FC<QuantumCubeProps> = ({ zIndex = 1, cameraPosition = [15, 0, 10] }) => {
   return (
-    <Canvas style={{ height: '500px', width: '100%' }} gl={{ alpha: true }} camera={{ position: [15, 0, 8] }}> {/* Updated camera position */}
+    <Canvas
+      style={{ height: '500px', width: '100%', zIndex }}
+      gl={{ alpha: true }}
+      camera={{ position: cameraPosition }}
+    >
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <directionalLight position={[-5, -5, -5]} intensity={0.5} />
