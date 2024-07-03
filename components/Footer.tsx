@@ -4,6 +4,7 @@ import socials from '@/utils/social-links';
 import { FacebookFilled } from "@ant-design/icons"
 import { LinkedinFilled } from '@ant-design/icons';
 import { YoutubeFilled } from '@ant-design/icons';
+import NewsLetter from "./NewsLetter";
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,34 +16,43 @@ const Footer = () => {
     <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14">
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-12">
-          {/* Logo and Newsletter Section */}
-          <div className="flex flex-col gap-5 lg:w-1/4">
-            <Link href='/'>
-
+          <div className="flex flex-col gap-5 lg:w-2/3">
+            <Link href="/">
               <Image
                 src={three_um_logo}
-                alt='company logo'
+                alt="company logo"
                 width={100}
                 height={100}
-                className='z-30 h-fit w-fullr'
+                className="z-30 h-fit w-fullr"
               />
             </Link>
-            <p className="font-paragraph-size-200 font-medium">The web3 development platform</p>
+            <p className="font-paragraph-size-200 font-medium">
+              The web3 development platform
+            </p>
             <div className="flex flex-wrap gap-3">
               {socials.map((social, index) => (
-                <a key={index} href={social.url} target="_blank" rel="noreferrer" className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-all hover:text-gray-500">
-                  <img alt={social.alt} loading="lazy" width="16" height="16" decoding="async" data-nimg="1" className="h-4 w-fit" style={{ color: 'transparent' }} src={social.img} />
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-all hover:text-gray-500"
+                >
+                  <img
+                    alt={social.alt}
+                    loading="lazy"
+                    width="16"
+                    height="16"
+                    decoding="async"
+                    data-nimg="1"
+                    className="h-4 w-fit"
+                    style={{ color: "transparent" }}
+                    src={social.img}
+                  />
                 </a>
               ))}
-              {/* Social media icons */}
             </div>
-            <div className="mt-6">
-              <h5 className="font-heading-size-100 font-extrabold text-gray-50">Supercharge your inbox</h5>
-              <p className="font-paragraph-size-200 pb-3 pt-1 font-medium">Sign up for our developer newsletter.</p>
-              <button className="group relative w-full rounded-lg bg-gray-100 text-gray-700 px-4 py-3 transition-all hover:text-gray-500">
-                Subscribe
-              </button>
-            </div>
+            <NewsLetter />
           </div>
 
           {/* Link Columns */}
