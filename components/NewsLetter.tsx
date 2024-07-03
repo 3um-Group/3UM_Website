@@ -10,6 +10,8 @@ const NewsLetter: React.FC = () => {
   const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID;
 
 
+
+  
   const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) {
