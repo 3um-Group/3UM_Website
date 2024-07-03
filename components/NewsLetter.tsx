@@ -6,11 +6,9 @@ const NewsLetter: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  // const PORTAL_ID = process.env.NEXT_PUBLIC_PORTAL_ID;
-  // const HUBSPOT_FORM_ID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID;
+  const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID;
+  const HUBSPOT_FORM_ID = process.env.HUBSPOT_FORM_ID;
 
-  const PORTAL_ID = "46650267";
-  const HUBSPOT_FORM_ID = "773ef321-30e0-442a-99b7-d707cdd5c8ca";
 
   const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,7 +19,7 @@ const NewsLetter: React.FC = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
         {
           method: "POST",
           headers: {
