@@ -1,4 +1,4 @@
-@tailwind base;
+  @tailwind base;
   @tailwind components;
   @tailwind utilities;
 
@@ -24,6 +24,39 @@
   mix-blend-mode: multiply;
   border-radius: 30px;
   z-index: 1;
+}
+
+.carousel-container {
+  margin: 20px 0;
+}
+
+.carousel-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #a1bee0, #3658ef);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.carousel-content {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.carousel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carousel-text {
+  font-size: 1rem;
 }
 
 .image {
@@ -93,6 +126,7 @@
       --ring: 212.7 26.8% 83.9%;
     }
   }
+
 
   @layer base {
     * {
