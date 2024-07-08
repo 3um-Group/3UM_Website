@@ -82,6 +82,41 @@
 .main-3D-Container {
   z-index: 10;
 }
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-item {
+  scroll-snap-align: start;
+  min-width: 300px;
+  max-width: 500px;
+  height: 400px;
+  margin-right: 20px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-item:hover {
+  transform: scale(1.05);
+}
+
+.slider-item img {
+  object-fit: cover;
+}
+
+.slider-item h2 {
+  color: #fff;
+}
+
+.slider-item p {
+  color: #fff;
+}
+
+
 
 .image {
 

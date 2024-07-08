@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14">
+    <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14 z99">
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-12">
           {/* Logo and Newsletter Section */}

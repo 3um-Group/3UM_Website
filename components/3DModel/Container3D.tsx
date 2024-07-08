@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import QuantumCube from '@/components/3DModel/QuantumCube';
 import ClientOnly from '@/components/3DModel/ClientOnly';
 
@@ -9,6 +9,8 @@ interface Container3DProps {
   width?: string;
   height?: string;
   placement?: 'left' | 'center' | 'right';
+  direction?: 'up' | 'down' | 'left' | 'right';
+  animationType?: 'appear' | 'grow';
 }
 
 const Container3D: React.FC<Container3DProps> = ({
@@ -16,71 +18,51 @@ const Container3D: React.FC<Container3DProps> = ({
   width = '100%',
   height = '500px',
   placement = 'center',
+  direction = 'right',
+  animationType = 'appear',
 }) => {
-  const [translateX, setTranslateX] = useState(0);
-  const [isAbsolute, setIsAbsolute] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-      if (containerRef.current?.contains(event.target as Node)) {
-        if (event.deltaY > 0) {
-          setTranslateX((prev) => Math.min(prev + 120, 2000));
-        } else {
-          setTranslateX((prev) => Math.max(prev - 120, 0));
-        }
-      }
-    };
-
-    window.addEventListener('wheel', handleScroll);
-
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (translateX >= 2000) {
-      document.body.style.overflowY = 'scroll';
-    } else {
-      document.body.style.overflowY = 'hidden';
+  const getInitialTransform = () => {
+    switch (direction) {
+      case 'up':
+        return 'translateY(100vh)';
+      case 'down':
+        return 'translateY(-100vh)';
+      case 'left':
+        return 'translateX(100vw)';
+      case 'right':
+        return 'translateX(-100vw)';
+      default:
+        return 'translateX(0)';
     }
-  }, [translateX]);
+  };
+
+  const getFinalTransform = () => {
+    return 'translateX(0) translateY(0)';
+  };
 
   useEffect(() => {
-    const handleScrollReset = () => {
-      if (window.scrollY === 0) {
-        setTranslateX(0);
-      }
+    const container = containerRef.current;
+    if (container) {
+      container.style.transform = getInitialTransform();
+      container.style.transition = 'transform 1.4s ease-in-out, opacity 1.4s ease-in-out';
+      container.style.opacity = '0';
 
-      const containerHeight = containerRef.current?.scrollHeight || 0;
-      if (window.scrollY + window.innerHeight >= containerHeight - 100) {
-        setIsAbsolute(false);
-      } else {
-        setIsAbsolute(true);
-      }
-    };
+      container.getBoundingClientRect(); // Force layout reflow
 
-    window.addEventListener('scroll', handleScrollReset);
-
-    return () => {
-      window.removeEventListener('scroll', handleScrollReset);
-    };
+      container.style.transform = getFinalTransform();
+      container.style.opacity = '1';
+    }
   }, []);
 
   return (
     <div
       className={`main-3D-Container relative flex items-center justify-${placement}`}
-      style={{ position: isAbsolute ? 'absolute' : 'relative', zIndex, width, height }}
+      style={{ position: 'absolute', zIndex, width, height }}
       ref={containerRef}
     >
-      <div
-        className="3D-Container flex justify-center"
-        style={{
-          transform: `translateX(-${translateX / 3}px)`,
-          transition: 'transform 0.8s ease-in-out',
-        }}
-      >
+      <div className="3D-Container flex justify-center">
         <ClientOnly>
           <QuantumCube zIndex={zIndex} />
         </ClientOnly>

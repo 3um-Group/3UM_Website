@@ -1,79 +1,33 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React from 'react';
 
 interface ScrollSectionProps {
-  content: React.ReactNode;
-  placement: 'left' | 'center' | 'right';
-  width: string;
-  height: string;
-  appearAnimation: 'fade' | 'scale';
-  transitionThreshold: number;
-  text?: string;
-  imageSrc?: string;
+  text: string;
+  direction?: string;
 }
 
-const ScrollSection: React.FC<ScrollSectionProps> = ({
-  content,
-  placement,
-  width,
-  height,
-  appearAnimation,
-  transitionThreshold,
-  text,
-  imageSrc,
-}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const sectionTop = sectionRef.current.getBoundingClientRect().top;
-        if (sectionTop <= window.innerHeight * transitionThreshold) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [transitionThreshold]);
-
-  useEffect(() => {
-    if (isVisible) {
-      controls.start({
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.8 },
-      });
-    } else {
-      controls.start({
-        opacity: 0,
-        scale: appearAnimation === 'scale' ? 0.5 : 1,
-        transition: { duration: 0.8 },
-      });
-    }
-  }, [isVisible, appearAnimation, controls]);
+const ScrollSection: React.FC<ScrollSectionProps> = ({ text }) => {
+  let direction = text == 'right'
+                  ? "right"
+                  : "left";
+  direction !== ("right" || "left")
+          ? "center"
+          : "left";
 
   return (
-    <motion.div
-      className={`absolute ${placement === 'left' ? 'left-0' : placement === 'center' ? 'left-1/2 transform -translate-x-1/2' : 'right-0'}`}
-      style={{ width, height }}
-      ref={sectionRef}
-      initial={{ opacity: 0, scale: appearAnimation === 'scale' ? 0.5 : 1 }}
-      animate={controls}
+    <div
+      className={`scroll-section-${direction} flex items-center justify-${direction} p-1 bg-blue`}
+      style={{
+        height: '100vh',
+        width: '100%',
+        background: direction === 'center' ? '#000' : '#fff',
+        color: direction === 'center' ? '#fff' : '#000',
+        textAlign: direction,
+      }}
     >
-      {imageSrc && <img src={imageSrc} alt="section" className="w-full h-full object-cover" />}
-      {text && <p className="text-lg">{text}</p>}
-      {content}
-    </motion.div>
+      <h1 className="text-2xl font-bold">{text}</h1>
+    </div>
   );
 };
 

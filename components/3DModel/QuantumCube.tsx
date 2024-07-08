@@ -88,7 +88,10 @@ const QuantumCubeModel: React.FC = () => {
 
 useGLTF.preload('/assets/3D/cubes_without_sphere.glb');
 
-const QuantumCube: React.FC<QuantumCubeProps> = ({ zIndex = 1, cameraPosition = [15, 0, 10] }) => {
+const QuantumCube: React.FC<QuantumCubeProps> = ({
+  zIndex = 1,
+  cameraPosition = [15, 0, 10],
+}) => {
   return (
     <Canvas
       style={{ height: '500px', width: '100%', zIndex }}
