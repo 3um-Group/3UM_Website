@@ -1,4 +1,5 @@
 
+import ProductDetails from '@/components/ProductDetails';
 import { notFound } from 'next/navigation';
 
 interface ProductPageProps {
@@ -10,12 +11,11 @@ interface ProductPageProps {
 export default function ProductPage({ params }: ProductPageProps) {
   const { product } = params;
 
-
-
   return (
     <div>
-      <h1>{product.charAt(0).toUpperCase() + product.slice(1)} Product Details</h1>
-      <p>This is the product details page for {product}.</p>
+      {/* <h1>{product.charAt(0).toUpperCase() + product.slice(1)} Product Details</h1>
+      <p>This is the product details page for {product}.</p> */}
+      <ProductDetails productName={product}/>
     </div>
   );
 }
