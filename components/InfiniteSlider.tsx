@@ -22,7 +22,6 @@ interface SliderItem {
   notificationLink: string;
 }
 
-//TODO[]: ADD LOGO for Slider Item
 const sliderItems: SliderItem[] = [
   {
     images: [House1, three_UM_DOA],
@@ -51,13 +50,12 @@ const sliderItems: SliderItem[] = [
 const InfiniteSlider: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentCard, setCurrentCard] = useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageIndices, setImageIndices] = useState(sliderItems.map(() => 0));
   const [userInteracted, setUserInteracted] = useState(false);
   const timerId = useRef<NodeJS.Timeout | null>(null);
 
   const handleCardClick = (index: number) => {
     setCurrentCard(index);
-    setCurrentImageIndex(0);
     setUserInteracted(true);
     resetTimer();
   };
@@ -94,16 +92,16 @@ const InfiniteSlider: React.FC = () => {
     }
   });
 
-  const handleImageChange = (direction: 'next' | 'prev') => {
-    if (direction === 'next') {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex + 1) % sliderItems[currentCard].images.length
-      );
-    } else {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === 0 ? sliderItems[currentCard].images.length - 1 : prevIndex - 1
-      );
-    }
+  const handleImageChange = (index: number, direction: 'next' | 'prev') => {
+    setImageIndices((prevIndices) => {
+      const newIndices = [...prevIndices];
+      if (direction === 'next') {
+        newIndices[index] = (newIndices[index] + 1) % sliderItems[index].images.length;
+      } else {
+        newIndices[index] = newIndices[index] === 0 ? sliderItems[index].images.length - 1 : newIndices[index] - 1;
+      }
+      return newIndices;
+    });
     resetTimer();
   };
 
@@ -130,7 +128,7 @@ const InfiniteSlider: React.FC = () => {
             className={`slider-item flex-shrink-0 relative m-4 p-4 rounded-lg transition-all duration-300 ease-in-out ${
               currentCard === index ? 'w-[100%] scale-[1.15]' : 'w-[50%]'
             } ${currentCard !== index ? 'hover:scale-[1.05]' : ''}`}
-            style={{ backgroundImage: `url(${typeof item.images[currentImageIndex] === 'string' ? item.images[currentImageIndex] : ''})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+            style={{ backgroundImage: `url(${typeof item.images[imageIndices[index]] === 'string' ? item.images[imageIndices[index]] : ''})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             onClick={() => handleCardClick(index)}
             tabIndex={0}
             role="button"
@@ -141,7 +139,7 @@ const InfiniteSlider: React.FC = () => {
                 <div
                   key={imgIndex}
                   className={`absolute inset-0 transition-opacity duration-300 ${
-                    currentImageIndex === imgIndex ? 'opacity-100' : 'opacity-0'
+                    imageIndices[index] === imgIndex ? 'opacity-100' : 'opacity-0'
                   }`}
                 >
                   {typeof image === 'string' ? (
@@ -180,22 +178,26 @@ const InfiniteSlider: React.FC = () => {
                   <button
                     key={imgIndex}
                     className={`w-2 h-2 rounded-full ${
-                      currentImageIndex === imgIndex ? 'bg-white' : 'bg-gray-400'
+                      imageIndices[index] === imgIndex ? 'bg-white' : 'bg-gray-400'
                     }`}
-                    onClick={() => setCurrentImageIndex(imgIndex)}
+                    onClick={() => setImageIndices((prevIndices) => {
+                      const newIndices = [...prevIndices];
+                      newIndices[index] = imgIndex;
+                      return newIndices;
+                    })}
                   />
                 ))}
               </div>
               <button
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full animate-fadeInUp"
-                onClick={() => handleImageChange('prev')}
+                onClick={() => handleImageChange(index, 'prev')}
                 aria-label="Previous Image"
               >
                 ‹
               </button>
               <button
                 className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full animate-fadeInUp"
-                onClick={() => handleImageChange('next')}
+                onClick={() => handleImageChange(index, 'next')}
                 aria-label="Next Image"
               >
                 ›
