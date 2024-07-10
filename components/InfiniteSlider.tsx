@@ -53,6 +53,7 @@ const InfiniteSlider: React.FC = () => {
   const [currentCard, setCurrentCard] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [userInteracted, setUserInteracted] = useState(false);
+  const timerId = useRef<NodeJS.Timeout | null>(null);
 
   const handleCardClick = (index: number) => {
     setCurrentCard(index);
@@ -62,14 +63,13 @@ const InfiniteSlider: React.FC = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (!userInteracted) {
-        setCurrentCard((prevCard) => (prevCard + 1) % sliderItems.length);
+    startTimer();
+    return () => {
+      if (timerId.current) {
+        clearInterval(timerId.current);
       }
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [userInteracted]);
+    };
+  }, []);
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -107,12 +107,18 @@ const InfiniteSlider: React.FC = () => {
     resetTimer();
   };
 
-  let timerId: NodeJS.Timeout;
-  const resetTimer = () => {
-    clearInterval(timerId);
-    timerId = setInterval(() => {
+  const startTimer = () => {
+    if (timerId.current) {
+      clearInterval(timerId.current);
+    }
+    timerId.current = setInterval(() => {
       setCurrentCard((prevCard) => (prevCard + 1) % sliderItems.length);
     }, 5000);
+  };
+
+  const resetTimer = () => {
+    startTimer();
+    setUserInteracted(false);
   };
 
   return (

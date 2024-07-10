@@ -37,6 +37,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import UseCaseCard from '@/components/home_components/useCaseCard';
 import InfiniteSlider from '@/components/InfiniteSlider';
 import FAQ from '@/components/FAQ';
+import Chatbox from '@/components/Chatbox';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0); // Set to 4 for "DAOs" to be active initially
@@ -241,54 +242,49 @@ export default function Home() {
         </section>
       </div>
 
-
+      {/* Second section: SuperDAO */}
       <div className="relative">
-        {/* First intelligent ecosystem section */}
-        <div className="bg-gradient-to-tl from-white to-blue-50">
-          <section
-            data-testid="heading-section-PdI721gFTOG_V3UBemfINg"
-            id="heading-complete-developer-platform"
-            className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24"
-          >
-            <div className="relative z-10 flex flex-col">
-              <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
-                <h2 className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl" data-testid="title-heading-section">
-                  <span className="block">The First </span>
-                  <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">Intelligent Ecosystem</span>
-                </h2>
-              </div>
+      {/* First intelligent ecosystem section */}
+      <div className="bg-gradient-to-tl from-white to-blue-50">
+        <section
+          data-testid="heading-section-PdI721gFTOG_V3UBemfINg"
+          id="heading-complete-developer-platform"
+          className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24"
+        >
+          <div className="relative z-10 flex flex-col">
+            <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
+              <h2 className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl" data-testid="title-heading-section">
+                <span className="block">The First </span>
+                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">Intelligent Ecosystem</span>
+              </h2>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section
-            id="home-alchemy-supernode"
-            className="px-6 py-16 md:py-24 lg:py-32"
-          >
-            <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-16">
-              <div className="lg:w-1/2 flex flex-col gap-8">
-                <div className="flex items-center gap-4">
-                  <h2 className="text-4xl font-bold">SuperDAO</h2>
-                </div>
-                <p className="text-xl text-gray-600 max-w-xl">
-                  Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, and interact with the infrastructure exactly as you want.
-                </p>
-                <div className="flex justify-left gap-4 mb-10">
-                  <a href="#" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Learn More</a>
-                  <a href="#" className="border border-3UM-color text-3UM-color px-6 py-3 rounded-lg font-semibold hover:bg-3UM-color hover:text-white transition-colors">Sign Up</a>
+        <section
+          id="home-alchemy-supernode"
+          className="px-6 py-16 md:py-24 lg:py-32"
+        >
+          <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-16">
+            <div className="lg:w-1/2 flex flex-col gap-8">
+              <div className="flex items-center gap-4">
+                <h2 className="text-4xl font-bold">SuperDAO</h2>
               </div>
-              </div>
-              <div className="lg:w-1/2">
-                <div
-                  data-testid="section-component-SGmvNDmrSti5E_k0k7s_yg"
-                  className="m-auto lg:order-2"
-                >
-                  <Image src={three_UM_DOA} key="three_UM_DOA" alt="company logo" width={500} height={500} className="z-30 h-fit w-fullr" />
-                </div>
+              <p className="text-xl text-gray-600 max-w-xl">
+                Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, and interact with the infrastructure exactly as you want.
+              </p>
+              <div className="flex justify-left gap-4 mb-10">
+                <a href="#" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Learn More</a>
+                <a href="#" className="border border-3UM-color text-3UM-color px-6 py-3 rounded-lg font-semibold hover:bg-3UM-color hover:text-white transition-colors">Sign Up</a>
               </div>
             </div>
-          </section>
-        </div>
+            <div className="lg:w-1/2">
+              <Chatbox /> 
+            </div>
+          </div>
+        </section>
       </div>
+    </div>
 
       {/* New section with Infinite Slider */}
       <div className="bg-gradient-to-tl from-white to-blue-50">
