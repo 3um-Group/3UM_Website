@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { FaGlobe, FaLock, FaTools, FaLightbulb } from 'react-icons/fa';
 
 interface ProductDetailsProps {
   productName: string;
@@ -12,7 +13,7 @@ interface Feature {
 }
 
 interface FeatureCard {
-  icon: string;
+  icon: React.ElementType;
   title: string;
   features: Feature[];
 }
@@ -31,66 +32,78 @@ interface ProductData {
 const productData: ProductData = {
   genesis: {
     title: '3UM Genesis',
-    subtitle: 'Supercharge your Microsoft security solutions with Armor MDR',
-    description: "Armor's specialized intelligent security analytics integrated within Microsoft's security solutions help your organization adapt quickly to fight threats. As the nature of attacks evolve, our expert cybersecurity professionals pivot to block attacks.",
+    subtitle: 'Empower your next-gen application development and deployment with 3UM Genesis',
+    description: "3UM Genesis integrates AI, blockchain, collective intelligence, and quantum computing to maximize their combined potential, overcoming the limitations of a fragmented approach. As technology evolves, our expert team continuously adapts to harness these advancements, ensuring optimal and cohesive solutions.",
     featureCards: [
       {
-        icon: 'platform',
-        title: 'Effective Platform Management and Configurations',
+        icon: FaGlobe,
+        title: 'Comprehensive Integration of Cutting-Edge Technologies',
         features: [
           {
-            title: 'Continuous platform management and best practice recommendations',
-            description: 'Ensures optimal usage of the products and its rich feature sets',
+            title: 'AI, Blockchain, Quantum Computing, and Collective Intelligence Integration',
+            description: 'Integrates AI, blockchain, quantum computing, and collective intelligence into a unified framework.',
           },
           {
-            title: 'Automation workflows (SOAR)',
-            description: 'Enrich and bridge workflows across the digital and security ecosystem (within and between Microsoft and third-party vendors)',
+            title: 'Seamless Interoperation',
+            description: 'Ensures these technologies work together seamlessly to create global value and drive innovation.',
           },
           {
-            title: 'DevOps deployment approach',
-            description: 'Enables scalable and rapid security configuration management',
+            title: 'Overcoming Fragmentation',
+            description: 'Addresses the fragmented approach by establishing a universal middleware for cohesive technology utilization.',
           },
         ],
       },
       {
-        icon: 'analytics',
-        title: 'Holistic Security Analytics and ML/AI-Powered Detections',
+        icon: FaLock,
+        title: 'Robust and Scalable Decentralized Network',
         features: [
           {
-            title: 'Armor rule library and custom rule development',
-            description: 'Helps reduce noise, by creating meaningful incidents and identify broader attack campaigns',
+            title: 'Decentralized Physical Infrastructure',
+            description: 'A global network of nodes and data centers owned and operated by the community, ensuring no single entity control.',
           },
           {
-            title: 'Usage and tuning of ML/AI-powered detections',
-            description: 'Identify complex multi-stage attacks, tuned appropriately for the models to operate better',
+            title: 'Peer-to-Peer Communication',
+            description: 'Enables direct, secure, and efficient communication between nodes, reducing latency and improving privacy.',
           },
           {
-            title: 'Threat hunting',
-            description: 'Proactively identify evasive and sophisticated threats',
+            title: 'Resilient and Secure',
+            description: 'Reduces risks of censorship, downtime, and centralization-related issues, ensuring a reliable and stable network.',
           },
         ],
       },
       {
-        icon: 'support',
-        title: '24x7 Armor SOC Expertise and Response Team',
+        icon: FaTools,
+        title: 'Empowering Developers of All Skill Levels',
         features: [
           {
-            title: 'Global view of threats and deep security expertise',
-            description: 'The Armor SOC provides global coverage spanning across more than 40 countries and various industry verticals, giving our team a deep understanding of global threat trends and adversarial techniques.',
+            title: 'No-Code Development Platform',
+            description: 'Allows users to create and deploy decentralized applications without writing a single line of code.',
           },
           {
-            title: 'Incident Response and forensics capabilities',
-            description: 'Our diligence ensures timely and appropriate containment and mitigation of threats to drastically limit the impact of the attack.',
+            title: 'Low-Code Development Environment',
+            description: 'Combines visual design tools with simple scripting languages for customization and extension.',
+          },
+          {
+            title: 'Full-Code Execution Capabilities',
+            description: 'Enables experienced developers to write and deploy custom smart contracts using popular programming languages.',
           },
         ],
       },
       {
-        icon: 'lock',
-        title: 'No MDR Vendor Lock-In',
+        icon: FaLightbulb,
+        title: 'Optimized for High Performance and Low Cost',
         features: [
           {
-            title: 'Ownership of your data and configurations',
-            description: 'All valuable historical data, tuning configurations, and artifacts like playbooks and automation assets developed over the course of our initial engagement term remain yours to keep. An active subscription provides you access to Armor support and updates, but we do not withhold any of your data and configurations.',
+            title: 'Advanced Sharding Techniques',
+            description: 'Uses sharding to handle high volumes of transactions and computations efficiently.',
+          },
+          {
+            title: 'Off-Chain Computation',
+            description: 'Reduces on-chain load and improves performance without compromising security.',
+          },
+          {
+            title: 'Efficient Consensus Mechanisms',
+            description: 'Ensures scalable and cost-effective operations, enabling large-scale use cases without excessive fees or congestion.',
           },
         ],
       },
@@ -114,8 +127,7 @@ const ProductDetails = ({ productName }: ProductDetailsProps) => {
           <div className="max-w-5xl mx-auto">
             <div className="text-black mb-12">
               <h2 className="text-lg font-semibold mb-4">WHY {product.title.toUpperCase()}</h2>
-              <h1 className="text-3xl font-bold mb-4">{product.description}</h1>
-              <p className="mb-4">You won't find a combination more powerful than Microsoft's suite of tools combined with the expertise of Armor.</p>
+              <h1 className="text-2xl font-bold mb-4">{product.description}</h1>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -124,10 +136,10 @@ const ProductDetails = ({ productName }: ProductDetailsProps) => {
               ))}
             </div>
 
-            <MicrosoftExpertise />
+            {/* <MicrosoftExpertise />
             <MaximizeDetection />
             <ReadyToSee />
-            <RelatedResources />
+            <RelatedResources /> */}
           </div>
         </div>
       </div>
@@ -151,12 +163,12 @@ interface HeaderProps {
   subtitle: string;
 }
 
-const FeatureCard: React.FC<FeatureCard> = ({ icon, title, features }) => {
+const FeatureCard: React.FC<FeatureCard> = ({ icon: Icon, title, features }) => {
   return (
     <div className="p-6 relative overflow-hidden border border-gray-200 rounded-lg transition-shadow duration-300 hover:shadow-lg">
       <div className="absolute top-0 left-0 right-0 h-1 bg-3UM-color"></div>
       <div className="flex items-center mb-4">
-        <IconPlaceholder icon={icon} />
+        <Icon className="w-6 h-6 text-3UM-color" />
         <h3 className="text-lg font-semibold ml-3">{title}</h3>
       </div>
       <ul className="space-y-4">
@@ -176,65 +188,9 @@ const FeatureCard: React.FC<FeatureCard> = ({ icon, title, features }) => {
   );
 };
 
-const IconPlaceholder: React.FC<{ icon: string }> = ({ icon }) => (
-  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-    <span className="text-xs">{icon}</span>
-  </div>
-);
-
-const MicrosoftExpertise: React.FC = () => (
-  <div className="mb-12">
-    <h2 className="text-3xl font-bold mb-6">Deep Microsoft expertise and partnership</h2>
-    <ul className="grid md:grid-cols-2 gap-4 mb-6">
-      <li>• Microsoft Solution Partner - Security</li>
-      <li>• Advanced Specialization – Threat Protection, Cloud Security</li>
-      <li>• Microsoft Sentinel Experts</li>
-      <li>• Microsoft Security Solutions partner</li>
-      <li>• Microsoft Intelligent Security Association (MISA) member</li>
-    </ul>
-    {/* Add Microsoft partnership logos here */}
-  </div>
-);
-
-const MaximizeDetection: React.FC = () => (
-  <div className="mb-12">
-    <h2 className="text-3xl font-bold mb-6">Maximize Detection During Attack Stages</h2>
-    <p className="mb-4">Comprehensive threat detection and response (TDR) across the cyber kill chain:</p>
-    <ul className="grid md:grid-cols-2 gap-4">
-      <li>• Microsoft Defender for Endpoint</li>
-      <li>• Microsoft Defender for Cloud Apps</li>
-      <li>• Microsoft Defender for Office 365</li>
-      <li>• Microsoft Sentinel</li>
-      <li>• Microsoft Defender for Identity</li>
-    </ul>
-  </div>
-);
-
-const ReadyToSee: React.FC = () => (
-  <div className="text-center mb-12">
-    <h2 className="text-3xl font-bold mb-4">Ready to see what Armor can do for you?</h2>
-    <p className="mb-6">Our Microsoft experienced cybersecurity and compliance experts are ready to understand your needs and walk you through our strategy and approach.</p>
-    <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">Request a Demo</button>
-  </div>
-);
-
-const RelatedResources: React.FC = () => (
-  <div className="mb-12">
-    <h2 className="text-3xl font-bold mb-6">Related Resources</h2>
-    <div className="grid md:grid-cols-3 gap-6">
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <img src="/path-to-image.jpg" alt="Resource" className="w-full h-48 object-cover" />
-        <div className="p-4">
-          <h3 className="font-bold mb-2">Economic Impact Report: XDR+SOC</h3>
-          <p className="text-sm mb-4">Read the potential return on investment (ROI) companies may realize when...</p>
-          <a href="#" className="text-blue-500 hover:underline">Read more</a>
-        </div>
-      </div>
-      {/* Add more resource cards as needed */}
-    </div>
-    <div className="text-center mt-8">
-      <button className="bg-gray-800 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition duration-300">View all resources</button>
-    </div>
+const IconPlaceholder: React.FC<{ icon: React.ElementType }> = ({ icon: Icon }) => (
+  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+    <Icon className="text-3UM-color" />
   </div>
 );
 
