@@ -7,8 +7,15 @@ import House1 from "@/public/assets/House1.jpeg"
 import House2 from "@/public/assets/House2.jpeg"
 import House3 from "@/public/assets/House3.jpeg"
 
+/**
+ * GitHub Story Point:
+ * Gherkin Language:
+ *
+ * Scenario:
+ */
+
 interface SliderItem {
-  images: (string | StaticImageData)[]; // Allow images to be string URLs or StaticImageData for next/image
+  images: (string | StaticImageData)[];
   title: string;
   description: string;
   tags: string[];
@@ -45,19 +52,24 @@ const InfiniteSlider: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentCard, setCurrentCard] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [userInteracted, setUserInteracted] = useState(false);
 
   const handleCardClick = (index: number) => {
     setCurrentCard(index);
     setCurrentImageIndex(0);
+    setUserInteracted(true);
+    resetTimer();
   };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentCard((prevCard) => (prevCard + 1) % sliderItems.length);
+      if (!userInteracted) {
+        setCurrentCard((prevCard) => (prevCard + 1) % sliderItems.length);
+      }
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [userInteracted]);
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -73,6 +85,12 @@ const InfiniteSlider: React.FC = () => {
   const bind = useDrag((state) => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft -= state.movement[0];
+      if (state.last) {
+        const nearestIndex = Math.round(sliderRef.current.scrollLeft / sliderRef.current.offsetWidth);
+        setCurrentCard(nearestIndex);
+        setUserInteracted(true);
+        resetTimer();
+      }
     }
   });
 
@@ -86,19 +104,31 @@ const InfiniteSlider: React.FC = () => {
         prevIndex === 0 ? sliderItems[currentCard].images.length - 1 : prevIndex - 1
       );
     }
+    resetTimer();
+  };
+
+  let timerId: NodeJS.Timeout;
+  const resetTimer = () => {
+    clearInterval(timerId);
+    timerId = setInterval(() => {
+      setCurrentCard((prevCard) => (prevCard + 1) % sliderItems.length);
+    }, 5000);
   };
 
   return (
     <div className="slider-container overflow-hidden relative" {...bind()}>
-      <div className="slider flex" ref={sliderRef}>
+      <div className="slider flex" ref={sliderRef} aria-live="polite">
         {sliderItems.map((item, index) => (
           <div
             key={index}
             className={`slider-item flex-shrink-0 relative m-4 p-4 rounded-lg transition-all duration-300 ease-in-out ${
-              currentCard === index ? 'w-[120%] scale-[1.15]' : 'w-[100%]'
-            } ${currentCard !== index ? 'hover:scale-105' : ''}`}
-            style={{ backgroundImage: `url(${typeof item.images[0] === 'string' ? item.images[0] : ''})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+              currentCard === index ? 'w-[100%] scale-[1.15]' : 'w-[50%]'
+            } ${currentCard !== index ? 'hover:scale-[1.05]' : ''}`}
+            style={{ backgroundImage: `url(${typeof item.images[currentImageIndex] === 'string' ? item.images[currentImageIndex] : ''})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             onClick={() => handleCardClick(index)}
+            tabIndex={0}
+            role="button"
+            aria-label={`Slide ${index + 1}: ${item.title}`}
           >
             <div className="relative w-full h-full">
               {item.images.map((image, imgIndex) => (
@@ -125,21 +155,21 @@ const InfiniteSlider: React.FC = () => {
                   )}
                 </div>
               ))}
-              <div className="absolute bottom-20 left-4 bg-gray-700 bg-opacity-50 p-2 rounded">
+              <div className="absolute bottom-20 left-4 bg-gray-700 bg-opacity-50 p-2 rounded animate-fadeInUp">
                 <h2 className="text-2xl font-bold text-white">{item.title}</h2>
                 <p className="text-white">{item.description}</p>
               </div>
-              <div className="absolute bottom-4 left-4 flex space-x-2">
+              <div className="absolute bottom-4 left-4 flex space-x-2 animate-fadeInUp">
                 {item.tags.map((tag, idx) => (
                   <span key={idx} className="bg-blue-500 text-white px-2 py-1 rounded-full">{tag}</span>
                 ))}
               </div>
-              <div className="absolute bottom-4 right-4">
+              <div className="absolute bottom-4 right-4 animate-fadeInUp">
                 <a href={item.notificationLink} className="bg-blue-500 text-white p-2 rounded-full flex items-center justify-center hover:scale-115 transition-transform duration-200">
                   <Image src={bellIcon} alt="Notification Bell" width={24} height={24} />
                 </a>
               </div>
-              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex space-x-2 animate-fadeInUp">
                 {item.images.map((_, imgIndex) => (
                   <button
                     key={imgIndex}
@@ -151,14 +181,16 @@ const InfiniteSlider: React.FC = () => {
                 ))}
               </div>
               <button
-                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full animate-fadeInUp"
                 onClick={() => handleImageChange('prev')}
+                aria-label="Previous Image"
               >
                 ‹
               </button>
               <button
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full"
+                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-2 rounded-full animate-fadeInUp"
                 onClick={() => handleImageChange('next')}
+                aria-label="Next Image"
               >
                 ›
               </button>
