@@ -127,7 +127,7 @@ const ProductDetails = ({ productName }: ProductDetailsProps) => {
           <div className="max-w-5xl mx-auto">
             <div className="text-black mb-12">
               <h2 className="text-lg font-semibold mb-4">WHY {product.title.toUpperCase()}</h2>
-              <h1 className="text-2xl font-bold mb-4">{product.description}</h1>
+              <h1 className="text-lg mb-4">{product.description}</h1>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
