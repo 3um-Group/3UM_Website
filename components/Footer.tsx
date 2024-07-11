@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14 z99">
+    <footer className="flex flex-col bg-gray-950 px-4 py-8 text-gray-200 sm:px-6 md:px-28 md:py-14">
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-12">
           <div className="flex flex-col gap-5 lg:w-2/3">
@@ -82,10 +82,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-7xl mt-8 pt-4 border-t border-gray-800">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <p className="font-paragraph-size-100 text-gray-200 text-sm sm:text-base">
-            Copyright© 2024 3UM. All rights reserved <a href="#" className="hover:underline">Terms of service</a>&nbsp; 
-            <Link href="/legal/privacypolicy" className="hover:underline">
-              Privacy Policy
-            </Link>
+            Copyright© 2024 3UM. All rights reserved <a href="#" className="hover:underline">Terms of service</a>
           </p>
           <a href="#" className="font-button-size-100 mt-4 sm:mt-0 rounded-lg bg-gray-100 px-4 py-2 text-sm text-gray-700 sm:py-3 sm:text-base">
             Powered by 3UM
