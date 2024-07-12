@@ -17,6 +17,18 @@ const config: Config = {
         "2xl": "1400px",
       },
     },
+    zIndex: {
+      '10': '10',
+      '20': '20',
+      '30': '30',
+      '40': '40',
+      '50': '50',
+      '60': '60',
+      '70': '70',
+      '80': '80',
+      '90': '90',
+      '99': '99',
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -68,10 +80,20 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        zoomIn: {
+          '0%': { transform: 'scale(0.5)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        zoomOut: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0.5)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "zoomIn": 'zoomIn 0.5s ease-in-out forwards',
+        "zoomOut": 'zoomOut 0.5s ease-in-out forwards',
       },
       // Add the custom maxWidth here
       maxWidth: {

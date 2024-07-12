@@ -35,6 +35,9 @@ import DataCard from '@/components/home_components/DataCards';
 import { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import UseCaseCard from '@/components/home_components/useCaseCard';
+import InfiniteSlider from '@/components/InfiniteSlider';
+import FAQ from '@/components/FAQ';
+import Chatbox from '@/components/Chatbox';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0); // Set to 4 for "DAOs" to be active initially
@@ -50,36 +53,35 @@ export default function Home() {
 
 
 
-  const useCases = [
-    {
+  // const useCases = [
+  //   {
 
-      description: 'Healthcare',
-      quote: 'Enhanced patient care with predictive analytics and personalized care.',
+  //     description: 'Healthcare',
+  //     quote: 'Enhanced patient care with predictive analytics and personalized care.',
 
-    },
-    {
-      description: 'Finance',
-      quote: 'Improved investment strategies with AI-driven analysis.',
+  //   },
+  //   {
+  //     description: 'Finance',
+  //     quote: 'Improved investment strategies with AI-driven analysis.',
 
 
-    },
-    {
-      description: 'Supply Chain',
-      quote: 'Optimized logistics with real-time data.',
+  //   },
+  //   {
+  //     description: 'Supply Chain',
+  //     quote: 'Optimized logistics with real-time data.',
 
-    },
-    {
-      description: 'Cybersecurity',
-      quote: 'Advanced threat detection with quantum-enhanced cryptography, zero-knowledge proofs, and quantum cryptography.',
+  //   },
+  //   {
+  //     description: 'Cybersecurity',
+  //     quote: 'Advanced threat detection with quantum-enhanced cryptography, zero-knowledge proofs, and quantum cryptography.',
 
-    },
-    {
-      description: 'Research',
-      quote: 'Accelerating discoveries with AI and quantum computing.',
+  //   },
+  //   {
+  //     description: 'Research',
+  //     quote: 'Accelerating discoveries with AI and quantum computing.',
 
-    }
-    // Add more use cases as needed
-  ];
+  //   }
+  // ];
 
   const handleNextSlide = () => {
     if (currentSlide < useCases.length - 1) {
@@ -107,54 +109,54 @@ export default function Home() {
     }
   };
 
-  const apiCards = [
-    {
-      icon: '🔒',
-      title: 'Integrated Identities',
-      description: 'Secure identity management with decentralized technology',
-    },
-    {
-      icon: '🔄',
-      title: 'Smart Contract Infrastructure',
-      description: 'Efficient and secure smart contract solutions.',
-    },
-    {
-      icon: '📄',
-      title: 'Decentralized Intelligence Tools',
-      description: 'Build and manage intelligent applications.',
-    },
-    {
-      icon: '💱',
-      title: 'Real-Time Analytics',
-      description: ' Gain insights with real-time data processing.',
-    },
-    {
-      icon: '🔮',
-      title: 'Blockchain Simulation',
-      description: 'Test and verify transactions securely.',
-    },
-  ];
+  // const apiCards = [
+  //   {
+  //     icon: '🔒',
+  //     title: 'Integrated Identities',
+  //     description: 'Secure identity management with decentralized technology',
+  //   },
+  //   {
+  //     icon: '🔄',
+  //     title: 'Smart Contract Infrastructure',
+  //     description: 'Efficient and secure smart contract solutions.',
+  //   },
+  //   {
+  //     icon: '📄',
+  //     title: 'Decentralized Intelligence Tools',
+  //     description: 'Build and manage intelligent applications.',
+  //   },
+  //   {
+  //     icon: '💱',
+  //     title: 'Real-Time Analytics',
+  //     description: ' Gain insights with real-time data processing.',
+  //   },
+  //   {
+  //     icon: '🔮',
+  //     title: 'Blockchain Simulation',
+  //     description: 'Test and verify transactions securely.',
+  //   },
+  // ];
 
 
-  const tabs = [
+  // const tabs = [
 
-    {
-      "name": "3UM.ID",
-      "content": "A revolutionary identity management system allowing users to control their digital identities securely, leveraging quantum computing, AI, and blockchain.",
-      "img": three_UM_brain
-    },
-    {
-      "name": "3UM Finance",
-      "content": "A comprehensive financial platform that empowers users to create, manage, and invest across CeFi, DeFi, HiFi, and TradFi, integrating robust security, real-time analytics, and personalized investment strategies.",
-      "img": three_UM_brain
-    },
-    {
-      "name": "3UM Genesis",
-      "content": "A powerful development platform enabling users to build, deploy, and scale intelligent applications across IoT, blockchain, AI, research, and more ecosystems with seamless connectivity and adaptive learning capabilities.",
-      "img": three_UM_brain
-    }
+  //   {
+  //     "name": "3UM.ID",
+  //     "content": "A revolutionary identity management system allowing users to control their digital identities securely, leveraging quantum computing, AI, and blockchain.",
+  //     "img": three_UM_brain
+  //   },
+  //   {
+  //     "name": "3UM Finance",
+  //     "content": "A comprehensive financial platform that empowers users to create, manage, and invest across CeFi, DeFi, HiFi, and TradFi, integrating robust security, real-time analytics, and personalized investment strategies.",
+  //     "img": three_UM_brain
+  //   },
+  //   {
+  //     "name": "3UM Genesis",
+  //     "content": "A powerful development platform enabling users to build, deploy, and scale intelligent applications across IoT, blockchain, AI, research, and more ecosystems with seamless connectivity and adaptive learning capabilities.",
+  //     "img": three_UM_brain
+  //   }
 
-  ];
+  // ];
 
   return (
     <>
@@ -239,86 +241,93 @@ export default function Home() {
         </section>
       </div>
 
-
-      <div className='relative'>
-        {/* Second section */}
-        <div className="bg-gradient-to-tl from-white to-blue-50">
-
-        
+      {/* Second section: SuperDAO */}
+      <div className="relative">
+      {/* First intelligent ecosystem section */}
+      <div className="bg-gradient-to-tl from-white to-blue-50">
         <section
           data-testid="heading-section-PdI721gFTOG_V3UBemfINg"
           id="heading-complete-developer-platform"
-          className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24 "
+          className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24"
         >
           <div className="relative z-10 flex flex-col">
             <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
               <h2 className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl" data-testid="title-heading-section">
-                <span className="block">The First </span>
-                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">Intelligent Ecosystem</span>
+                <span className="block">Your Business</span>
+                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">with Fractional Real Estate NFTs and DAO Integration.</span>
               </h2>
             </div>
-
           </div>
         </section>
 
         <section
           id="home-alchemy-supernode"
-          className="px-6 py-16 md:py-24 lg:py-32 "
+          className="px-6 py-16 md:py-24 lg:py-32"
         >
           <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-16">
             <div className="lg:w-1/2 flex flex-col gap-8">
               <div className="flex items-center gap-4">
-                {/* Placeholder for supernode icon - replace with actual icon */}
-                {/* <div className="w-12 h-12 bg-blue-500 rounded-full"></div> */}
                 <h2 className="text-4xl font-bold">SuperDAO</h2>
               </div>
               <p className="text-xl text-gray-600 max-w-xl">
                 Meet the infrastructure powering our suite of applications. Read, write, manage, integrate, and interact with the infrastructure exactly as you want.
-
               </p>
-              {/* <div className="flex flex-row gap-4">
-                <a
-                  href="https://dashboard.alchemy.com/signup/?a="
-                  className="px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors"
-                >
-                  Get your API key
-                </a>
-                <a
-                  href="https://docs.alchemy.com/reference/api-overview"
-                  className="px-6 py-3 text-blue-500 font-semibold flex items-center gap-2 hover:bg-blue-50 rounded-lg transition-colors"
-                >
-                  View docs
-                  <svg className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
-                </a>
-              </div> */}
+              <div className="flex justify-left gap-4 mb-10">
+                <a href="#" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Learn More</a>
+                <a href="#" className="border border-3UM-color text-3UM-color px-6 py-3 rounded-lg font-semibold hover:bg-3UM-color hover:text-white transition-colors">Sign Up</a>
+              </div>
             </div>
             <div className="lg:w-1/2">
-              {/* Placeholder for supernode diagram - replace with actual image */}
-
-
-              <div data-testid="section-component-SGmvNDmrSti5E_k0k7s_yg"
-                className="m-auto [&amp;>img]:max-h-[700px] [&amp;>img]:max-w-[700px] [&amp;>img]:object-contain lg:order-2">
-                <Image
-                  src={three_UM_DOA}
-                  alt='company logo'
-                  width={500}
-                  height={500}
-                  className='z-30 h-fit w-fullr'
-                />
-
-              </div>
+              <Chatbox /> 
             </div>
           </div>
         </section>
-        </div>
+      </div>
+    </div>
+
+      {/* New section with Infinite Slider */}
+      <div className="bg-gradient-to-tl from-white to-blue-50">
+        <section
+          data-testid="heading-section-slider"
+          id="heading-slider"
+          className="relative flex flex-col gap-14 overflow-hidden px-6 xl:px-0 pt-12 md:pt-16 lg:pt-24"
+        >
+          <div className="relative z-10 flex flex-col">
+            <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
+              <h2 className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl" data-testid="title-heading-section">
+                <span className="block">Explore </span>
+                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">3UM Fortuna</span>
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="home-slider-section"
+          className="px-4 py-4 md:py-8 lg:py-12"
+        >
+          <div className="mx-auto max-w-7xl flex flex-col items-center justify-between gap-16">
+            <div className="w-full text-center">
+              <h3 className="text-xl text-gray-600 max-w-xl mx-auto mb-6">
+                Fractional Real Estate Investing with our proprietary token, 3MX
+              </h3>
+              <div className="flex justify-center gap-4 mb-10">
+                <a href="#" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Learn More</a>
+                <a href="#" className="border border-3UM-color text-3UM-color px-6 py-3 rounded-lg font-semibold hover:bg-3UM-color hover:text-white transition-colors">Sign Up</a>
+              </div>
+              <InfiniteSlider />
+            </div>
+          </div>
+        </section>
+      </div>
+
+    
 
 
-<div className='bg-gradient-to-tl from-white to-blue-50'>
+    <div className='bg-gradient-to-tl from-white to-blue-50'>
 
 
-        <section className="py-16 px-4">
+        {/* <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Intelligent Solutions for Every Use Case</h2>
             <p className="text-xl text-gray-700">
@@ -331,12 +340,17 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="relative overflow-hidden py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-12">Powering web3 growth</h2>
+            <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
 
+            <div>
+             <FAQ />
+            </div>
+
+{/* 
             <div ref={sliderRef} className="flex overflow-hidden snap-x snap-mandatory">
               {useCases.map((useCase, index) => (
                 <UseCaseCard
@@ -369,14 +383,14 @@ export default function Home() {
                   <circle cx="20" cy="20" r="19.5" stroke="currentColor" />
                   <path d="M18 14L24 20L18 26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </button>
-            </div>
+              </button> 
+            </div>*/}
           </div>
         </section>
 
 
 
-        <section className="py-12 md:py-24 px-6 md:px-28 lg:px-52">
+        {/* <section className="py-12 md:py-24 px-6 md:px-28 lg:px-52">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <p className="text-sm font-bold text-gray-700 mb-5">3UM SDK</p>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-5">
@@ -418,7 +432,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* bg purple removed here*/}
+          {/* bg purple removed here }
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -449,16 +463,16 @@ export default function Home() {
                 />
                 {/* <div className="bg-gray-200 rounded-lg h-full flex items-center justify-center">
                   <p className="text-gray-500 text-lg">Image Placeholder</p>
-                </div> */}
+                </div> }
               </div>
             </motion.div>
           </AnimatePresence>
-        </section>
+        </section> */}
 
       </div>
-      </div>
+      
 
-      <section id="conversion-panel-center-blockchain-magic-home" data-testid="conversion-panel-section" className="relative flex flex-col items-center gap-14 overflow-hidden px-6 py-12 md:px-28 md:py-16 lg:flex-row lg:py-24 xl:px-0 bg-gradient-to-r from-black to-blue-900">
+      {/* <section id="conversion-panel-center-blockchain-magic-home" data-testid="conversion-panel-section" className="relative flex flex-col items-center gap-14 overflow-hidden px-6 py-12 md:px-28 md:py-16 lg:flex-row lg:py-24 xl:px-0 bg-gradient-to-r from-black to-blue-900">
         <div className="mx-auto flex w-full max-w-4xl items-center gap-8 flex-col">
           <div className="flex flex-col gap-8 items-center">
             <div className="flex max-w-xl flex-col items-center gap-4  text-center">
@@ -476,7 +490,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
 
 
