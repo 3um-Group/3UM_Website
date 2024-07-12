@@ -109,7 +109,85 @@ const productData: ProductData = {
       },
     ],
   },
-  // Add more products here
+  apexai: {
+    title: 'Apex AI',
+    subtitle: 'Empower your real estate fractional investing business with Apex AI',
+    description: "Apex AI is a Decentralized Autonomous Organization (DAO) with multi-perplexity capability designed to revolutionize the real estate fractional investing sector. By integrating advanced AI technology and seamless B2B integrations, Apex AI ensures your business operations are optimized and scalable.",
+    featureCards: [
+      {
+        icon: FaGlobe,
+        title: 'Comprehensive Integration of Cutting-Edge Technologies',
+        features: [
+          {
+            title: 'AI and Multi-Perplexity Capability Integration',
+            description: 'Apex AI leverages advanced AI and multi-perplexity capabilities to provide a cohesive and intelligent framework for managing real estate investments.',
+          },
+          {
+            title: 'Seamless Interoperation',
+            description: 'Ensures seamless interaction between different business models and technological systems to drive innovation and efficiency.',
+          },
+          {
+            title: 'Overcoming Fragmentation',
+            description: 'Establishes a universal middleware to address fragmented approaches in real estate management and utilization.',
+          },
+        ],
+      },
+      {
+        icon: FaLock,
+        title: 'Robust and Scalable Decentralized Network',
+        features: [
+          {
+            title: 'Decentralized Physical Infrastructure',
+            description: 'A global network of nodes and data centers owned and operated by the community ensures no single entity has control, promoting transparency and security.',
+          },
+          {
+            title: 'Peer-to-Peer Communication',
+            description: 'Enables direct, secure, and efficient communication between nodes, reducing latency and improving privacy.',
+          },
+          {
+            title: 'Resilient and Secure',
+            description: 'Reduces risks of censorship, downtime, and centralization-related issues, ensuring a reliable and stable network.',
+          },
+        ],
+      },
+      {
+        icon: FaTools,
+        title: 'Empowering Real Estate Businesses',
+        features: [
+          {
+            title: 'B2B Integration for Your Business of Choice',
+            description: 'Integrates with popular platforms and business models such as Airbnb, corporate housing, and multi-family rentals, providing flexibility and scalability.',
+          },
+          {
+            title: 'Low-Code Development Environment',
+            description: 'Combines visual design tools with simple scripting languages for easy customization and extension.',
+          },
+          {
+            title: 'Full-Code Execution Capabilities',
+            description: 'Enables experienced developers to write and deploy custom smart contracts using popular programming languages.',
+          },
+        ],
+      },
+      {
+        icon: FaLightbulb,
+        title: 'Optimized for High Performance and Low Cost',
+        features: [
+          {
+            title: 'Advanced Sharding Techniques',
+            description: 'Uses sharding to handle high volumes of transactions and computations efficiently, ensuring scalability.',
+          },
+          {
+            title: 'Off-Chain Computation',
+            description: 'Reduces on-chain load and improves performance without compromising security.',
+          },
+          {
+            title: 'Efficient Consensus Mechanisms',
+            description: 'Ensures scalable and cost-effective operations, enabling large-scale use cases without excessive fees or congestion.',
+          },
+        ],
+      },
+    ],
+  },
 };
 
 const ProductDetails = ({ productName }: ProductDetailsProps) => {

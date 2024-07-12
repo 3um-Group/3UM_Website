@@ -25,7 +25,7 @@ export async function generateStaticParams() {
   return [
     { product: 'fortuna' },
     { product: 'genesis' },
-    { product: 'ai' },
+    { product: 'apexai' },
   ];
 }
 
