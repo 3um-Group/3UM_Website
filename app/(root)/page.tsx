@@ -53,36 +53,35 @@ export default function Home() {
 
 
 
-  const useCases = [
-    {
+  // const useCases = [
+  //   {
 
-      description: 'Healthcare',
-      quote: 'Enhanced patient care with predictive analytics and personalized care.',
+  //     description: 'Healthcare',
+  //     quote: 'Enhanced patient care with predictive analytics and personalized care.',
 
-    },
-    {
-      description: 'Finance',
-      quote: 'Improved investment strategies with AI-driven analysis.',
+  //   },
+  //   {
+  //     description: 'Finance',
+  //     quote: 'Improved investment strategies with AI-driven analysis.',
 
 
-    },
-    {
-      description: 'Supply Chain',
-      quote: 'Optimized logistics with real-time data.',
+  //   },
+  //   {
+  //     description: 'Supply Chain',
+  //     quote: 'Optimized logistics with real-time data.',
 
-    },
-    {
-      description: 'Cybersecurity',
-      quote: 'Advanced threat detection with quantum-enhanced cryptography, zero-knowledge proofs, and quantum cryptography.',
+  //   },
+  //   {
+  //     description: 'Cybersecurity',
+  //     quote: 'Advanced threat detection with quantum-enhanced cryptography, zero-knowledge proofs, and quantum cryptography.',
 
-    },
-    {
-      description: 'Research',
-      quote: 'Accelerating discoveries with AI and quantum computing.',
+  //   },
+  //   {
+  //     description: 'Research',
+  //     quote: 'Accelerating discoveries with AI and quantum computing.',
 
-    }
-    // Add more use cases as needed
-  ];
+  //   }
+  // ];
 
   const handleNextSlide = () => {
     if (currentSlide < useCases.length - 1) {
@@ -110,54 +109,54 @@ export default function Home() {
     }
   };
 
-  const apiCards = [
-    {
-      icon: '🔒',
-      title: 'Integrated Identities',
-      description: 'Secure identity management with decentralized technology',
-    },
-    {
-      icon: '🔄',
-      title: 'Smart Contract Infrastructure',
-      description: 'Efficient and secure smart contract solutions.',
-    },
-    {
-      icon: '📄',
-      title: 'Decentralized Intelligence Tools',
-      description: 'Build and manage intelligent applications.',
-    },
-    {
-      icon: '💱',
-      title: 'Real-Time Analytics',
-      description: ' Gain insights with real-time data processing.',
-    },
-    {
-      icon: '🔮',
-      title: 'Blockchain Simulation',
-      description: 'Test and verify transactions securely.',
-    },
-  ];
+  // const apiCards = [
+  //   {
+  //     icon: '🔒',
+  //     title: 'Integrated Identities',
+  //     description: 'Secure identity management with decentralized technology',
+  //   },
+  //   {
+  //     icon: '🔄',
+  //     title: 'Smart Contract Infrastructure',
+  //     description: 'Efficient and secure smart contract solutions.',
+  //   },
+  //   {
+  //     icon: '📄',
+  //     title: 'Decentralized Intelligence Tools',
+  //     description: 'Build and manage intelligent applications.',
+  //   },
+  //   {
+  //     icon: '💱',
+  //     title: 'Real-Time Analytics',
+  //     description: ' Gain insights with real-time data processing.',
+  //   },
+  //   {
+  //     icon: '🔮',
+  //     title: 'Blockchain Simulation',
+  //     description: 'Test and verify transactions securely.',
+  //   },
+  // ];
 
 
-  const tabs = [
+  // const tabs = [
 
-    {
-      "name": "3UM.ID",
-      "content": "A revolutionary identity management system allowing users to control their digital identities securely, leveraging quantum computing, AI, and blockchain.",
-      "img": three_UM_brain
-    },
-    {
-      "name": "3UM Finance",
-      "content": "A comprehensive financial platform that empowers users to create, manage, and invest across CeFi, DeFi, HiFi, and TradFi, integrating robust security, real-time analytics, and personalized investment strategies.",
-      "img": three_UM_brain
-    },
-    {
-      "name": "3UM Genesis",
-      "content": "A powerful development platform enabling users to build, deploy, and scale intelligent applications across IoT, blockchain, AI, research, and more ecosystems with seamless connectivity and adaptive learning capabilities.",
-      "img": three_UM_brain
-    }
+  //   {
+  //     "name": "3UM.ID",
+  //     "content": "A revolutionary identity management system allowing users to control their digital identities securely, leveraging quantum computing, AI, and blockchain.",
+  //     "img": three_UM_brain
+  //   },
+  //   {
+  //     "name": "3UM Finance",
+  //     "content": "A comprehensive financial platform that empowers users to create, manage, and invest across CeFi, DeFi, HiFi, and TradFi, integrating robust security, real-time analytics, and personalized investment strategies.",
+  //     "img": three_UM_brain
+  //   },
+  //   {
+  //     "name": "3UM Genesis",
+  //     "content": "A powerful development platform enabling users to build, deploy, and scale intelligent applications across IoT, blockchain, AI, research, and more ecosystems with seamless connectivity and adaptive learning capabilities.",
+  //     "img": three_UM_brain
+  //   }
 
-  ];
+  // ];
 
   return (
     <>
@@ -254,8 +253,8 @@ export default function Home() {
           <div className="relative z-10 flex flex-col">
             <div className="mx-auto flex max-w-xl flex-col items-center text-gray-950 gap-4 py-8">
               <h2 className="font-heading-size-450 text-center font-extrabold text-3xl md:text-4xl lg:text-5xl" data-testid="title-heading-section">
-                <span className="block">The First </span>
-                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">Intelligent Ecosystem</span>
+                <span className="block">Your Business</span>
+                <span className="bg-gradient-to-r from-3UM-color to-black bg-clip-text text-transparent">with Fractional Real Estate NFTs and DAO Integration.</span>
               </h2>
             </div>
           </div>

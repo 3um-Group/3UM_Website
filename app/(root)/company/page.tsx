@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import ScrollSection from '@/components/company_components/ScrollSection';
+import Products from '@/components/our_solutions_components/OurProducts'
+import OurSolutions from '@/components/our_solutions_components/OurSolutions'
 
 const PageTitle: React.FC<{ title: string }> = ({ title }) => {
   return (
@@ -18,41 +19,17 @@ enum TEXT {
   Text3 = "Check out our products below"
 }
 
-const CompanyPage: React.FC = () => {
+const OurSolutionsPage: React.FC = () => {
   return (
     <div className="w-1/2 min-h-screen bg-white text-black pb-0 flex-columns mx-auto items-center justify-center">
-      <section className="h-[600px] overflow-y-scroll snap-y snap-mandatory border-solid border-2 border-indigo-600">
-            <div className="relative mx-auto max-w-container md:lg:max-w-6xl lg:max-w-6xl">
-              <PageTitle title="Our Company" />
-            </div>
-            <div className="snap-start h-full flex items-center justify-center border-solid border-2 border-indigo-600">
-              <ScrollSection direction={'right'} text={TEXT.Text1} />
-            </div>
-            <div className="snap-start h-full flex items-center justify-center border-solid border-2 border-indigo-600">
-              <ScrollSection direction={'center'} text={TEXT.Text2} />
-            </div>
-            <div className="snap-start h-full flex items-center justify-center border-solid border-1 border-indigo-600">
-              <ScrollSection direction={'right'} text={TEXT.Text3} />
-            </div>
-      </section>
-      <section className="h-[600px] overflow-y-scroll snap-y snap-mandatory border-solid border-2 border-indigo-600">
-        <div className="relative mx-auto max-w-container md:lg:max-w-6xl lg:max-w-6xl">
-          <PageTitle title="Our Solutions" />
-        </div>
-        <div className="snap-start h-full flex items-center justify-center border-solid border-2 border-indigo-600">
-          <ScrollSection direction={'right'} text={TEXT.Text1} />
-        </div>
-        <div className="snap-start h-full flex items-center justify-center border-solid border-2 border-indigo-600">
-          <ScrollSection direction={'center'} text={TEXT.Text2} />
-        </div>
-        <div className="snap-start h-full flex items-center justify-center border-solid border-1 border-indigo-600">
-          <ScrollSection direction={'right'} text={TEXT.Text3} />
-        </div>
-      </section>
+            <div>
+      <OurSolutions />
+      <Products />
+    </div>
       <hr/>
     </div>
   );
 };
 
 
-export default CompanyPage;
+export default OurSolutionsPage;

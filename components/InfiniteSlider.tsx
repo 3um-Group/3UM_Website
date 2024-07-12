@@ -6,7 +6,9 @@ import bellIcon from '@/public/assets/bell.png';
 import House1 from "@/public/assets/House1.jpeg"
 import House2 from "@/public/assets/House2.jpeg"
 import House3 from "@/public/assets/House3.jpeg"
-
+import Bathroom1 from "@/public/assets/Bathroom1.jpg"
+import Bathroom2 from "@/public/assets/Bathroom2.jpg"
+import Bathroom3 from "@/public/assets/Bathroom3.jpg"
 /**
  * GitHub Story Point:
  * Gherkin Language:
@@ -24,27 +26,26 @@ interface SliderItem {
 
 const sliderItems: SliderItem[] = [
   {
-    images: [House1, three_UM_DOA],
+    images: [House1, Bathroom1],
     title: 'Title 1',
     description: 'Description 1',
     tags: ['Tag1', 'Tag2', 'Tag3', 'Tag4'],
     notificationLink: '/home',
   },
   {
-    images: [House2, three_UM_DOA],
+    images: [House2, Bathroom2],
     title: 'Celebrity Home',
     description: 'Appraised by legendary Makoto',
     tags: ['Luxe', 'Profitable', 'Staked', 'Hot 🔥'],
     notificationLink: '/home',
   },
   {
-    images: [House3, three_UM_DOA],
+    images: [House3, Bathroom3],
     title: 'Cottage by David',
     description: 'Countryside Livin\'',
     tags: ['Fave', 'Most Visited', 'Airbnb', 'Hot Tub'],
     notificationLink: '/home',
   },
-  // Add more items as needed
 ];
 
 const InfiniteSlider: React.FC = () => {
@@ -74,7 +75,7 @@ const InfiniteSlider: React.FC = () => {
       const selectedCard = sliderRef.current.children[currentCard] as HTMLDivElement;
       selectedCard.scrollIntoView({
         behavior: 'smooth',
-        block: 'nearest',
+        block: 'center',
         inline: 'center',
       });
     }
@@ -84,7 +85,7 @@ const InfiniteSlider: React.FC = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft -= state.movement[0];
       if (state.last) {
-        const nearestIndex = Math.round(sliderRef.current.scrollLeft / sliderRef.current.offsetWidth);
+        const nearestIndex = Math.round(sliderRef.current.scrollLeft / (sliderRef.current.scrollWidth / sliderItems.length));
         setCurrentCard(nearestIndex);
         setUserInteracted(true);
         resetTimer();
