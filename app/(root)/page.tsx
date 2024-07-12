@@ -176,10 +176,10 @@ export default function Home() {
                 Build, deploy, and scale your applications with our powerful infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Explore the Ecosystem</a>
+                <a href="" role="button" className="bg-3UM-color text-white px-6 py-3 rounded-lg font-semibold hover:bg-black transition-colors">Explore the Ecosystem</a>
 
                 <div className="group relative cursor-default">
-                  <a href="" className="text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center pointer-events-none">
+                  <a href="" role="link" className="text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center pointer-events-none">
                     View docs
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
