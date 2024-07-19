@@ -1,7 +1,6 @@
 name: Connect to Hashicorp Vault
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["vault-trial"]
 
@@ -9,6 +8,13 @@ jobs:
   vault-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          repository: 3um-Group/Github-Vault-Action
+          ref: v0.2.1-alpha
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: ./test/workflows/
       - name: Hashicorp Vault Secrets
         id: hashicorp-vault-secrets
         uses: 3um-Group/Github-Vault-Action@v0.2.1-alpha
