@@ -15,16 +15,16 @@ jobs:
           ref: v0.2.1-alpha
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           path: ./test/workflows/
-      - name: Hashicorp Vault Secrets
-        id: hashicorp-vault-secrets
-        uses: 3um-Group/Github-Vault-Action@v0.2.1-alpha
-        with:
-          CLIENT_ID: ${{ secrets.VAULT_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.VAULT_TOKEN }}
-          ORGANIZATION_ID: "2203773f-14a3-405d-bca7-aa95a8c28c97"
-          PROJECT_ID: "918fb763-cd0e-4d5d-81ea-e6b2c830cf32"
-          APP_NAME: "preprod-3UM-Website"
-          SECRET_NAMES: '["preprod_3UMWebsite_Trial"]'
+      # - name: Hashicorp Vault Secrets
+      #   id: hashicorp-vault-secrets
+      #   uses: 3um-Group/Github-Vault-Action@v0.2.1-alpha
+      #   with:
+      #     CLIENT_ID: ${{ secrets.VAULT_CLIENT_ID }}
+      #     CLIENT_SECRET: ${{ secrets.VAULT_TOKEN }}
+      #     ORGANIZATION_ID: "2203773f-14a3-405d-bca7-aa95a8c28c97"
+      #     PROJECT_ID: "918fb763-cd0e-4d5d-81ea-e6b2c830cf32"
+      #     APP_NAME: "preprod-3UM-Website"
+      #     SECRET_NAMES: '["preprod_3UMWebsite_Trial"]'
 
-      - name: Example Step
-        run: echo "The output value is ${{ steps.hashicorp-vault-secrets.outputs.preprod_3UMWebsite_Trial }}"
+      # - name: Example Step
+      #   run: echo "The output value is ${{ steps.hashicorp-vault-secrets.outputs.preprod_3UMWebsite_Trial }}"
