@@ -1,8 +1,9 @@
 name: Connect to Hashicorp Vault
 
 on:
-  issues:
-    types: [opened, edited, closed]
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["vault-trial"]
 
 jobs:
   vault-job:
