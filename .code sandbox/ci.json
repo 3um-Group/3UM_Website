@@ -1,0 +1,5 @@
+{
+  "buildCommand": "start",
+  "node": "22",
+  "sandboxes": ["new", "vanilla"]
+}
