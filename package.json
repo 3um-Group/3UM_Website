@@ -11,7 +11,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.4.0",
+    "@ant-design/icons": "^6.0.0",
     "@clerk/nextjs": "^5.5.2",
     "@heroicons/react": "^1.0.6",
     "@radix-ui/react-select": "^2.0.0",
